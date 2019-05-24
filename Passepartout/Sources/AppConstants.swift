@@ -183,6 +183,18 @@ public class AppConstants {
     }
 
     public class URLs {
+        public class iOS {
+            public static let readme = Repos.ios.appendingPathComponent("blob/master/README.md")
+            
+            public static let changelog = Repos.ios.appendingPathComponent("blob/master/CHANGELOG.md")
+        }
+
+        public class macOS {
+            public static let readme = Repos.macos.appendingPathComponent("blob/master/README.md")
+            
+            public static let changelog = Repos.macos.appendingPathComponent("blob/master/CHANGELOG.md")
+        }
+        
         public static let website = URL(string: "https://\(Domain.name)")!
         
         public static let faq = website.appendingPathComponent("faq")
@@ -190,10 +202,6 @@ public class AppConstants {
         public static let disclaimer = website.appendingPathComponent("disclaimer")
 
         public static let privacyPolicy = website.appendingPathComponent("privacy")
-        
-        public static let readme = Repos.ios.appendingPathComponent("blob/master/README.md")
-        
-        public static let changelog = Repos.ios.appendingPathComponent("blob/master/CHANGELOG.md")
         
         public static let subreddit = URL(string: "https://www.reddit.com/r/passepartout")!
         
@@ -254,6 +262,8 @@ public class AppConstants {
         
         public static let ios = github(repo: "passepartout-ios")
 
+        public static let macos = github(repo: "passepartout-macos")
+        
         public static let api = githubRaw(repo: "api")
     }
 

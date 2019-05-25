@@ -247,6 +247,7 @@ public class IntentDispatcher {
     }
 
     public static func handleCellularNetwork(trust: Bool, interaction: INInteraction?, completionHandler: ((Error?) -> Void)?) {
+        #if os(iOS)
         guard Utils.hasCellularData() else {
             // FIXME: error = has no mobile data
             completionHandler?(nil)
@@ -255,9 +256,10 @@ public class IntentDispatcher {
         let service = TransientStore.shared.service
         service.preferences.trustsMobileNetwork = trust
         TransientStore.shared.serialize(withProfiles: false)
-        
+
         log.info("\(trust ? "Trusted" : "Untrusted") cellular network")
         refreshVPN(service: service, doReconnect: false, completionHandler: completionHandler)
+        #endif
     }
 
     private static func refreshVPN(service: ConnectionService, doReconnect: Bool, completionHandler: ((Error?) -> Void)?) {

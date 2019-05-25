@@ -227,6 +227,7 @@ public extension Array where Element: CustomStringConvertible {
     }
 }
 
+#if os(iOS)
 public extension UITableView {
     func scrollToRowAsync(at indexPath: IndexPath) {
         DispatchQueue.main.async { [weak self] in
@@ -240,3 +241,4 @@ public extension UITableView {
         }
     }
 }
+#endif

@@ -68,6 +68,10 @@ public class Reviewer {
         }
         log.debug("Prompting for review...")
 
+        // FIXME: macOS, request review (async)
+        guard #available(iOS 11, macOS 10.14, *) else {
+            return
+        }
         SKStoreReviewController.requestReview()
         defaults.removeObject(forKey: Keys.eventCount)
         defaults.set(currentVersion, forKey: Keys.lastVersion)

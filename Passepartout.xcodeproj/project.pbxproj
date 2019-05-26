@@ -1,0 +1,1326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AF669B49537A541679F3D3F /* Pods_PassepartoutCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91447348AA873B433C45EBA /* Pods_PassepartoutCore_macOS.framework */; };
+		0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
+		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
+		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
+		0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
+		0E7177A42299DF8F0055BBC2 /* MockVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */; };
+		0E7177A52299DF8F0055BBC2 /* VPNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177702299DF8F0055BBC2 /* VPNStatus.swift */; };
+		0E7177A62299DF8F0055BBC2 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */; };
+		0E7177A72299DF8F0055BBC2 /* VPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177722299DF8F0055BBC2 /* VPNProvider.swift */; };
+		0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177732299DF8F0055BBC2 /* VPN.swift */; };
+		0E7177A92299DF8F0055BBC2 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */; };
+		0E7177AA2299DF8F0055BBC2 /* GroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177752299DF8F0055BBC2 /* GroupConstants.swift */; };
+		0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177762299DF8F0055BBC2 /* ApplicationError.swift */; };
+		0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */; };
+		0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */; };
+		0E7177AE2299DF8F0055BBC2 /* ConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */; };
+		0E7177AF2299DF8F0055BBC2 /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */; };
+		0E7177B02299DF8F0055BBC2 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777C2299DF8F0055BBC2 /* DebugLog.swift */; };
+		0E7177B12299DF8F0055BBC2 /* ProfileNetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */; };
+		0E7177B22299DF8F0055BBC2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777E2299DF8F0055BBC2 /* Preferences.swift */; };
+		0E7177B32299DF8F0055BBC2 /* DataUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777F2299DF8F0055BBC2 /* DataUnit.swift */; };
+		0E7177B42299DF8F0055BBC2 /* TransientStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177802299DF8F0055BBC2 /* TransientStore.swift */; };
+		0E7177B52299DF8F0055BBC2 /* EndpointDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177812299DF8F0055BBC2 /* EndpointDataSource.swift */; };
+		0E7177B62299DF8F0055BBC2 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177822299DF8F0055BBC2 /* ConnectionService.swift */; };
+		0E7177B72299DF8F0055BBC2 /* PoolCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177842299DF8F0055BBC2 /* PoolCategory.swift */; };
+		0E7177B82299DF8F0055BBC2 /* HostConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177852299DF8F0055BBC2 /* HostConnectionProfile.swift */; };
+		0E7177B92299DF8F0055BBC2 /* ProviderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */; };
+		0E7177BA2299DF8F0055BBC2 /* ProfileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177872299DF8F0055BBC2 /* ProfileKey.swift */; };
+		0E7177BB2299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177882299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift */; };
+		0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177892299DF8F0055BBC2 /* Credentials.swift */; };
+		0E7177BD2299DF8F0055BBC2 /* TrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */; };
+		0E7177BE2299DF8F0055BBC2 /* SessionProxy+Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */; };
+		0E7177BF2299DF8F0055BBC2 /* SwiftGen+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */; };
+		0E7177C02299DF8F0055BBC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778D2299DF8F0055BBC2 /* Utils.swift */; };
+		0E7177C12299DF8F0055BBC2 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778E2299DF8F0055BBC2 /* Reviewer.swift */; };
+		0E7177C22299DF8F0055BBC2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778F2299DF8F0055BBC2 /* AppConstants.swift */; };
+		0E7177C32299DF8F0055BBC2 /* IntentDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */; };
+		0E7177C42299DF8F0055BBC2 /* PoolGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177932299DF8F0055BBC2 /* PoolGroup.swift */; };
+		0E7177C52299DF8F0055BBC2 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177942299DF8F0055BBC2 /* Infrastructure.swift */; };
+		0E7177C62299DF8F0055BBC2 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177952299DF8F0055BBC2 /* Pool.swift */; };
+		0E7177C72299DF8F0055BBC2 /* InfrastructurePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177962299DF8F0055BBC2 /* InfrastructurePreset.swift */; };
+		0E7177C82299DF8F0055BBC2 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177972299DF8F0055BBC2 /* WebServices.swift */; };
+		0E7177C92299DF8F0055BBC2 /* InfrastructureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177982299DF8F0055BBC2 /* InfrastructureFactory.swift */; };
+		0E7178022299E2F90055BBC2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778F2299DF8F0055BBC2 /* AppConstants.swift */; };
+		0E7178032299E2F90055BBC2 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177762299DF8F0055BBC2 /* ApplicationError.swift */; };
+		0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177752299DF8F0055BBC2 /* GroupConstants.swift */; };
+		0E7178052299E2F90055BBC2 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778E2299DF8F0055BBC2 /* Reviewer.swift */; };
+		0E7178062299E2F90055BBC2 /* SwiftGen+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */; };
+		0E7178072299E2F90055BBC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778D2299DF8F0055BBC2 /* Utils.swift */; };
+		0E7178082299E2FD0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
+		0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */; };
+		0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177702299DF8F0055BBC2 /* VPNStatus.swift */; };
+		0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */; };
+		0E71780C2299E2FD0055BBC2 /* VPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177722299DF8F0055BBC2 /* VPNProvider.swift */; };
+		0E71780D2299E2FD0055BBC2 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177732299DF8F0055BBC2 /* VPN.swift */; };
+		0E71780E2299E2FD0055BBC2 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */; };
+		0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177932299DF8F0055BBC2 /* PoolGroup.swift */; };
+		0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177942299DF8F0055BBC2 /* Infrastructure.swift */; };
+		0E7178112299E3060055BBC2 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177952299DF8F0055BBC2 /* Pool.swift */; };
+		0E7178122299E3060055BBC2 /* InfrastructurePreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177962299DF8F0055BBC2 /* InfrastructurePreset.swift */; };
+		0E7178132299E3060055BBC2 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177972299DF8F0055BBC2 /* WebServices.swift */; };
+		0E7178142299E3060055BBC2 /* InfrastructureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177982299DF8F0055BBC2 /* InfrastructureFactory.swift */; };
+		0E7178152299E3160055BBC2 /* ConnectionService+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */; };
+		0E7178162299E3160055BBC2 /* ConnectionService+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */; };
+		0E7178172299E3160055BBC2 /* ConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */; };
+		0E7178182299E3160055BBC2 /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */; };
+		0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777C2299DF8F0055BBC2 /* DebugLog.swift */; };
+		0E71781A2299E3160055BBC2 /* ProfileNetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */; };
+		0E71781B2299E3160055BBC2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777E2299DF8F0055BBC2 /* Preferences.swift */; };
+		0E71781C2299E3160055BBC2 /* DataUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777F2299DF8F0055BBC2 /* DataUnit.swift */; };
+		0E71781D2299E3160055BBC2 /* TransientStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177802299DF8F0055BBC2 /* TransientStore.swift */; };
+		0E71781E2299E3160055BBC2 /* EndpointDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177812299DF8F0055BBC2 /* EndpointDataSource.swift */; };
+		0E71781F2299E3160055BBC2 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177822299DF8F0055BBC2 /* ConnectionService.swift */; };
+		0E7178202299E3160055BBC2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177892299DF8F0055BBC2 /* Credentials.swift */; };
+		0E7178212299E3160055BBC2 /* TrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */; };
+		0E7178222299E3160055BBC2 /* SessionProxy+Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */; };
+		0E7178232299E3190055BBC2 /* HostConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177852299DF8F0055BBC2 /* HostConnectionProfile.swift */; };
+		0E7178242299E3190055BBC2 /* PlaceholderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177882299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift */; };
+		0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177842299DF8F0055BBC2 /* PoolCategory.swift */; };
+		0E7178262299E3190055BBC2 /* ProfileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177872299DF8F0055BBC2 /* ProfileKey.swift */; };
+		0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */; };
+		0E7178282299E31F0055BBC2 /* IntentDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */; };
+		0E7178292299E3280055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
+		0E71782A2299E32D0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
+		0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
+		0E7178362299E6A40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */; };
+		0E7178452299E6B40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */; };
+		0E71784B2299E7520055BBC2 /* ConnectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CD2299DF9A0055BBC2 /* ConnectionServiceTests.swift */; };
+		0E71784C2299E7520055BBC2 /* InfrastructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CB2299DF9A0055BBC2 /* InfrastructureTests.swift */; };
+		0E71784D2299E7520055BBC2 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CC2299DF9A0055BBC2 /* UtilsTests.swift */; };
+		0E71784E2299E7520055BBC2 /* ConnectionService.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */; };
+		0E71784F2299E7550055BBC2 /* ConnectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CD2299DF9A0055BBC2 /* ConnectionServiceTests.swift */; };
+		0E7178502299E7550055BBC2 /* InfrastructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CB2299DF9A0055BBC2 /* InfrastructureTests.swift */; };
+		0E7178512299E7550055BBC2 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CC2299DF9A0055BBC2 /* UtilsTests.swift */; };
+		0E7178522299E7550055BBC2 /* ConnectionService.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */; };
+		0E7178552299E8120055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178542299E8120055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E7178562299E8170055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178532299E8090055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AFA2C9264E53F518FCB9AAF /* Pods_PassepartoutCoreTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8251F38F153AC3DED8D913 /* Pods_PassepartoutCoreTests_macOS.framework */; };
+		BA16AE32304E09E2680E48DE /* Pods_PassepartoutCoreTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629AE83950EFA48570FF9A5A /* Pods_PassepartoutCoreTests_iOS.framework */; };
+		F213256E84A089B5A8A72BFD /* Pods_PassepartoutCore_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26A90F20406158E7B6827D3 /* Pods_PassepartoutCore_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E7178372299E6A40055BBC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E7177262299DF2D0055BBC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E71772E2299DF2D0055BBC2;
+			remoteInfo = "Passepartout-iOS";
+		};
+		0E7178462299E6B40055BBC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E7177262299DF2D0055BBC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E7177DF2299E0980055BBC2;
+			remoteInfo = "Passepartout-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PassepartoutCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7177502299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177522299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E7177532299DF8F0055BBC2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177542299DF8F0055BBC2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E7177552299DF8F0055BBC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177562299DF8F0055BBC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E7177572299DF8F0055BBC2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177582299DF8F0055BBC2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E7177622299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177632299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E7177652299DF8F0055BBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
+		0E7177662299DF8F0055BBC2 /* pt-br */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-br"; path = "pt-br.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0E7177672299DF8F0055BBC2 /* pt-br */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-br"; path = "pt-br.lproj/Intents.strings"; sourceTree = "<group>"; };
+		0E7177682299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177692299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E71776A2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E71776B2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Intents.strings; sourceTree = "<group>"; };
+		0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardVPNProvider.swift; sourceTree = "<group>"; };
+		0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVPNProvider.swift; sourceTree = "<group>"; };
+		0E7177702299DF8F0055BBC2 /* VPNStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNStatus.swift; sourceTree = "<group>"; };
+		0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNConfiguration.swift; sourceTree = "<group>"; };
+		0E7177722299DF8F0055BBC2 /* VPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNProvider.swift; sourceTree = "<group>"; };
+		0E7177732299DF8F0055BBC2 /* VPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+		0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GracefulVPN.swift; sourceTree = "<group>"; };
+		0E7177752299DF8F0055BBC2 /* GroupConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConstants.swift; sourceTree = "<group>"; };
+		0E7177762299DF8F0055BBC2 /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConnectionService+Configurations.swift"; sourceTree = "<group>"; };
+		0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConnectionService+Migration.swift"; sourceTree = "<group>"; };
+		0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionProfile.swift; sourceTree = "<group>"; };
+		0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustedNetworks.swift; sourceTree = "<group>"; };
+		0E71777C2299DF8F0055BBC2 /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
+		0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkSettings.swift; sourceTree = "<group>"; };
+		0E71777E2299DF8F0055BBC2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		0E71777F2299DF8F0055BBC2 /* DataUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUnit.swift; sourceTree = "<group>"; };
+		0E7177802299DF8F0055BBC2 /* TransientStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransientStore.swift; sourceTree = "<group>"; };
+		0E7177812299DF8F0055BBC2 /* EndpointDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointDataSource.swift; sourceTree = "<group>"; };
+		0E7177822299DF8F0055BBC2 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		0E7177842299DF8F0055BBC2 /* PoolCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolCategory.swift; sourceTree = "<group>"; };
+		0E7177852299DF8F0055BBC2 /* HostConnectionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostConnectionProfile.swift; sourceTree = "<group>"; };
+		0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderConnectionProfile.swift; sourceTree = "<group>"; };
+		0E7177872299DF8F0055BBC2 /* ProfileKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileKey.swift; sourceTree = "<group>"; };
+		0E7177882299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderConnectionProfile.swift; sourceTree = "<group>"; };
+		0E7177892299DF8F0055BBC2 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustPolicy.swift; sourceTree = "<group>"; };
+		0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SessionProxy+Communication.swift"; sourceTree = "<group>"; };
+		0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftGen+Strings.swift"; sourceTree = "<group>"; };
+		0E71778D2299DF8F0055BBC2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0E71778E2299DF8F0055BBC2 /* Reviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviewer.swift; sourceTree = "<group>"; };
+		0E71778F2299DF8F0055BBC2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentDispatcher.swift; sourceTree = "<group>"; };
+		0E7177932299DF8F0055BBC2 /* PoolGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoolGroup.swift; sourceTree = "<group>"; };
+		0E7177942299DF8F0055BBC2 /* Infrastructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
+		0E7177952299DF8F0055BBC2 /* Pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
+		0E7177962299DF8F0055BBC2 /* InfrastructurePreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfrastructurePreset.swift; sourceTree = "<group>"; };
+		0E7177972299DF8F0055BBC2 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
+		0E7177982299DF8F0055BBC2 /* InfrastructureFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfrastructureFactory.swift; sourceTree = "<group>"; };
+		0E7177CB2299DF9A0055BBC2 /* InfrastructureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfrastructureTests.swift; sourceTree = "<group>"; };
+		0E7177CC2299DF9A0055BBC2 /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		0E7177CD2299DF9A0055BBC2 /* ConnectionServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionServiceTests.swift; sourceTree = "<group>"; };
+		0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConnectionService.json; sourceTree = "<group>"; };
+		0E7177CF2299DF9A0055BBC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PassepartoutCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7177F72299E1930055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7177FB2299E1E00055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7178312299E6A40055BBC2 /* PassepartoutCoreTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PassepartoutCoreTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7178352299E6A40055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7178402299E6B40055BBC2 /* PassepartoutCoreTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PassepartoutCoreTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7178442299E6B40055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7178532299E8090055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
+		0E7178542299E8120055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
+		2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-iOS/Pods-PassepartoutCore-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2C8C92596FF85CE3567504AE /* Pods-PassepartoutCoreTests-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-macOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		47502F88A0D46D7F867B6521 /* Pods-PassepartoutCore-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-macOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-macOS/Pods-PassepartoutCore-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5075278C1060731E6FE0985F /* Pods-PassepartoutCoreTests-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-macOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		562BF3FC548C3466D9810E34 /* Pods-PassepartoutCore-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-iOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-iOS/Pods-PassepartoutCore-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		629AE83950EFA48570FF9A5A /* Pods_PassepartoutCoreTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassepartoutCoreTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF783258CDF8DA5A2E39A26 /* Pods-PassepartoutCoreTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ACFA1E31E2F0C5F906228D1A /* Pods-PassepartoutCore-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-macOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-macOS/Pods-PassepartoutCore-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		AF8251F38F153AC3DED8D913 /* Pods_PassepartoutCoreTests_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassepartoutCoreTests_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91447348AA873B433C45EBA /* Pods_PassepartoutCore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassepartoutCore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B9DC6BDA72637AD52F8815 /* Pods-PassepartoutCoreTests-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-iOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E26A90F20406158E7B6827D3 /* Pods_PassepartoutCore_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassepartoutCore_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E71772C2299DF2D0055BBC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F213256E84A089B5A8A72BFD /* Pods_PassepartoutCore_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7177DD2299E0980055BBC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AF669B49537A541679F3D3F /* Pods_PassepartoutCore_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71782E2299E6A40055BBC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178362299E6A40055BBC2 /* PassepartoutCore.framework in Frameworks */,
+				BA16AE32304E09E2680E48DE /* Pods_PassepartoutCoreTests_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71783D2299E6B40055BBC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178452299E6B40055BBC2 /* PassepartoutCore.framework in Frameworks */,
+				3AFA2C9264E53F518FCB9AAF /* Pods_PassepartoutCoreTests_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E7177252299DF2D0055BBC2 = {
+			isa = PBXGroup;
+			children = (
+				0E71774D2299DF8F0055BBC2 /* Passepartout */,
+				0E7177CA2299DF9A0055BBC2 /* PassepartoutTests */,
+				0E7177F62299E1890055BBC2 /* PassepartoutCore-iOS */,
+				0E7177FA2299E1E00055BBC2 /* PassepartoutCore-macOS */,
+				0E7178322299E6A40055BBC2 /* PassepartoutCoreTests-iOS */,
+				0E7178412299E6B40055BBC2 /* PassepartoutCoreTests-macOS */,
+				0E7177302299DF2D0055BBC2 /* Products */,
+				7EC1DF9D3B91FBCF9CE4B5D4 /* Pods */,
+				77D77BB6A93A19727196529B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0E7177302299DF2D0055BBC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */,
+				0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */,
+				0E7178312299E6A40055BBC2 /* PassepartoutCoreTests-iOS.xctest */,
+				0E7178402299E6B40055BBC2 /* PassepartoutCoreTests-macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E71774D2299DF8F0055BBC2 /* Passepartout */ = {
+			isa = PBXGroup;
+			children = (
+				0E71774E2299DF8F0055BBC2 /* Resources */,
+				0E71776C2299DF8F0055BBC2 /* Sources */,
+			);
+			path = Passepartout;
+			sourceTree = "<group>";
+		};
+		0E71774E2299DF8F0055BBC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E71774F2299DF8F0055BBC2 /* Localizable.strings */,
+				0E7177512299DF8F0055BBC2 /* Intents.strings */,
+				0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E71776C2299DF8F0055BBC2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177902299DF8F0055BBC2 /* Intents */,
+				0E7177772299DF8F0055BBC2 /* Model */,
+				0E7177922299DF8F0055BBC2 /* Services */,
+				0E71776D2299DF8F0055BBC2 /* VPN */,
+				0E71778F2299DF8F0055BBC2 /* AppConstants.swift */,
+				0E7177762299DF8F0055BBC2 /* ApplicationError.swift */,
+				0E7177752299DF8F0055BBC2 /* GroupConstants.swift */,
+				0E71778E2299DF8F0055BBC2 /* Reviewer.swift */,
+				0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */,
+				0E71778D2299DF8F0055BBC2 /* Utils.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0E71776D2299DF8F0055BBC2 /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */,
+				0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */,
+				0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */,
+				0E7177732299DF8F0055BBC2 /* VPN.swift */,
+				0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */,
+				0E7177722299DF8F0055BBC2 /* VPNProvider.swift */,
+				0E7177702299DF8F0055BBC2 /* VPNStatus.swift */,
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		0E7177772299DF8F0055BBC2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177832299DF8F0055BBC2 /* Profiles */,
+				0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */,
+				0E7177822299DF8F0055BBC2 /* ConnectionService.swift */,
+				0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */,
+				0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */,
+				0E7177892299DF8F0055BBC2 /* Credentials.swift */,
+				0E71777F2299DF8F0055BBC2 /* DataUnit.swift */,
+				0E71777C2299DF8F0055BBC2 /* DebugLog.swift */,
+				0E7177812299DF8F0055BBC2 /* EndpointDataSource.swift */,
+				0E71777E2299DF8F0055BBC2 /* Preferences.swift */,
+				0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */,
+				0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */,
+				0E7177802299DF8F0055BBC2 /* TransientStore.swift */,
+				0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */,
+				0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7177832299DF8F0055BBC2 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177852299DF8F0055BBC2 /* HostConnectionProfile.swift */,
+				0E7177882299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift */,
+				0E7177842299DF8F0055BBC2 /* PoolCategory.swift */,
+				0E7177872299DF8F0055BBC2 /* ProfileKey.swift */,
+				0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		0E7177902299DF8F0055BBC2 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		0E7177922299DF8F0055BBC2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177942299DF8F0055BBC2 /* Infrastructure.swift */,
+				0E7177982299DF8F0055BBC2 /* InfrastructureFactory.swift */,
+				0E7177962299DF8F0055BBC2 /* InfrastructurePreset.swift */,
+				0E7177952299DF8F0055BBC2 /* Pool.swift */,
+				0E7177932299DF8F0055BBC2 /* PoolGroup.swift */,
+				0E7177972299DF8F0055BBC2 /* WebServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E7177CA2299DF9A0055BBC2 /* PassepartoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E7177CD2299DF9A0055BBC2 /* ConnectionServiceTests.swift */,
+				0E7177CB2299DF9A0055BBC2 /* InfrastructureTests.swift */,
+				0E7177CC2299DF9A0055BBC2 /* UtilsTests.swift */,
+				0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */,
+				0E7177CF2299DF9A0055BBC2 /* Info.plist */,
+			);
+			path = PassepartoutTests;
+			sourceTree = "<group>";
+		};
+		0E7177F62299E1890055BBC2 /* PassepartoutCore-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0E7178532299E8090055BBC2 /* Passepartout.h */,
+				0E7177F72299E1930055BBC2 /* Info.plist */,
+			);
+			path = "PassepartoutCore-iOS";
+			sourceTree = "<group>";
+		};
+		0E7177FA2299E1E00055BBC2 /* PassepartoutCore-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				0E7178542299E8120055BBC2 /* Passepartout.h */,
+				0E7177FB2299E1E00055BBC2 /* Info.plist */,
+			);
+			path = "PassepartoutCore-macOS";
+			sourceTree = "<group>";
+		};
+		0E7178322299E6A40055BBC2 /* PassepartoutCoreTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0E7178352299E6A40055BBC2 /* Info.plist */,
+			);
+			path = "PassepartoutCoreTests-iOS";
+			sourceTree = "<group>";
+		};
+		0E7178412299E6B40055BBC2 /* PassepartoutCoreTests-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				0E7178442299E6B40055BBC2 /* Info.plist */,
+			);
+			path = "PassepartoutCoreTests-macOS";
+			sourceTree = "<group>";
+		};
+		77D77BB6A93A19727196529B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E26A90F20406158E7B6827D3 /* Pods_PassepartoutCore_iOS.framework */,
+				B91447348AA873B433C45EBA /* Pods_PassepartoutCore_macOS.framework */,
+				629AE83950EFA48570FF9A5A /* Pods_PassepartoutCoreTests_iOS.framework */,
+				AF8251F38F153AC3DED8D913 /* Pods_PassepartoutCoreTests_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EC1DF9D3B91FBCF9CE4B5D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */,
+				562BF3FC548C3466D9810E34 /* Pods-PassepartoutCore-iOS.release.xcconfig */,
+				47502F88A0D46D7F867B6521 /* Pods-PassepartoutCore-macOS.debug.xcconfig */,
+				ACFA1E31E2F0C5F906228D1A /* Pods-PassepartoutCore-macOS.release.xcconfig */,
+				8FF783258CDF8DA5A2E39A26 /* Pods-PassepartoutCoreTests-iOS.debug.xcconfig */,
+				C5B9DC6BDA72637AD52F8815 /* Pods-PassepartoutCoreTests-iOS.release.xcconfig */,
+				5075278C1060731E6FE0985F /* Pods-PassepartoutCoreTests-macOS.debug.xcconfig */,
+				2C8C92596FF85CE3567504AE /* Pods-PassepartoutCoreTests-macOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0E71772A2299DF2D0055BBC2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178562299E8170055BBC2 /* Passepartout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7177DB2299E0980055BBC2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178552299E8120055BBC2 /* Passepartout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0E71772E2299DF2D0055BBC2 /* PassepartoutCore-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7177432299DF2E0055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCore-iOS" */;
+			buildPhases = (
+				1B038D2DF2A0E2A3BF7CD4F8 /* [CP] Check Pods Manifest.lock */,
+				0E71772A2299DF2D0055BBC2 /* Headers */,
+				0E71772B2299DF2D0055BBC2 /* Sources */,
+				0E71772C2299DF2D0055BBC2 /* Frameworks */,
+				0E71772D2299DF2D0055BBC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PassepartoutCore-iOS";
+			productName = Passepartout;
+			productReference = 0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E7177DF2299E0980055BBC2 /* PassepartoutCore-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7177EE2299E0980055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCore-macOS" */;
+			buildPhases = (
+				FD8F5F5203D75A099403C7B5 /* [CP] Check Pods Manifest.lock */,
+				0E7177DB2299E0980055BBC2 /* Headers */,
+				0E7177DC2299E0980055BBC2 /* Sources */,
+				0E7177DD2299E0980055BBC2 /* Frameworks */,
+				0E7177DE2299E0980055BBC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PassepartoutCore-macOS";
+			productName = Passepartout;
+			productReference = 0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E7178302299E6A40055BBC2 /* PassepartoutCoreTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7178392299E6A40055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCoreTests-iOS" */;
+			buildPhases = (
+				16F83FED906EB376E7CDA323 /* [CP] Check Pods Manifest.lock */,
+				0E71782D2299E6A40055BBC2 /* Sources */,
+				0E71782E2299E6A40055BBC2 /* Frameworks */,
+				0E71782F2299E6A40055BBC2 /* Resources */,
+				2589BD37454E5E57C86743AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E7178382299E6A40055BBC2 /* PBXTargetDependency */,
+			);
+			name = "PassepartoutCoreTests-iOS";
+			productName = "PassepartoutTests-iOS";
+			productReference = 0E7178312299E6A40055BBC2 /* PassepartoutCoreTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0E71783F2299E6B40055BBC2 /* PassepartoutCoreTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7178482299E6B40055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCoreTests-macOS" */;
+			buildPhases = (
+				115D8550E9B8FF990F0D0032 /* [CP] Check Pods Manifest.lock */,
+				0E71783C2299E6B40055BBC2 /* Sources */,
+				0E71783D2299E6B40055BBC2 /* Frameworks */,
+				0E71783E2299E6B40055BBC2 /* Resources */,
+				EE0700736851C0279826F491 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E7178472299E6B40055BBC2 /* PBXTargetDependency */,
+			);
+			name = "PassepartoutCoreTests-macOS";
+			productName = "PassepartoutTests-macOS";
+			productReference = 0E7178402299E6B40055BBC2 /* PassepartoutCoreTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E7177262299DF2D0055BBC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Davide De Rosa";
+				TargetAttributes = {
+					0E71772E2299DF2D0055BBC2 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					0E7177DF2299E0980055BBC2 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					0E7178302299E6A40055BBC2 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					0E71783F2299E6B40055BBC2 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 0E7177292299DF2D0055BBC2 /* Build configuration list for PBXProject "Passepartout" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				de,
+				el,
+				it,
+				sv,
+				Base,
+				"pt-br",
+				"pt-BR",
+				ru,
+				nl,
+			);
+			mainGroup = 0E7177252299DF2D0055BBC2;
+			productRefGroup = 0E7177302299DF2D0055BBC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E71772E2299DF2D0055BBC2 /* PassepartoutCore-iOS */,
+				0E7178302299E6A40055BBC2 /* PassepartoutCoreTests-iOS */,
+				0E7177DF2299E0980055BBC2 /* PassepartoutCore-macOS */,
+				0E71783F2299E6B40055BBC2 /* PassepartoutCoreTests-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E71772D2299DF2D0055BBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */,
+				0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7177DE2299E0980055BBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */,
+				0E71782A2299E32D0055BBC2 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71782F2299E6A40055BBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178522299E7550055BBC2 /* ConnectionService.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71783E2299E6B40055BBC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E71784E2299E7520055BBC2 /* ConnectionService.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		115D8550E9B8FF990F0D0032 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PassepartoutCoreTests-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16F83FED906EB376E7CDA323 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PassepartoutCoreTests-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B038D2DF2A0E2A3BF7CD4F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PassepartoutCore-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2589BD37454E5E57C86743AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS-frameworks.sh",
+				"${PODS_ROOT}/OpenSSL-Apple/frameworks/iPhone/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive-iOS/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver-iOS/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/TunnelKit-iOS/TunnelKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TunnelKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE0700736851C0279826F491 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS-frameworks.sh",
+				"${PODS_ROOT}/OpenSSL-Apple/frameworks/MacOSX/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive-macOS/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver-macOS/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/TunnelKit-macOS/TunnelKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TunnelKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD8F5F5203D75A099403C7B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PassepartoutCore-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E71772B2299DF2D0055BBC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7177B62299DF8F0055BBC2 /* ConnectionService.swift in Sources */,
+				0E7177AA2299DF8F0055BBC2 /* GroupConstants.swift in Sources */,
+				0E7177B42299DF8F0055BBC2 /* TransientStore.swift in Sources */,
+				0E7177B32299DF8F0055BBC2 /* DataUnit.swift in Sources */,
+				0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */,
+				0E7177C82299DF8F0055BBC2 /* WebServices.swift in Sources */,
+				0E7177AF2299DF8F0055BBC2 /* TrustedNetworks.swift in Sources */,
+				0E7177C92299DF8F0055BBC2 /* InfrastructureFactory.swift in Sources */,
+				0E7177B92299DF8F0055BBC2 /* ProviderConnectionProfile.swift in Sources */,
+				0E7177B12299DF8F0055BBC2 /* ProfileNetworkSettings.swift in Sources */,
+				0E7177B82299DF8F0055BBC2 /* HostConnectionProfile.swift in Sources */,
+				0E7177BE2299DF8F0055BBC2 /* SessionProxy+Communication.swift in Sources */,
+				0E7177A92299DF8F0055BBC2 /* GracefulVPN.swift in Sources */,
+				0E7177C72299DF8F0055BBC2 /* InfrastructurePreset.swift in Sources */,
+				0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */,
+				0E7177C52299DF8F0055BBC2 /* Infrastructure.swift in Sources */,
+				0E7177C62299DF8F0055BBC2 /* Pool.swift in Sources */,
+				0E7177C32299DF8F0055BBC2 /* IntentDispatcher.swift in Sources */,
+				0E7177B72299DF8F0055BBC2 /* PoolCategory.swift in Sources */,
+				0E7177B22299DF8F0055BBC2 /* Preferences.swift in Sources */,
+				0E7177B02299DF8F0055BBC2 /* DebugLog.swift in Sources */,
+				0E7177BA2299DF8F0055BBC2 /* ProfileKey.swift in Sources */,
+				0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */,
+				0E7177B52299DF8F0055BBC2 /* EndpointDataSource.swift in Sources */,
+				0E7177C12299DF8F0055BBC2 /* Reviewer.swift in Sources */,
+				0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */,
+				0E7177BD2299DF8F0055BBC2 /* TrustPolicy.swift in Sources */,
+				0E7177AE2299DF8F0055BBC2 /* ConnectionProfile.swift in Sources */,
+				0E7177C02299DF8F0055BBC2 /* Utils.swift in Sources */,
+				0E7177C42299DF8F0055BBC2 /* PoolGroup.swift in Sources */,
+				0E7177BF2299DF8F0055BBC2 /* SwiftGen+Strings.swift in Sources */,
+				0E7177BB2299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
+				0E7177C22299DF8F0055BBC2 /* AppConstants.swift in Sources */,
+				0E7177A62299DF8F0055BBC2 /* VPNConfiguration.swift in Sources */,
+				0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */,
+				0E7177A72299DF8F0055BBC2 /* VPNProvider.swift in Sources */,
+				0E7177A52299DF8F0055BBC2 /* VPNStatus.swift in Sources */,
+				0E7177A42299DF8F0055BBC2 /* MockVPNProvider.swift in Sources */,
+				0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */,
+				0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E7177DC2299E0980055BBC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E71780D2299E2FD0055BBC2 /* VPN.swift in Sources */,
+				0E71781C2299E3160055BBC2 /* DataUnit.swift in Sources */,
+				0E71780C2299E2FD0055BBC2 /* VPNProvider.swift in Sources */,
+				0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */,
+				0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */,
+				0E7178242299E3190055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
+				0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */,
+				0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */,
+				0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */,
+				0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */,
+				0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */,
+				0E7178142299E3060055BBC2 /* InfrastructureFactory.swift in Sources */,
+				0E7178062299E2F90055BBC2 /* SwiftGen+Strings.swift in Sources */,
+				0E71781A2299E3160055BBC2 /* ProfileNetworkSettings.swift in Sources */,
+				0E7178222299E3160055BBC2 /* SessionProxy+Communication.swift in Sources */,
+				0E71781D2299E3160055BBC2 /* TransientStore.swift in Sources */,
+				0E7178132299E3060055BBC2 /* WebServices.swift in Sources */,
+				0E7178162299E3160055BBC2 /* ConnectionService+Migration.swift in Sources */,
+				0E7178172299E3160055BBC2 /* ConnectionProfile.swift in Sources */,
+				0E7178022299E2F90055BBC2 /* AppConstants.swift in Sources */,
+				0E71780E2299E2FD0055BBC2 /* GracefulVPN.swift in Sources */,
+				0E7178082299E2FD0055BBC2 /* StandardVPNProvider.swift in Sources */,
+				0E71781E2299E3160055BBC2 /* EndpointDataSource.swift in Sources */,
+				0E7178052299E2F90055BBC2 /* Reviewer.swift in Sources */,
+				0E71781F2299E3160055BBC2 /* ConnectionService.swift in Sources */,
+				0E7178122299E3060055BBC2 /* InfrastructurePreset.swift in Sources */,
+				0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */,
+				0E7178202299E3160055BBC2 /* Credentials.swift in Sources */,
+				0E7178152299E3160055BBC2 /* ConnectionService+Configurations.swift in Sources */,
+				0E7178232299E3190055BBC2 /* HostConnectionProfile.swift in Sources */,
+				0E7178032299E2F90055BBC2 /* ApplicationError.swift in Sources */,
+				0E71781B2299E3160055BBC2 /* Preferences.swift in Sources */,
+				0E7178072299E2F90055BBC2 /* Utils.swift in Sources */,
+				0E7178262299E3190055BBC2 /* ProfileKey.swift in Sources */,
+				0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */,
+				0E7178282299E31F0055BBC2 /* IntentDispatcher.swift in Sources */,
+				0E7178112299E3060055BBC2 /* Pool.swift in Sources */,
+				0E7178212299E3160055BBC2 /* TrustPolicy.swift in Sources */,
+				0E7178292299E3280055BBC2 /* Intents.intentdefinition in Sources */,
+				0E7178182299E3160055BBC2 /* TrustedNetworks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71782D2299E6A40055BBC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7178502299E7550055BBC2 /* InfrastructureTests.swift in Sources */,
+				0E71784F2299E7550055BBC2 /* ConnectionServiceTests.swift in Sources */,
+				0E7178512299E7550055BBC2 /* UtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E71783C2299E6B40055BBC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E71784C2299E7520055BBC2 /* InfrastructureTests.swift in Sources */,
+				0E71784B2299E7520055BBC2 /* ConnectionServiceTests.swift in Sources */,
+				0E71784D2299E7520055BBC2 /* UtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E7178382299E6A40055BBC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E71772E2299DF2D0055BBC2 /* PassepartoutCore-iOS */;
+			targetProxy = 0E7178372299E6A40055BBC2 /* PBXContainerItemProxy */;
+		};
+		0E7178472299E6B40055BBC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E7177DF2299E0980055BBC2 /* PassepartoutCore-macOS */;
+			targetProxy = 0E7178462299E6B40055BBC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E71774F2299DF8F0055BBC2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7177502299DF8F0055BBC2 /* de */,
+				0E7177532299DF8F0055BBC2 /* el */,
+				0E7177552299DF8F0055BBC2 /* en */,
+				0E7177572299DF8F0055BBC2 /* it */,
+				0E7177622299DF8F0055BBC2 /* sv */,
+				0E7177662299DF8F0055BBC2 /* pt-br */,
+				0E7177682299DF8F0055BBC2 /* ru */,
+				0E71776A2299DF8F0055BBC2 /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		0E7177512299DF8F0055BBC2 /* Intents.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7177522299DF8F0055BBC2 /* de */,
+				0E7177542299DF8F0055BBC2 /* el */,
+				0E7177562299DF8F0055BBC2 /* en */,
+				0E7177582299DF8F0055BBC2 /* it */,
+				0E7177632299DF8F0055BBC2 /* sv */,
+				0E7177672299DF8F0055BBC2 /* pt-br */,
+				0E7177692299DF8F0055BBC2 /* ru */,
+				0E71776B2299DF8F0055BBC2 /* nl */,
+			);
+			name = Intents.strings;
+			sourceTree = "<group>";
+		};
+		0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7177652299DF8F0055BBC2 /* Base */,
+			);
+			name = Intents.intentdefinition;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E7177412299DF2E0055BBC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0E7177422299DF2E0055BBC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0E7177442299DF2E0055BBC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PassepartoutCore-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algoritmico.ios.Passepartout;
+				PRODUCT_NAME = PassepartoutCore;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E7177452299DF2E0055BBC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 562BF3FC548C3466D9810E34 /* Pods-PassepartoutCore-iOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/PassepartoutCore-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algoritmico.ios.Passepartout;
+				PRODUCT_NAME = PassepartoutCore;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0E7177EF2299E0980055BBC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47502F88A0D46D7F867B6521 /* Pods-PassepartoutCore-macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/PassepartoutCore-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algoritmico.macos.Passepartout;
+				PRODUCT_NAME = PassepartoutCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0E7177F02299E0980055BBC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACFA1E31E2F0C5F906228D1A /* Pods-PassepartoutCore-macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/PassepartoutCore-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.algoritmico.macos.Passepartout;
+				PRODUCT_NAME = PassepartoutCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		0E71783A2299E6A40055BBC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF783258CDF8DA5A2E39A26 /* Pods-PassepartoutCoreTests-iOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				INFOPLIST_FILE = "PassepartoutCoreTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.algoritmico.ios.PassepartoutTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E71783B2299E6A40055BBC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5B9DC6BDA72637AD52F8815 /* Pods-PassepartoutCoreTests-iOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				INFOPLIST_FILE = "PassepartoutCoreTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.algoritmico.ios.PassepartoutTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0E7178492299E6B40055BBC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5075278C1060731E6FE0985F /* Pods-PassepartoutCoreTests-macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				INFOPLIST_FILE = "PassepartoutCoreTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.algoritmico.macos.PassepartoutTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0E71784A2299E6B40055BBC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C8C92596FF85CE3567504AE /* Pods-PassepartoutCoreTests-macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DTDYD63ZX9;
+				INFOPLIST_FILE = "PassepartoutCoreTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.algoritmico.macos.PassepartoutTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E7177292299DF2D0055BBC2 /* Build configuration list for PBXProject "Passepartout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7177412299DF2E0055BBC2 /* Debug */,
+				0E7177422299DF2E0055BBC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7177432299DF2E0055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCore-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7177442299DF2E0055BBC2 /* Debug */,
+				0E7177452299DF2E0055BBC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7177EE2299E0980055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCore-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7177EF2299E0980055BBC2 /* Debug */,
+				0E7177F02299E0980055BBC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7178392299E6A40055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCoreTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E71783A2299E6A40055BBC2 /* Debug */,
+				0E71783B2299E6A40055BBC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E7178482299E6B40055BBC2 /* Build configuration list for PBXNativeTarget "PassepartoutCoreTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7178492299E6B40055BBC2 /* Debug */,
+				0E71784A2299E6B40055BBC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E7177262299DF2D0055BBC2 /* Project object */;
+}

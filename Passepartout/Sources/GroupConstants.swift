@@ -27,6 +27,8 @@ import Foundation
 
 public class GroupConstants {
     public class App {
+        public static let config = Bundle.main.infoDictionary?["com.algoritmico.Passepartout.config"] as? [String: Any]
+        
         public static let name = "Passepartout"
 
         public static let tunnelKitName = "TunnelKit"
@@ -40,19 +42,7 @@ public class GroupConstants {
 
         public static let versionString = "\(versionNumber) (\(buildNumber))"
 
-        public static let config: [String: Any] = {
-            guard let cfg = Bundle.main.infoDictionary?["com.algoritmico.Passepartout.config"] as? [String: Any] else {
-                fatalError("Missing app config from Info.plist")
-            }
-            return cfg
-        }()
-        
-        public static let groupId: String = {
-            guard let identifier = config["group_id"] as? String else {
-                fatalError("Missing group_id from Info.plist config")
-            }
-            return identifier
-        }()
+        public static let groupId = config?["group_id"] as? String ?? "DUMMY_group_id"
 
         private static var containerURL: URL {
             guard let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupId) else {

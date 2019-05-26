@@ -29,12 +29,7 @@ import SwiftyBeaver
 
 public class AppConstants {
     public class App {
-        public static let appStoreId: String = {
-            guard let identifier = GroupConstants.App.config["appstore_id"] as? String else {
-                fatalError("Missing appstore_id from Info.plist config")
-            }
-            return identifier
-        }()
+        public static let appStoreId = GroupConstants.App.config?["appstore_id"] as? String ?? "DUMMY_appstore_id"
 
         public static let tunnelBundleId: String = {
             guard let identifier = Bundle.main.infoDictionary?[kCFBundleIdentifierKey as String] as? String else {

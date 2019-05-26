@@ -236,8 +236,8 @@ public class AppConstants {
             .mullvad: "https://mullvad.net/en/account/create/",
             .nordVPN: "https://go.nordvpn.net/SH21Z",
             .pia: "https://www.privateinternetaccess.com/pages/buy-vpn/",
-            .protonVPN: "https://protonvpn.net/?aid=keeshux",
-            .tunnelBear: "https://click.tunnelbear.com/SHb8",
+            .protonVPN: "https://proton.go2cloud.org/SHZ",
+            .tunnelBear: "https://www.tunnelbear.com/",
             .vyprVPN: "https://www.vyprvpn.com/",
             .windscribe: "https://secure.link/kCsD0prd"
         ]

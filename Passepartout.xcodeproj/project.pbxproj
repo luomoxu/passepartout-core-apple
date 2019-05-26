@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0AF669B49537A541679F3D3F /* Pods_PassepartoutCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91447348AA873B433C45EBA /* Pods_PassepartoutCore_macOS.framework */; };
+		0E3CAF7A229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
+		0E3CAF7B229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
 		0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
 		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
@@ -127,6 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E3CAF79229A82030008E5C8 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
 		0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PassepartoutCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7177502299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E7177522299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 				0E7177FA2299E1E00055BBC2 /* PassepartoutCore-macOS */,
 				0E7178322299E6A40055BBC2 /* PassepartoutCoreTests-iOS */,
 				0E7178412299E6B40055BBC2 /* PassepartoutCoreTests-macOS */,
+				0E3CAF79229A82030008E5C8 /* API */,
 				0E7177302299DF2D0055BBC2 /* Products */,
 				7EC1DF9D3B91FBCF9CE4B5D4 /* Pods */,
 				77D77BB6A93A19727196529B /* Frameworks */,
@@ -611,6 +615,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3CAF7A229A82040008E5C8 /* API in Resources */,
 				0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */,
 				0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */,
 			);
@@ -620,6 +625,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3CAF7B229A82040008E5C8 /* API in Resources */,
 				0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */,
 				0E71782A2299E32D0055BBC2 /* Localizable.strings in Resources */,
 			);

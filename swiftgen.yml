@@ -1,0 +1,9 @@
+strings:
+    inputs:
+        - Passepartout/Resources/en.lproj/Localizable.strings
+    outputs:
+        - templateName: structured-swift4
+          output: Passepartout/Sources/SwiftGen+Strings.swift
+          params:
+            publicAccess: true
+

@@ -4,6 +4,7 @@
 
 [![TunnelKit 2.0.x](https://img.shields.io/badge/tunnelkit-2.0-d69c68.svg)][dep-tunnelkit]
 [![License GPLv3](https://img.shields.io/badge/license-GPLv3-lightgray.svg)](LICENSE)
+[![Travis-CI](https://api.travis-ci.org/passepartoutvpn/passepartout-core-apple.svg?branch=master)](https://travis-ci.org/passepartoutvpn/passepartout-core-apple)
 
 Passepartout is a non-official, user-friendly [OpenVPN®][openvpn] client.
 

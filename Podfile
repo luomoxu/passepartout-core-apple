@@ -19,7 +19,6 @@ target 'PassepartoutCore-iOS' do
 end
 target 'PassepartoutCoreTests-iOS' do
     platform :ios, '11.0'
-    shared_pods
 end
 target 'PassepartoutCore-macOS' do
     platform :osx, '10.12'
@@ -27,5 +26,4 @@ target 'PassepartoutCore-macOS' do
 end
 target 'PassepartoutCoreTests-macOS' do
     platform :osx, '10.12'
-    shared_pods
 end

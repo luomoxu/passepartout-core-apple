@@ -281,10 +281,9 @@ public class ConnectionService: Codable {
                     profile = providerProfile
                     
                 case .host:
-//                    let hostProfile = try decoder.decode(HostConnectionProfile.self, from: data)
-//
-//                    profile = hostProfile
-                    break
+                    let hostProfile = try decoder.decode(HostConnectionProfile.self, from: data)
+
+                    profile = hostProfile
                 }
                 cache[key] = profile
             } catch let e {

@@ -172,6 +172,7 @@ public class AppConstants {
         public static let authorByLanguage: [String: String] = [
             "de": "Christian Lederer",
             "el": "Konstantinos Koukoulakis",
+            "en-US": "Davide De Rosa",
             "es": "Davide De Rosa, Elena Vivó",
             "fr-FR": "Julien Laniel",
             "it": "Davide De Rosa",

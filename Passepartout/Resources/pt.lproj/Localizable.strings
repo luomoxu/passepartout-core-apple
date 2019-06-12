@@ -85,7 +85,7 @@
 "service.welcome.message" = "Bem-vindo ao Passepartout!\n\nUse o organizador para adicionar um novo perfil.";
 "service.sections.general.header" = "Geral";
 "service.sections.vpn.header" = "VPN";
-"service.sections.vpn.footer" = "A conexão será estabeleciada assim que necessária.";
+"service.sections.vpn.footer" = "A conexão será estabelecida assim que necessária.";
 "service.sections.status.header" = "Conexão";
 "service.sections.configuration.header" = "Configuração";
 "service.sections.provider_infrastructure.footer" = "Última atualização em %@.";

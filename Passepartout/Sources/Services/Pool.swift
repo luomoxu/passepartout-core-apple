@@ -159,3 +159,20 @@ extension Pool {
         return str
     }
 }
+
+public extension Array where Element: Pool {
+    func sortedPools() -> [Element] {
+        return sorted {
+            guard let lnum = $0.num else {
+                return true
+            }
+            guard let rnum = $1.num else {
+                return false
+            }
+            guard lnum != rnum else {
+                return $0.secondaryId < $1.secondaryId
+            }
+            return lnum < rnum
+        }
+    }
+}

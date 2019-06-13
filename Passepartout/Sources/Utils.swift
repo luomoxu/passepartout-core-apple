@@ -228,6 +228,20 @@ public extension Array where Element: CustomStringConvertible {
 }
 
 #if os(iOS)
+public extension UIView {
+    static func get<T: UIView>() -> T {
+        let name = String(describing: T.self)
+        let nib = UINib(nibName: name, bundle: nil)
+        let objects = nib.instantiate(withOwner: nil)
+        for o in objects {
+            if let view = o as? T {
+                return view
+            }
+        }
+        fatalError()
+    }
+}
+
 public extension UITableView {
     func scrollToRowAsync(at indexPath: IndexPath) {
         DispatchQueue.main.async { [weak self] in
@@ -239,6 +253,28 @@ public extension UITableView {
         DispatchQueue.main.async { [weak self] in
             self?.selectRow(at: indexPath, animated: false, scrollPosition: .middle)
         }
+    }
+}
+#else
+public extension NSView {
+    static func get<T: NSView>() -> T {
+        let name = String(describing: T.self)
+        guard let nib = NSNib(nibNamed: name, bundle: nil) else {
+            fatalError()
+        }
+        var objects: NSArray?
+        guard nib.instantiate(withOwner: nil, topLevelObjects: &objects) else {
+            fatalError()
+        }
+        guard let nonOptionalObjects = objects else {
+            fatalError()
+        }
+        for o in nonOptionalObjects {
+            if let view = o as? T {
+                return view
+            }
+        }
+        fatalError()
     }
 }
 #endif

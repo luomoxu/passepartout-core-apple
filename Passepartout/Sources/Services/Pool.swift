@@ -143,7 +143,8 @@ extension Pool {
             comps.append(contentsOf: extraCountries.map { Utils.localizedCountry($0) })
         }
         if let area = area {
-            comps.append(area.uppercased())
+//            comps.append(area.uppercased())
+            comps.append(area.capitalized)
         }
         if let num = num {
             comps.append("#\(num)")

@@ -25,7 +25,7 @@
 
 import Foundation
 
-public struct PoolGroup: Codable, Hashable, Comparable, CustomStringConvertible {
+public class PoolGroup: Codable, Hashable, Comparable, CustomStringConvertible {
     public let country: String
     
     public let area: String?
@@ -46,6 +46,12 @@ public struct PoolGroup: Codable, Hashable, Comparable, CustomStringConvertible 
             localizedId += area
         }
         return localizedId
+    }
+    
+    // MARK: Equatable
+    
+    public static func ==(lhs: PoolGroup, rhs: PoolGroup) -> Bool {
+        return lhs.localizedId == rhs.localizedId
     }
     
     // MARK: Hashable

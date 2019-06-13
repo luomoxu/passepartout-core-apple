@@ -29,7 +29,7 @@ import TunnelKit
 // supports a subset of OpenVPNTunnelProvider.Configuration
 // ignores new JSON keys
 
-public struct InfrastructurePreset: Codable {
+public class InfrastructurePreset: Codable {
     public enum ExternalKey: String, Codable {
         case ca
         
@@ -148,7 +148,7 @@ public struct InfrastructurePreset: Codable {
     
     // MARK: Codable
     
-    public init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: PresetKeys.self)
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)

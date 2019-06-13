@@ -26,7 +26,7 @@
 import Foundation
 import TunnelKit
 
-public struct Pool: Codable, Hashable {
+public class Pool: Codable, Hashable {
     public enum CodingKeys: String, CodingKey {
         case id
 

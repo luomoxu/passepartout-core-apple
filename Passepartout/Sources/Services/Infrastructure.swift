@@ -26,7 +26,7 @@
 import Foundation
 import SSZipArchive
 
-public struct Infrastructure: Codable {
+public class Infrastructure: Codable {
     public enum Name: String, Codable, Comparable {
         case mullvad = "Mullvad"
         

@@ -142,8 +142,6 @@
 		0E7177622299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E7177632299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Intents.strings; sourceTree = "<group>"; };
 		0E7177652299DF8F0055BBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
-		0E7177662299DF8F0055BBC2 /* pt-br */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-br"; path = "pt-br.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		0E7177672299DF8F0055BBC2 /* pt-br */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-br"; path = "pt-br.lproj/Intents.strings"; sourceTree = "<group>"; };
 		0E7177682299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E7177692299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intents.strings; sourceTree = "<group>"; };
 		0E71776A2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -201,6 +199,8 @@
 		0E7178442299E6B40055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7178532299E8090055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
 		0E7178542299E8120055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
+		0EF795ED22B8D5D700262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Intents.strings; sourceTree = "<group>"; };
+		0EF795EE22B8D5DB00262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-iOS/Pods-PassepartoutCore-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2C8C92596FF85CE3567504AE /* Pods-PassepartoutCoreTests-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-macOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		47502F88A0D46D7F867B6521 /* Pods-PassepartoutCore-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-macOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-macOS/Pods-PassepartoutCore-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -593,9 +593,9 @@
 				sv,
 				Base,
 				"pt-br",
-				"pt-BR",
 				ru,
 				nl,
+				pt,
 			);
 			mainGroup = 0E7177252299DF2D0055BBC2;
 			productRefGroup = 0E7177302299DF2D0055BBC2 /* Products */;
@@ -935,9 +935,9 @@
 				0E7177552299DF8F0055BBC2 /* en */,
 				0E7177572299DF8F0055BBC2 /* it */,
 				0E7177622299DF8F0055BBC2 /* sv */,
-				0E7177662299DF8F0055BBC2 /* pt-br */,
 				0E7177682299DF8F0055BBC2 /* ru */,
 				0E71776A2299DF8F0055BBC2 /* nl */,
+				0EF795EE22B8D5DB00262FC6 /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -950,9 +950,9 @@
 				0E7177562299DF8F0055BBC2 /* en */,
 				0E7177582299DF8F0055BBC2 /* it */,
 				0E7177632299DF8F0055BBC2 /* sv */,
-				0E7177672299DF8F0055BBC2 /* pt-br */,
 				0E7177692299DF8F0055BBC2 /* ru */,
 				0E71776B2299DF8F0055BBC2 /* nl */,
+				0EF795ED22B8D5D700262FC6 /* pt */,
 			);
 			name = Intents.strings;
 			sourceTree = "<group>";

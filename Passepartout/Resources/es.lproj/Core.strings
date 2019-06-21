@@ -1,5 +1,5 @@
 //
-//  Localizable.strings
+//  Core.strings
 //  Passepartout
 //
 //  Created by Davide De Rosa on 6/13/18.
@@ -30,19 +30,16 @@
 "global.host.title_input.message" = "Caracteres aceptados son los alfanuméricos más el guión alto \"-\", el guión bajo \"_\" y el punto \".\".";
 "global.host.title_input.placeholder" = "Mi perfil";
 "global.email_not_configured" = "Ningún e-mail configurado.";
-
 "global.cells.enabled" = "Habilitado";
 "global.cells.disabled" = "Deshabilitado";
 "global.cells.none" = "Ninguno";
 "global.cells.automatic" = "Automático";
 "global.cells.manual" = "Manual";
-
 "reddit.title" = "Reddit";
 "reddit.message" = "Sabías que Passepartout tiene un subreddit? Suscríbete para actualizaciones o comentar problemas, funciones, nuevas plataformas o todo lo que se te ocurra.\n\nTambién es la manera ideal de mostrar interés en este proyecto.";
 "reddit.buttons.subscribe" = "Suscribir ahora!";
 "reddit.buttons.remind" = "Recordar más tarde";
 "reddit.buttons.never" = "No preguntar más";
-
 "organizer.sections.providers.header" = "Proveedores";
 "organizer.sections.providers.footer" = "Aquí encuentras algunos proveedores con ajustes preconfigurados.";
 "organizer.sections.hosts.header" = "Hosts";
@@ -51,9 +48,6 @@
 "organizer.sections.siri.footer" = "Déjate ayudar por Siri para acelerar tus interacciones más frecuentes con la aplicación.";
 "organizer.sections.support.header" = "Soporte";
 "organizer.sections.feedback.header" = "Feedback";
-"organizer.cells.profile.value.current" = "En uso";
-"organizer.cells.add_provider.caption" = "Añadir proveedor";
-"organizer.cells.add_host.caption" = "Añadir host";
 "organizer.cells.siri_shortcuts.caption" = "Gestionar atajos";
 "organizer.cells.join_community.caption" = "Apuntarse a la comunidad";
 "organizer.cells.write_review.caption" = "Escribir una reseña";
@@ -66,11 +60,7 @@
 "organizer.alerts.add_host.message" = "Abre el URL de un fichero de configuración .ovpn a través de Safari, Mail u otra aplicación para configurar un host.\n\nTambién puedes importar un .ovpn con iTunes File Sharing.";
 "organizer.alerts.cannot_donate.message" = "No hay métodos de pago configurados en este dispositivo.";
 "organizer.alerts.delete_vpn_profile.message" = "Realmente quieres eliminar la configuración VPN de tu dispositivo? Ésto puede corregir algunos estados incorrectos del VPN y no afectará tus perfiles.";
-
-"wizards.host.cells.title_input.caption" = "Título";
-"wizards.host.sections.existing.header" = "Perfiles existentes";
 "wizards.host.alerts.existing.message" = "Ya existe un host con el mismo título. Reemplazar?";
-
 "parsed_file.alerts.malformed.message" = "El fichero de configuración contiene una opción mal formada (%@).";
 "parsed_file.alerts.missing.message" = "El fichero de configuración falta de una opción necesaria (%@).";
 "parsed_file.alerts.unsupported.message" = "El fichero de configuración contiene una opción no soportada (%@).";
@@ -79,42 +69,23 @@
 "parsed_file.alerts.decryption.message" = "La configuración contiene una clave privada cifrada que no ha podido ser descifrada. Por favor revisa la contraseña introducida.";
 "parsed_file.alerts.parsing.message" = "Imposible importar el fichero de configuración proporcionado (%@).";
 "parsed_file.alerts.buttons.report" = "Reportar una incidencia";
-
-"imported_hosts.title" = "Hosts importados";
-
-"service.welcome.message" = "Bienvenid@ a Passepartout!\n\nUsa el organizador para añadir un nuevo perfil.";
-"service.sections.general.header" = "General";
-"service.sections.vpn.header" = "VPN";
 "service.sections.vpn.footer" = "La conexión se establecerá siempre y cuando sea necesario.";
-"service.sections.status.header" = "Conexión";
-"service.sections.configuration.header" = "Configuración";
 "service.sections.provider_infrastructure.footer" = "Última actualización: %@.";
 "service.sections.vpn_survives_sleep.footer" = "Deshabilitar para mejorar el uso de la batería, a costa de ralentizaciones ocasionales por las reconexiones al despertar el dispositivo.";
 "service.sections.vpn_resolves_hostname.footer" = "Preferido en la mayoría de las redes y necesario en algunas redes IPv6. Deshabilitar donde el DNS esté bloqueado, o para acelerar la negociación cuando el DNS sea lento en responder.";
-//"service.sections.vpn_prefers_udp.footer" = "UDP is faster than TCP, but may not work in some networks. Disable in networks where UDP might be blocked.";
 "service.sections.trusted.header" = "Redes de confianza";
 "service.sections.trusted.footer" = "Entrando en una red de confianza, normalmente el VPN es cerrado y mantenido desconectado. Deshabilitar esta opción para no forzar este modo.";
 "service.sections.diagnostics.header" = "Diagnósticos";
 "service.sections.diagnostics.footer" = "El estado de ocultación será efectivo tras reconectar. Los datos de red son hostnames, direcciones IP, routing, SSID. Las credenciales y las claves privadas no son registrados a pesar.";
-//"service.sections.destruction.footer" = "Delete configuration from device settings.";
-
-"service.cells.use_profile.caption" = "Usar este perfil";
-"service.cells.vpn_service.caption" = "Habilitado";
 "service.cells.connection_status.caption" = "Estado";
-"service.cells.reconnect.caption" = "Reconectar";
 "service.cells.account.caption" = "Cuenta";
-"service.cells.account.none" = "Ninguna configurada";
 "service.cells.endpoint.caption" = "Destino";
 "service.cells.provider.pool.caption" = "Ubicación";
 "service.cells.provider.preset.caption" = "Ajuste";
-"service.cells.provider.refresh.caption" = "Refrescar infraestructura";
-"service.cells.host.parameters.caption" = "Parámetros";
 "service.cells.network_settings.caption" = "Ajustes de red";
 "service.cells.vpn_survives_sleep.caption" = "Mantener en modo inactivo";
 "service.cells.vpn_resolves_hostname.caption" = "Resolver hostname del servidor";
-//"service.cells.vpn_prefers_udp.caption" = "Prefer UDP socket";
 "service.cells.trusted_mobile.caption" = "Red móvil";
-"service.cells.trusted_add_wifi.caption" = "Añadir Wi-Fi en uso";
 "service.cells.trusted_policy.caption" = "Red de confianza deshabilita el VPN";
 "service.cells.test_connectivity.caption" = "Testear conectividad";
 "service.cells.data_count.caption" = "Datos intercambiados";
@@ -122,7 +93,6 @@
 "service.cells.debug_log.caption" = "Registro de debug";
 "service.cells.masks_private_data.caption" = "Ocultar datos de red";
 "service.cells.report_issue.caption" = "Reportar problema de conectividad";
-
 "service.alerts.rename.title" = "Renombrar perfil";
 "service.alerts.credentials_needed.message" = "Primero debes introducir las credenciales de tu cuenta.";
 "service.alerts.reconnect_vpn.message" = "Quieres reconectarte al VPN?";
@@ -138,8 +108,6 @@
 "service.alerts.download.message" = "%@ requiere la descarga de fichero de configuración adicionales.\n\nConfirmar para empezar la descarga.";
 "service.alerts.download.failed" = "Imposible descargar los ficheros de configuración. %@";
 "service.alerts.download.hud.extracting" = "Extrayendo ficheros, por favor ten paciencia...";
-
-"account.sections.credentials.header" = "Credenciales";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Usa tus credenciales de la web %@. Normalmente tu usuario es numérico.";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Usa tus credenciales de la web %@. Normalmente tu usuario es tu e-mail.";
 "account.sections.guidance.footer.infrastructure.pia" = "Usa tus credenciales de la web %@. Normalmente tu usuario es numérico con un prefijo \"p\".";
@@ -152,19 +120,10 @@
 "account.cells.username.placeholder" = "usuario";
 "account.cells.password.caption" = "Contraseña";
 "account.cells.password.placeholder" = "secreto";
-//"account.cells.password_confirm.caption" = "Confirm";
-//"account.cells.password_confirm.mismatch" = "Passwords don't match!";
 "account.cells.open_guide.caption" = "Mira tus credenciales";
 "account.cells.signup.caption" = "Registrarse con %@";
-
-"endpoint.sections.location_addresses.header" = "Direcciones";
-"endpoint.sections.location_protocols.header" = "Protocolos";
 "endpoint.cells.any_address.caption" = "Automática";
 "endpoint.cells.any_protocol.caption" = "Automático";
-
-"provider.preset.cells.tech_details.caption" = "Detalles técnicos";
-//"provider.preset.sections.main.footer" = "Tap info button to disclose technical details.";
-
 "configuration.sections.communication.header" = "Comunicación";
 "configuration.sections.reset.footer" = "Si acabaste estropeando tu conectividad tras cambiar los parámetros de comunicación, pulsa para volver a la configuración inicial.";
 "configuration.sections.tls.header" = "TLS";
@@ -198,25 +157,18 @@
 "configuration.cells.renegotiation_seconds.caption" = "Renegociación";
 "configuration.cells.renegotiation_seconds.value.after" = "después de %@";
 "configuration.cells.random_endpoint.caption" = "Aleatorizar destino";
-
 "network_settings.cells.choice.client" = "Leer .ovpn";
 "network_settings.cells.choice.server" = "Obtener del servidor";
 "network_settings.cells.address.caption" = "Dirección";
 "network_settings.cells.port.caption" = "Puerta";
-"network_settings.cells.add_dns_server.caption" = "Añadir dirección";
-"network_settings.cells.proxy_bypass.caption" = "Dominio ignorado";
-"network_settings.cells.add_proxy_bypass.caption" = "Añadir dominio ignorado";
-
 "debug_log.buttons.previous" = "Anterior";
 "debug_log.buttons.next" = "Siguiente";
 "debug_log.alerts.empty_log.message" = "El registro de debug está vacío.";
-
 "vpn.connecting" = "Conectando";
 "vpn.active" = "Activo";
 "vpn.disconnecting" = "Desconectando";
 "vpn.inactive" = "Inactivo";
 "vpn.disabled" = "Deshabilitado";
-
 "vpn.errors.timeout" = "Timeout";
 "vpn.errors.dns" = "DNS fallido";
 "vpn.errors.auth" = "Autentificación fallida";
@@ -226,14 +178,10 @@
 "vpn.errors.network" = "Cambio de red";
 "vpn.errors.routing" = "Sin rutas";
 "vpn.errors.gateway" = "Sin puerta de enlace";
-
 "issue_reporter.title" = "Reportar incidencia";
 "issue_reporter.message" = "El registro de debug de tus últimas conexiones es primordial para resolver tus problemas de conectividad y es completamente anónimo.\n\nSi hay un fichero de configuración .ovpn, se adjuntará sin ningún dato sensible.\n\nSi no estás segur@, por favor revisa los adjuntos del e-mail.";
 "issue_reporter.buttons.accept" = "Entendido";
-
 "translations.title" = "Traducciones";
-
-"shortcuts.add.title" = "Añadir atajo";
 "shortcuts.add.sections.vpn.header" = "VPN";
 "shortcuts.add.sections.wifi.header" = "Wi-Fi";
 "shortcuts.add.sections.cellular.header" = "Móvil";
@@ -245,11 +193,7 @@
 "shortcuts.add.cells.trust_cellular.caption" = "Añadir red móvil de confianza";
 "shortcuts.add.cells.untrust_cellular.caption" = "Borrar red móvil de confianza";
 "shortcuts.add.alerts.no_profiles.message" = "No hay ningún perfil al que conectarse.";
-
-"shortcuts.edit.title" = "Gestionar atajos";
 "shortcuts.edit.sections.all.header" = "Atajos existentes";
-"shortcuts.edit.cells.add_shortcut.caption" = "Añadir atajo";
-
 "about.title" = "Información";
 "about.sections.web.header" = "Web";
 "about.sections.share.header" = "Compartir";
@@ -260,7 +204,6 @@
 "about.cells.privacy_policy.caption" = "Política de privacidad";
 "about.cells.share_twitter.caption" = "Enviar un Tweet!";
 "about.cells.share_generic.caption" = "Invitar a un amig@";
-
 "donation.title" = "Donar";
 "donation.sections.one_time.header" = "Única";
 "donation.sections.one_time.footer" = "Si te gusta mi trabajo, aquí puedes colaborar con una donación.\n\nSólo se te cobrará una vez por donación, y puedes donar las veces que quieras.";
@@ -269,15 +212,11 @@
 "donation.alerts.purchase.success.title" = "Muchas gracias";
 "donation.alerts.purchase.success.message" = "Ésto significa mucho para mí y espero sinceramente que sigas usando y promoviendo esta aplicación.";
 "donation.alerts.purchase.failure.message" = "Imposible completar la donación, por favor vuelve a intentarlo. %@";
-
 "share.message" = "Passepartout es un cliente OpenVPN intuitivo, de código abierto para iOS y macOS";
-
 "version.title" = "Versión";
 "version.labels.intro" = "Passepartout y TunnelKit están escritos y son mantenidos por Davide De Rosa (keeshux).\n\nEl código de Passepartout y TunnelKit es público y está disponible en GitHub bajo la GPLv3, encontrarás enlaces en la página de inicio.\n\nPassepartout es un cliente no oficial y no es afiliado de OpenVPN Inc.";
-
 "credits.title" = "Créditos";
 "credits.sections.licenses.header" = "Licencias";
 "credits.sections.notices.header" = "Avisos";
 "credits.sections.translations.header" = "Traducciones";
-
 "label.license.error" = "Imposible descargar el contenido completo de la licencia.";

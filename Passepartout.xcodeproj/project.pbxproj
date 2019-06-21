@@ -10,9 +10,9 @@
 		0AF669B49537A541679F3D3F /* Pods_PassepartoutCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91447348AA873B433C45EBA /* Pods_PassepartoutCore_macOS.framework */; };
 		0E3CAF7A229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
 		0E3CAF7B229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
-		0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
 		0E45E71222BE12CD00F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
 		0E45E71322BE12D400F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
+		0E7177992299DF8F0055BBC2 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Core.strings */; };
 		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
 		0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
@@ -92,7 +92,7 @@
 		0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */; };
 		0E7178282299E31F0055BBC2 /* IntentDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */; };
 		0E7178292299E3280055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
-		0E71782A2299E32D0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
+		0E71782A2299E32D0055BBC2 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Core.strings */; };
 		0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7178362299E6A40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */; };
 		0E7178452299E6B40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */; };
@@ -132,20 +132,20 @@
 		0E3CAF79229A82030008E5C8 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
 		0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenVPNOptions.swift; sourceTree = "<group>"; };
 		0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PassepartoutCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E7177502299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177502299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177522299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E7177532299DF8F0055BBC2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177532299DF8F0055BBC2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177542299DF8F0055BBC2 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E7177552299DF8F0055BBC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177552299DF8F0055BBC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177562299DF8F0055BBC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E7177572299DF8F0055BBC2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177572299DF8F0055BBC2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177582299DF8F0055BBC2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E7177622299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177622299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177632299DF8F0055BBC2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Intents.strings; sourceTree = "<group>"; };
 		0E7177652299DF8F0055BBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
-		0E7177682299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E7177682299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Core.strings; sourceTree = "<group>"; };
 		0E7177692299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E71776A2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E71776A2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Core.strings; sourceTree = "<group>"; };
 		0E71776B2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Intents.strings; sourceTree = "<group>"; };
 		0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardVPNProvider.swift; sourceTree = "<group>"; };
 		0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVPNProvider.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		0E7178532299E8090055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
 		0E7178542299E8120055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
 		0EF795ED22B8D5D700262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Intents.strings; sourceTree = "<group>"; };
-		0EF795EE22B8D5DB00262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0EF795EE22B8D5DB00262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Core.strings; sourceTree = "<group>"; };
 		2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-iOS/Pods-PassepartoutCore-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2C8C92596FF85CE3567504AE /* Pods-PassepartoutCoreTests-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCoreTests-macOS.release.xcconfig"; path = "Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		47502F88A0D46D7F867B6521 /* Pods-PassepartoutCore-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-macOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-macOS/Pods-PassepartoutCore-macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		0E71774E2299DF8F0055BBC2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0E71774F2299DF8F0055BBC2 /* Localizable.strings */,
+				0E71774F2299DF8F0055BBC2 /* Core.strings */,
 				0E7177512299DF8F0055BBC2 /* Intents.strings */,
 				0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */,
 			);
@@ -617,7 +617,7 @@
 			files = (
 				0E3CAF7A229A82040008E5C8 /* API in Resources */,
 				0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */,
-				0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */,
+				0E7177992299DF8F0055BBC2 /* Core.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,7 +627,7 @@
 			files = (
 				0E3CAF7B229A82040008E5C8 /* API in Resources */,
 				0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */,
-				0E71782A2299E32D0055BBC2 /* Localizable.strings in Resources */,
+				0E71782A2299E32D0055BBC2 /* Core.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +927,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E71774F2299DF8F0055BBC2 /* Localizable.strings */ = {
+		0E71774F2299DF8F0055BBC2 /* Core.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0E7177502299DF8F0055BBC2 /* de */,
@@ -939,7 +939,7 @@
 				0E71776A2299DF8F0055BBC2 /* nl */,
 				0EF795EE22B8D5DB00262FC6 /* pt */,
 			);
-			name = Localizable.strings;
+			name = Core.strings;
 			sourceTree = "<group>";
 		};
 		0E7177512299DF8F0055BBC2 /* Intents.strings */ = {

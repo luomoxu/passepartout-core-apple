@@ -43,7 +43,6 @@
 		0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177892299DF8F0055BBC2 /* Credentials.swift */; };
 		0E7177BD2299DF8F0055BBC2 /* TrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */; };
 		0E7177BE2299DF8F0055BBC2 /* SessionProxy+Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */; };
-		0E7177BF2299DF8F0055BBC2 /* SwiftGen+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */; };
 		0E7177C02299DF8F0055BBC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778D2299DF8F0055BBC2 /* Utils.swift */; };
 		0E7177C12299DF8F0055BBC2 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778E2299DF8F0055BBC2 /* Reviewer.swift */; };
 		0E7177C22299DF8F0055BBC2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778F2299DF8F0055BBC2 /* AppConstants.swift */; };
@@ -58,7 +57,6 @@
 		0E7178032299E2F90055BBC2 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177762299DF8F0055BBC2 /* ApplicationError.swift */; };
 		0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177752299DF8F0055BBC2 /* GroupConstants.swift */; };
 		0E7178052299E2F90055BBC2 /* Reviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778E2299DF8F0055BBC2 /* Reviewer.swift */; };
-		0E7178062299E2F90055BBC2 /* SwiftGen+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */; };
 		0E7178072299E2F90055BBC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778D2299DF8F0055BBC2 /* Utils.swift */; };
 		0E7178082299E2FD0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
 		0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */; };
@@ -177,7 +175,6 @@
 		0E7177892299DF8F0055BBC2 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustPolicy.swift; sourceTree = "<group>"; };
 		0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SessionProxy+Communication.swift"; sourceTree = "<group>"; };
-		0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftGen+Strings.swift"; sourceTree = "<group>"; };
 		0E71778D2299DF8F0055BBC2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0E71778E2299DF8F0055BBC2 /* Reviewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviewer.swift; sourceTree = "<group>"; };
 		0E71778F2299DF8F0055BBC2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -313,7 +310,6 @@
 				0E7177762299DF8F0055BBC2 /* ApplicationError.swift */,
 				0E7177752299DF8F0055BBC2 /* GroupConstants.swift */,
 				0E71778E2299DF8F0055BBC2 /* Reviewer.swift */,
-				0E71778C2299DF8F0055BBC2 /* SwiftGen+Strings.swift */,
 				0E71778D2299DF8F0055BBC2 /* Utils.swift */,
 			);
 			path = Sources;
@@ -836,7 +832,6 @@
 				0E7177AE2299DF8F0055BBC2 /* ConnectionProfile.swift in Sources */,
 				0E7177C02299DF8F0055BBC2 /* Utils.swift in Sources */,
 				0E7177C42299DF8F0055BBC2 /* PoolGroup.swift in Sources */,
-				0E7177BF2299DF8F0055BBC2 /* SwiftGen+Strings.swift in Sources */,
 				0E7177BB2299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
 				0E7177C22299DF8F0055BBC2 /* AppConstants.swift in Sources */,
 				0E7177A62299DF8F0055BBC2 /* VPNConfiguration.swift in Sources */,
@@ -866,7 +861,6 @@
 				0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */,
 				0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */,
 				0E7178142299E3060055BBC2 /* InfrastructureFactory.swift in Sources */,
-				0E7178062299E2F90055BBC2 /* SwiftGen+Strings.swift in Sources */,
 				0E71781A2299E3160055BBC2 /* ProfileNetworkSettings.swift in Sources */,
 				0E7178222299E3160055BBC2 /* SessionProxy+Communication.swift in Sources */,
 				0E71781D2299E3160055BBC2 /* TransientStore.swift in Sources */,

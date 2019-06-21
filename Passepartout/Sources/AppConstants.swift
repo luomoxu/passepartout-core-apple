@@ -210,8 +210,8 @@ public class AppConstants {
         
         private static let twitterHashtags = ["OpenVPN", "iOS", "macOS"]
         
-        public static var twitterIntent: URL {
-            var text = L10n.Share.message
+        public static func twitterIntent(withMessage message: String) -> URL {
+            var text = message
             for ht in twitterHashtags {
                 text = text.replacingOccurrences(of: ht, with: "#\(ht)")
             }

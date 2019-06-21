@@ -31,12 +31,14 @@
 "global.host.title_input.placeholder" = "My profile";
 "global.email_not_configured" = "No e-mail account is configured.";
 
-// FIXME: global.values.*
-"global.cells.enabled" = "Enabled";
-"global.cells.disabled" = "Disabled";
-"global.cells.none" = "None";
-"global.cells.automatic" = "Automatic";
-"global.cells.manual" = "Manual";
+"global.captions.address" = "Address";
+"global.captions.port" = "Port";
+
+"global.values.enabled" = "Enabled";
+"global.values.disabled" = "Disabled";
+"global.values.none" = "None";
+"global.values.automatic" = "Automatic";
+"global.values.manual" = "Manual";
 
 "reddit.title" = "Reddit";
 "reddit.message" = "Did you know that Passepartout has a subreddit? Subscribe for updates or to discuss issues, features, new platforms or whatever you like.\n\nIt's also a great way to show you care about this project.";
@@ -69,9 +71,8 @@
 "parsed_file.alerts.parsing.message" = "Unable to parse the provided configuration file (%@).";
 "parsed_file.alerts.buttons.report" = "Report an issue";
 
-// FIXME: network_choice.*
-"network_settings.cells.choice.client" = "Read .ovpn";
-"network_settings.cells.choice.server" = "Pull from server";
+"network_choice.client" = "Read .ovpn";
+"network_choice.server" = "Pull from server";
 
 "issue_reporter.title" = "Report issue";
 "issue_reporter.message" = "The debug log of your latest connections is crucial to resolve your connectivity issues and is completely anonymous.\n\nThe .ovpn configuration file, if any, is attached stripped of any sensitive data.\n\nPlease double check the e-mail attachments if unsure.";
@@ -117,11 +118,8 @@
 "service.sections.diagnostics.header" = "Diagnostics";
 "service.sections.diagnostics.footer" = "Masking status will be effective after reconnecting. Network data are hostnames, IP addresses, routing, SSID. Credentials and private keys are not logged regardless.";
 "service.cells.connection_status.caption" = "Status";
-"service.cells.account.caption" = "Account";
-"service.cells.endpoint.caption" = "Endpoint";
 "service.cells.provider.pool.caption" = "Location";
 "service.cells.provider.preset.caption" = "Preset";
-"service.cells.network_settings.caption" = "Network settings";
 "service.cells.vpn_survives_sleep.caption" = "Keep alive on sleep";
 "service.cells.vpn_resolves_hostname.caption" = "Resolve server hostname";
 "service.cells.trusted_mobile.caption" = "Cellular network";
@@ -149,6 +147,7 @@
 "service.alerts.download.failed" = "Failed to download configuration files. %@";
 "service.alerts.download.hud.extracting" = "Extracting files, please be patient...";
 
+"account.title" = "Account";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Use your %@ website credentials. Your username is usually numeric.";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Use your %@ website credentials. Your username is usually your e-mail.";
 "account.sections.guidance.footer.infrastructure.pia" = "Use your %@ website credentials. Your username is usually numeric with a \"p\" prefix.";
@@ -164,8 +163,11 @@
 "account.cells.open_guide.caption" = "See your credentials";
 "account.cells.signup.caption" = "Register with %@";
 
+"endpoint.title" = "Endpoint";
 "endpoint.cells.any_address.caption" = "Automatic";
 "endpoint.cells.any_protocol.caption" = "Automatic";
+
+"network_settings.title" = "Network settings";
 
 "configuration.sections.communication.header" = "Communication";
 "configuration.sections.reset.footer" = "If you ended up with broken connectivity after changing the communication parameters, tap to revert to the original configuration.";
@@ -176,6 +178,12 @@
 "configuration.cells.cipher.caption" = "Cipher";
 "configuration.cells.digest.caption" = "Authentication";
 "configuration.cells.digest.value.embedded" = "Embedded";
+"configuration.cells.compression_framing.caption" = "Framing";
+"configuration.cells.compression_framing.value.lzo" = "--comp-lzo";
+"configuration.cells.compression_framing.value.compress" = "--compress";
+"configuration.cells.compression_algorithm.caption" = "Algorithm";
+"configuration.cells.compression_algorithm.value.lzo" = "LZO";
+"configuration.cells.compression_algorithm.value.other" = "Unsupported";
 "configuration.cells.reset_original.caption" = "Reset configuration";
 "configuration.cells.client.caption" = "Client certificate";
 "configuration.cells.client.value.enabled" = "Verified";
@@ -184,28 +192,16 @@
 "configuration.cells.tls_wrapping.value.auth" = "Authentication";
 "configuration.cells.tls_wrapping.value.crypt" = "Encryption";
 "configuration.cells.eku.caption" = "Extended verification";
-// FIXME: moved to network_settings
-"configuration.cells.default_gateway.caption" = "Default gateway";
-"configuration.cells.dns_server.caption" = "DNS";
-"configuration.cells.dns_domain.caption" = "Domain";
-"configuration.cells.proxy_http.caption" = "Proxy";
-"configuration.cells.proxy_https.caption" = "Proxy (HTTPS)";
-/////////
-"configuration.cells.compression_framing.caption" = "Framing";
-"configuration.cells.compression_framing.value.lzo" = "--comp-lzo";
-"configuration.cells.compression_framing.value.compress" = "--compress";
-"configuration.cells.compression_algorithm.caption" = "Algorithm";
-"configuration.cells.compression_algorithm.value.lzo" = "LZO";
-"configuration.cells.compression_algorithm.value.other" = "Unsupported";
 "configuration.cells.keep_alive.caption" = "Keep-alive";
 "configuration.cells.keep_alive.value.seconds" = "%d seconds";
 "configuration.cells.renegotiation_seconds.caption" = "Renegotiation";
 "configuration.cells.renegotiation_seconds.value.after" = "after %@";
 "configuration.cells.random_endpoint.caption" = "Randomize endpoint";
 
-// FIXME: move to global
-"network_settings.cells.address.caption" = "Address";
-"network_settings.cells.port.caption" = "Port";
+"network_settings.gateway.title" = "Default gateway";
+"network_settings.dns.title" = "DNS";
+"network_settings.dns.cells.domain.caption" = "Domain";
+"network_settings.proxy.title" = "Proxy";
 
 "debug_log.buttons.previous" = "Previous";
 "debug_log.buttons.next" = "Next";

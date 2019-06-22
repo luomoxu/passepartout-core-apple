@@ -11,6 +11,8 @@
 		0E3CAF7A229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
 		0E3CAF7B229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
 		0E7177992299DF8F0055BBC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Localizable.strings */; };
+		0E45E71222BE12CD00F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
+		0E45E71322BE12D400F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
 		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
 		0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
@@ -130,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		0E3CAF79229A82030008E5C8 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
+		0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenVPNOptions.swift; sourceTree = "<group>"; };
 		0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PassepartoutCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7177502299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E7177522299DF8F0055BBC2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -342,6 +345,7 @@
 				0E71777F2299DF8F0055BBC2 /* DataUnit.swift */,
 				0E71777C2299DF8F0055BBC2 /* DebugLog.swift */,
 				0E7177812299DF8F0055BBC2 /* EndpointDataSource.swift */,
+				0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */,
 				0E71777E2299DF8F0055BBC2 /* Preferences.swift */,
 				0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */,
 				0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */,
@@ -810,6 +814,7 @@
 				0E7177AF2299DF8F0055BBC2 /* TrustedNetworks.swift in Sources */,
 				0E7177C92299DF8F0055BBC2 /* InfrastructureFactory.swift in Sources */,
 				0E7177B92299DF8F0055BBC2 /* ProviderConnectionProfile.swift in Sources */,
+				0E45E71222BE12CD00F19312 /* OpenVPNOptions.swift in Sources */,
 				0E7177B12299DF8F0055BBC2 /* ProfileNetworkSettings.swift in Sources */,
 				0E7177B82299DF8F0055BBC2 /* HostConnectionProfile.swift in Sources */,
 				0E7177BE2299DF8F0055BBC2 /* SessionProxy+Communication.swift in Sources */,
@@ -857,6 +862,7 @@
 				0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */,
 				0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */,
 				0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */,
+				0E45E71322BE12D400F19312 /* OpenVPNOptions.swift in Sources */,
 				0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */,
 				0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */,
 				0E7178142299E3060055BBC2 /* InfrastructureFactory.swift in Sources */,

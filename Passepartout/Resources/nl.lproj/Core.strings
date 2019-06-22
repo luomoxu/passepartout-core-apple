@@ -220,3 +220,5 @@
 "credits.sections.notices.header" = "Mededelingen";
 "credits.sections.translations.header" = "Vertalingen";
 "label.license.error" = "Kan volledige licentie-inhoud niet downloaden.";
+"organizer.cells.profile.value.current" = "In gebruik";
+"service.welcome.message" = "Welkom bij Passepartout!\n\nGebruik de organizer om een nieuw profiel toe te voegen.";

@@ -220,3 +220,5 @@
 "credits.sections.notices.header" = "Упоминания";
 "credits.sections.translations.header" = "Переводы";
 "label.license.error" = "Не получается загрузить полную лицензию.";
+"organizer.cells.profile.value.current" = "Используется";
+"service.welcome.message" = "Добро пожаловать в Passepartout!\n\nИспользуйте организатор для добавления нового профиля.";

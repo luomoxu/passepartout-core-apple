@@ -220,3 +220,5 @@
 "credits.sections.notices.header" = "Meddelanden";
 "credits.sections.translations.header" = "Translations";
 "label.license.error" = "Kan inte ladda ner fullständigt licensinnehåll.";
+"organizer.cells.profile.value.current" = "Under användning";
+"service.welcome.message" = "Välkommen till Passepartout! \n\nAnvänd arrangören för att lägga till en ny profil.";

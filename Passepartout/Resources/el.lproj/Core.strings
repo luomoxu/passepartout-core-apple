@@ -220,3 +220,5 @@
 "credits.sections.notices.header" = "Σημειώσεις";
 "credits.sections.translations.header" = "Μεταφράσεις";
 "label.license.error" = "Δεν είναι δυνατή η λήψη πλήρους περιεχομένου άδειας χρήσης.";
+"organizer.cells.profile.value.current" = "Σε χρήση";
+"service.welcome.message" = "Καλώς Ήλθατε στο Passepartout!\n\nΧρησιμοποιήστε τον διοργανωτή για να προσθέσετε ένα νέο προφίλ.";

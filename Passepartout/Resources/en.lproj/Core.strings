@@ -94,6 +94,7 @@
 "organizer.sections.siri.footer" = "Get help from Siri to speed up your most common interactions with the app.";
 "organizer.sections.support.header" = "Support";
 "organizer.sections.feedback.header" = "Feedback";
+"organizer.cells.profile.value.current" = "In use";
 "organizer.cells.siri_shortcuts.caption" = "Manage shortcuts";
 "organizer.cells.join_community.caption" = "Join community";
 "organizer.cells.write_review.caption" = "Write a review";
@@ -109,6 +110,7 @@
 
 "wizards.host.alerts.existing.message" = "A host profile with the same title already exists. Replace it?";
 
+"service.welcome.message" = "Welcome to Passepartout!\n\nUse the organizer to add a new profile.";
 "service.sections.vpn.footer" = "The connection will be established whenever necessary.";
 "service.sections.provider_infrastructure.footer" = "Last updated on %@.";
 "service.sections.vpn_survives_sleep.footer" = "Disable to improve battery usage, at the expense of occasional slowdowns due to wake-up reconnections.";

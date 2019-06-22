@@ -220,3 +220,5 @@
 "credits.sections.notices.header" = "Notice";
 "credits.sections.translations.header" = "Traduzioni";
 "label.license.error" = "Impossibile scaricare il contenuto completo della licenza.";
+"organizer.cells.profile.value.current" = "In uso";
+"service.welcome.message" = "Benvenuto in Passepartout!\n\nUsa il menu per aggiungere un nuovo profilo.";

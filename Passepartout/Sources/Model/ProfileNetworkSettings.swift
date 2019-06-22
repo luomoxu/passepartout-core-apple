@@ -173,3 +173,12 @@ extension OpenVPN.ConfigurationBuilder {
         }
     }
 }
+
+extension ConnectionProfile {
+    public var clientNetworkSettings: ProfileNetworkSettings? {
+        guard let hostProfile = self as? HostConnectionProfile else {
+            return nil
+        }
+        return ProfileNetworkSettings(from: hostProfile.parameters.sessionConfiguration)
+    }
+}

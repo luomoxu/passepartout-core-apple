@@ -29,6 +29,7 @@ import SystemConfiguration.CaptiveNetwork
 #else
 import CoreWLAN
 #endif
+import StoreKit
 import SwiftyBeaver
 
 private let log = SwiftyBeaver.self
@@ -224,5 +225,14 @@ public extension URL {
 public extension Array where Element: CustomStringConvertible {
     func sortedCaseInsensitive() -> [Element] {
         return sorted { $0.description.lowercased() < $1.description.lowercased() }
+    }
+}
+
+public extension SKProduct {
+    var localizedPrice: String? {
+        let fmt = NumberFormatter()
+        fmt.numberStyle = .currency
+        fmt.locale = priceLocale
+        return fmt.string(from: price)
     }
 }

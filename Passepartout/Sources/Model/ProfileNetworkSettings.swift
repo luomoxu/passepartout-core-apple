@@ -32,6 +32,13 @@ public enum NetworkChoice: String, Codable {
     case server // erase client settings
     
     case manual
+    
+    public static func choices(for profile: ConnectionProfile?) -> [NetworkChoice] {
+        if let _ = profile as? HostConnectionProfile {
+            return [.client, .server, .manual]
+        }
+        return [.server, .manual]
+    }
 }
 
 public class ProfileNetworkChoices: Codable {
@@ -164,5 +171,14 @@ extension OpenVPN.ConfigurationBuilder {
                 proxyBypassDomains = nil
             }
         }
+    }
+}
+
+extension ConnectionProfile {
+    public var clientNetworkSettings: ProfileNetworkSettings? {
+        guard let hostProfile = self as? HostConnectionProfile else {
+            return nil
+        }
+        return ProfileNetworkSettings(from: hostProfile.parameters.sessionConfiguration)
     }
 }

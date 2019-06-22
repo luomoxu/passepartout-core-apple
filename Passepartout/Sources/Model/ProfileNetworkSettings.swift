@@ -32,6 +32,13 @@ public enum NetworkChoice: String, Codable {
     case server // erase client settings
     
     case manual
+    
+    public static func choices(for profile: ConnectionProfile?) -> [NetworkChoice] {
+        if let _ = profile as? HostConnectionProfile {
+            return [.client, .server, .manual]
+        }
+        return [.server, .manual]
+    }
 }
 
 public class ProfileNetworkChoices: Codable {

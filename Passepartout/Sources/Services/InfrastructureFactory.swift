@@ -270,3 +270,18 @@ private extension Infrastructure.Name {
         return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.path)", withExtension: "json")
     }
 }
+
+public extension ConnectionService {
+    func availableProviderNames() -> [Infrastructure.Name] {
+        var names = Set(InfrastructureFactory.shared.allNames)
+        var createdNames: [Infrastructure.Name] = []
+        ids(forContext: .provider).forEach {
+            guard let name = Infrastructure.Name(rawValue: $0) else {
+                return
+            }
+            createdNames.append(name)
+        }
+        names.formSymmetricDifference(createdNames)
+        return Array(names).sorted()
+    }
+}

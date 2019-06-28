@@ -53,6 +53,16 @@ public class ProfileNetworkChoices: Codable {
         dns = choice
         proxy = choice
     }
+
+    public static func with(profile: ConnectionProfile?) -> ProfileNetworkChoices {
+        if let choices = profile?.networkChoices {
+            return choices
+        }
+        if let _ = profile as? ProviderConnectionProfile {
+            return ProfileNetworkChoices(choice: .server)
+        }
+        return ProfileNetworkChoices(choice: .client)
+    }
 }
 
 public class ProfileNetworkSettings: Codable, CustomStringConvertible {

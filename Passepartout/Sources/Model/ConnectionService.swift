@@ -436,7 +436,7 @@ public class ConnectionService: Codable {
 
         cache.removeValue(forKey: key)
         removeCredentials(for: profile)
-        if cache.isEmpty {
+        if key == activeProfileKey {
             activeProfileKey = nil
         }
         

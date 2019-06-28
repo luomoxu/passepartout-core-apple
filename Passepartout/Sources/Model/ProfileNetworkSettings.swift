@@ -41,7 +41,7 @@ public enum NetworkChoice: String, Codable {
     }
 }
 
-public class ProfileNetworkChoices: Codable {
+public struct ProfileNetworkChoices: Codable {
     public var gateway: NetworkChoice
 
     public var dns: NetworkChoice

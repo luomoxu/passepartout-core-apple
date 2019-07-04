@@ -141,7 +141,7 @@
 "configuration.cells.tls_wrapping.value.auth" = "Authentifizierung";
 "configuration.cells.tls_wrapping.value.crypt" = "Verschlüsselung";
 "configuration.cells.eku.caption" = "Erweiterte Verifizierung";
-"network_settings.headers.gateway" = "Standart-Gateway";
+"network_settings.headers.gateway" = "Standard-Gateway";
 "network_settings.headers.dns" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Domäne";
 "network_settings.headers.proxy" = "Proxy";

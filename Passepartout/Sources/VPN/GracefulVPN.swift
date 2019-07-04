@@ -53,6 +53,7 @@ public class GracefulVPN {
     
     public init(service: ConnectionService) {
         self.service = service
+        profile = service.activeProfile
     }
     
     public func prepare(completionHandler: (() -> Void)?) {

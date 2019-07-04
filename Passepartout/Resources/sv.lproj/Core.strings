@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Otillgänglig";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Mask nätverksdata";
+"service.cells.reconnect.caption" = "Återanslut";
 "service.cells.report_issue.caption" = "Rapportera anslutningsproblem";
 "service.alerts.rename.title" = "Byt namn på profil";
 "service.alerts.credentials_needed.message" = "Du måste ange kontouppgifterna först.";

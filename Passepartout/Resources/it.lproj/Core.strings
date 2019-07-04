@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Non disponibile";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Maschera dati rete";
+"service.cells.reconnect.caption" = "Riconnetti";
 "service.cells.report_issue.caption" = "Segnala problema connettività";
 "service.alerts.rename.title" = "Rinomina profilo";
 "service.alerts.credentials_needed.message" = "Devi prima inserire le tue credenziali.";

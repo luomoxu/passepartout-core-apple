@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Недоступно";
 "service.cells.debug_log.caption" = "Журнал отладки";
 "service.cells.masks_private_data.caption" = "Маскировать информацию сети";
+"service.cells.reconnect.caption" = "Переподключиться";
 "service.cells.report_issue.caption" = "Сообщить о проблеме подкл.";
 "service.alerts.rename.title" = "Переименовать профиль";
 "service.alerts.credentials_needed.message" = "Сначала нужно ввести данные аккаунта.";

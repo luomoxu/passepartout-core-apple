@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Μη διαθέσιμο";
 "service.cells.debug_log.caption" = "Μητρώο εντοπισμού σφαλμάτων";
 "service.cells.masks_private_data.caption" = "Μάσκα δεδομένα δικτύου";
+"service.cells.reconnect.caption" = "Επανασύνδεση";
 "service.cells.report_issue.caption" = "Αναφορά ζητήματος συνδεσιμότητας";
 "service.alerts.rename.title" = "Μετονομασία προφίλ";
 "service.alerts.credentials_needed.message" = "Πρέπει πρώτα να εισαγάγετε διαπιστευτήρια λογαριασμού.";

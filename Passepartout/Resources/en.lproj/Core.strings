@@ -131,6 +131,7 @@
 "service.cells.data_count.none" = "Unavailable";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Mask network data";
+"service.cells.reconnect.caption" = "Reconnect";
 "service.cells.report_issue.caption" = "Report connectivity issue";
 
 "service.alerts.rename.title" = "Rename profile";

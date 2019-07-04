@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Nicht verfügbar";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Netzwerkdaten zensieren";
+"service.cells.reconnect.caption" = "Erneut verbinden";
 "service.cells.report_issue.caption" = "Verbindungsproblem melden";
 "service.alerts.rename.title" = "Profil umbenennen";
 "service.alerts.credentials_needed.message" = "Du musst zuerst die Account-Zugangsdaten eingeben.";

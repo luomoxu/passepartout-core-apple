@@ -92,6 +92,7 @@
 "service.cells.data_count.none" = "Niet beschikbaar";
 "service.cells.debug_log.caption" = "Foutopsporingslogboek";
 "service.cells.masks_private_data.caption" = "Netwerkgegevens maskeren";
+"service.cells.reconnect.caption" = "Opnieuw verbinden";
 "service.cells.report_issue.caption" = "Probleem met connectiviteit melden";
 "service.alerts.rename.title" = "Profiel hernoemen";
 "service.alerts.credentials_needed.message" = "Voer eerst de accountgegevens in.";

@@ -56,8 +56,6 @@ public class AppConstants {
 
         public static let apiDirectory = "API/\(API.version)"
 
-        public static let webCacheDirectory = "Web"
-
         public static let providersDirectory = "Providers"
 
         public static let hostsDirectory = "Hosts"

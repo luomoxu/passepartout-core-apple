@@ -133,6 +133,16 @@ public class Utils {
             }
         }.resume()
     }
+    
+    public static func mailto(to: String, subject: String, body: String) -> URL? {
+        guard let escapedSubject = subject.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            return nil
+        }
+        guard let escapedBody = body.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            return nil
+        }
+        return URL(string: "mailto:\(to)?subject=\(escapedSubject)&body=\(escapedBody)")
+    }
 
     public static func localizedCountry(_ code: String) -> String {
         return Locale.current.localizedString(forRegionCode: code) ?? code

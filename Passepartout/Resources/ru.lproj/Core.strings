@@ -142,10 +142,10 @@
 "configuration.cells.tls_wrapping.value.auth" = "Аутентификация";
 "configuration.cells.tls_wrapping.value.crypt" = "Шифрование";
 "configuration.cells.eku.caption" = "Расширенная проверка";
-"network_settings.headers.gateway" = "Шлюз по умолчанию";
-"network_settings.headers.dns" = "DNS";
+"network_settings.gateway.title" = "Шлюз по умолчанию";
+"network_settings.dns.title" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Домен";
-"network_settings.headers.proxy" = "Прокси";
+"network_settings.proxy.title" = "Прокси";
 "configuration.cells.proxy_https.caption" = "Прокси (HTTPS)";
 "configuration.cells.compression_framing.caption" = "Фрейминг";
 "configuration.cells.compression_framing.value.lzo" = "--comp-lzo";

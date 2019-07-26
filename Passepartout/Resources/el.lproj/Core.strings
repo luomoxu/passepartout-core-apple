@@ -142,10 +142,10 @@
 "configuration.cells.tls_wrapping.value.auth" = "Αυθεντικοποίηση";
 "configuration.cells.tls_wrapping.value.crypt" = "Κρυπτογράφηση";
 "configuration.cells.eku.caption" = "Εκτεταμένη επαλήθευση";
-"network_settings.headers.gateway" = "Προεπιλεγμένη πύλη";
-"network_settings.headers.dns" = "DNS";
+"network_settings.gateway.title" = "Προεπιλεγμένη πύλη";
+"network_settings.dns.title" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Domain";
-"network_settings.headers.proxy" = "Proxy";
+"network_settings.proxy.title" = "Proxy";
 "configuration.cells.proxy_https.caption" = "Proxy (HTTPS)";
 "configuration.cells.compression_framing.caption" = "Framing";
 "configuration.cells.compression_framing.value.lzo" = "--comp-lzo";

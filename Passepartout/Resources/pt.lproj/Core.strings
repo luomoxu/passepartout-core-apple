@@ -142,10 +142,10 @@
 "configuration.cells.tls_wrapping.value.auth" = "Autenticação";
 "configuration.cells.tls_wrapping.value.crypt" = "Criptografia";
 "configuration.cells.eku.caption" = "Verificação extendida";
-"network_settings.headers.gateway" = "Gateway padrão";
-"network_settings.headers.dns" = "DNS";
+"network_settings.gateway.title" = "Gateway padrão";
+"network_settings.dns.title" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Domínio";
-"network_settings.headers.proxy" = "Proxy";
+"network_settings.proxy.title" = "Proxy";
 "configuration.cells.proxy_https.caption" = "Proxy (HTTPS)";
 "configuration.cells.compression_framing.caption" = "Framing";
 "configuration.cells.compression_framing.value.lzo" = "--comp-lzo";

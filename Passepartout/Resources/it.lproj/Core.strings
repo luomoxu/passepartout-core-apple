@@ -143,7 +143,7 @@
 "configuration.cells.tls_wrapping.value.crypt" = "Criptazione";
 "configuration.cells.eku.caption" = "Verifica estesa";
 "network_settings.gateway.title" = "Gateway predefinito";
-"network_settings.dns.title" = "Indirizzo";
+"network_settings.dns.title" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Dominio";
 "network_settings.proxy.title" = "Proxy";
 "configuration.cells.proxy_https.caption" = "Proxy (HTTPS)";

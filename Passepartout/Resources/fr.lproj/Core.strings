@@ -49,11 +49,11 @@
 "organizer.sections.support.header" = "Support";
 "organizer.sections.feedback.header" = "Commentaires";
 "organizer.cells.siri_shortcuts.caption" = "Gérer les raccourcis";
-"organizer.cells.join_community.caption" = "Joindre la communauté";
+"organizer.cells.join_community.caption" = "Rejoindre la communauté";
 "organizer.cells.write_review.caption" = "Écrire un avis";
 "organizer.cells.donate.caption" = "Faire un don";
-"organizer.cells.patreon.caption" = "Me supporter sur Patreon";
-"organizer.cells.translate.caption" = "Offrir de traduire";
+"organizer.cells.patreon.caption" = "Parrainer moi chez Patreon";
+"organizer.cells.translate.caption" = "Offre de traduction";
 "organizer.cells.about.caption" = "À propos %@";
 "organizer.cells.uninstall.caption" = "Supprimer la configuration VPN";
 "organizer.alerts.exhausted_providers.message" = "Vous avez créé un profile pour un fournisseur existant.";
@@ -77,7 +77,7 @@
 "service.sections.trusted.footer" = "Lors d'une connection à un réseau de confiance, le VPN est normalement fermé. Désactivez cette option pour ne pas autoriser ce comportement.";
 "service.sections.diagnostics.header" = "Diagnostiques";
 "service.sections.diagnostics.footer" = "Camouflage du status sera effectif après la reconnection. Les données réseaux sont les noms d'hôtes, adresses IP, routage, SSID. Les identifiants et clés privés ne sont pas enregistrés.";
-"service.cells.connection_status.caption" = "Status";
+"service.cells.connection_status.caption" = "Statut";
 "account.title" = "Compte";
 "endpoint.title" = "Extrémité";
 "service.cells.provider.pool.caption" = "Locallisation";
@@ -168,7 +168,7 @@
 "vpn.connecting" = "Connection...";
 "vpn.active" = "Actif";
 "vpn.disconnecting" = "Déconnection...";
-"vpn.inactive" = "Inactid";
+"vpn.inactive" = "Inactif";
 "vpn.disabled" = "Désactivé";
 "vpn.errors.timeout" = "Délais dépassé";
 "vpn.errors.dns" = "Échec DNS";

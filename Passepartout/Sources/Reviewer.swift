@@ -68,12 +68,18 @@ public class Reviewer {
         }
         log.debug("Prompting for review...")
 
-        // FIXME: macOS, request review (async)
-        guard #available(iOS 11, macOS 10.14, *) else {
-            return
-        }
-        SKStoreReviewController.requestReview()
         defaults.removeObject(forKey: Keys.eventCount)
         defaults.set(currentVersion, forKey: Keys.lastVersion)
+
+        if #available(iOS 11, macOS 10.14, *) {
+            SKStoreReviewController.requestReview()
+        } else {
+            #if os(macOS)
+            let url = AppConstants.URLs.review(withId: AppConstants.App.appStoreId)
+            NSWorkspace.shared.open(url)
+            #else
+            fatalError("Writing review on iOS < 11?")
+            #endif
+        }
     }
 }

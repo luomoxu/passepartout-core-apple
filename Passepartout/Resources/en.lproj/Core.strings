@@ -84,8 +84,6 @@
 
 //////////////////////
 
-// FIXME: rename ids (omit sections/cells)
-
 "organizer.sections.providers.header" = "Providers";
 "organizer.sections.providers.footer" = "Here you find a few providers with preset configuration profiles.";
 "organizer.sections.hosts.header" = "Hosts";

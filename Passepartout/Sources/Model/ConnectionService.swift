@@ -288,6 +288,11 @@ public class ConnectionService: Codable {
                 cache[key] = profile
             } catch let e {
                 log.error("Could not decode profile JSON: \(e)")
+                
+                // drop corrupt cache entry
+                cache.removeValue(forKey: key)
+                try? FileManager.default.removeItem(at: profileURL(key))
+                
                 return nil
             }
         }

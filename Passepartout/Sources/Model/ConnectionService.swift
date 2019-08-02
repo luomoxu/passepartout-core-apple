@@ -93,8 +93,6 @@ public class ConnectionService: Codable {
     
     private var cache: [ProfileKey: ConnectionProfile]
     
-    private var dataCountObserver: Timer?
-    
     public private(set) var activeProfileKey: ProfileKey? {
         willSet {
             if let oldProfile = activeProfile {
@@ -138,10 +136,6 @@ public class ConnectionService: Codable {
         preferences = EditablePreferences()
 
         cache = [:]
-    }
-    
-    deinit {
-        dataCountObserver?.invalidate()
     }
     
     // MARK: Codable
@@ -604,16 +598,24 @@ public class ConnectionService: Codable {
         baseConfiguration.clearLastError(in: appGroup)
     }
 
-    public func observeVPNDataCount(interval: TimeInterval) {
-        dataCountObserver?.invalidate()
-        dataCountObserver = Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { [weak self] (_) in
-            guard let dataCount = self?.vpnDataCount else {
-                return
-            }
-            NotificationCenter.default.post(name: .ConnectionServiceDidUpdateDataCount, object: nil, userInfo: [NotificationKeys.dataCount: dataCount])
-        })
+    public func observeVPNDataCount(milliseconds: Int) {
+        reportDataCountAndRepeat(after: milliseconds)
     }
     
+    private func reportDataCountAndRepeat(after milliseconds: Int) {
+        reportDataCount()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(milliseconds)) { [weak self] in
+            self?.reportDataCountAndRepeat(after: milliseconds)
+        }
+    }
+
+    private func reportDataCount() {
+        guard let dataCount = vpnDataCount else {
+            return
+        }
+        NotificationCenter.default.post(name: .ConnectionServiceDidUpdateDataCount, object: nil, userInfo: [NotificationKeys.dataCount: dataCount])
+    }
+
     public var vpnDataCount: (Int, Int)? {
         return baseConfiguration.dataCount(in: appGroup)
     }

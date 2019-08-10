@@ -177,7 +177,8 @@ public class AppConstants {
             "nl": "Norbert de Vreede",
             "pt-BR": "Helder Santana",
             "ru": "Alexander Korobynikov",
-            "sv": "Henry Gross-Hellsen"
+            "sv": "Henry Gross-Hellsen",
+            "zh-Hans": "OnlyThen"
         ]
     }
 

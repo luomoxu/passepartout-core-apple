@@ -40,9 +40,9 @@ public class AppConstants {
     }
 
     public class Flags {
-        public static let isBeta = false
+        public static var isBeta = false
 
-        public static let isMockVPN = false
+        public static var isMockVPN = false
     }
 
     public class Domain {

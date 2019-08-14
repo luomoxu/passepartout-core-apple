@@ -433,12 +433,12 @@ public class ConnectionService: Codable {
             return
         }
 
-        cache.removeValue(forKey: key)
-        removeCredentials(for: profile)
         if key == activeProfileKey {
             activeProfileKey = nil
         }
-        
+        cache.removeValue(forKey: key)
+        removeCredentials(for: profile)
+
         delegate?.connectionService(didRemoveProfileWithKey: key)
 
         // serialization (can fail)

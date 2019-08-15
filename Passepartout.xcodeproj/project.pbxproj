@@ -106,6 +106,8 @@
 		0E7178522299E7550055BBC2 /* ConnectionService.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */; };
 		0E7178552299E8120055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178542299E8120055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E7178562299E8170055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178532299E8090055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ECF12CE23061012008E4924 /* InAppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF12CD23061012008E4924 /* InAppHelper.swift */; };
+		0ECF12CF23061015008E4924 /* InAppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF12CD23061012008E4924 /* InAppHelper.swift */; };
 		3AFA2C9264E53F518FCB9AAF /* Pods_PassepartoutCoreTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8251F38F153AC3DED8D913 /* Pods_PassepartoutCoreTests_macOS.framework */; };
 		BA16AE32304E09E2680E48DE /* Pods_PassepartoutCoreTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629AE83950EFA48570FF9A5A /* Pods_PassepartoutCoreTests_iOS.framework */; };
 		F213256E84A089B5A8A72BFD /* Pods_PassepartoutCore_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26A90F20406158E7B6827D3 /* Pods_PassepartoutCore_iOS.framework */; };
@@ -199,6 +201,7 @@
 		0E7178442299E6B40055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7178532299E8090055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
 		0E7178542299E8120055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
+		0ECF12CD23061012008E4924 /* InAppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppHelper.swift; sourceTree = "<group>"; };
 		0EF795ED22B8D5D700262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Intents.strings; sourceTree = "<group>"; };
 		0EF795EE22B8D5DB00262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Core.strings; sourceTree = "<group>"; };
 		2195353E408DAF72143CC2FE /* Pods-PassepartoutCore-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassepartoutCore-iOS.debug.xcconfig"; path = "Target Support Files/Pods-PassepartoutCore-iOS/Pods-PassepartoutCore-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 				0E71778F2299DF8F0055BBC2 /* AppConstants.swift */,
 				0E7177762299DF8F0055BBC2 /* ApplicationError.swift */,
 				0E7177752299DF8F0055BBC2 /* GroupConstants.swift */,
+				0ECF12CD23061012008E4924 /* InAppHelper.swift */,
 				0E71778E2299DF8F0055BBC2 /* Reviewer.swift */,
 				0E71778D2299DF8F0055BBC2 /* Utils.swift */,
 			);
@@ -826,6 +830,7 @@
 				0E7177BA2299DF8F0055BBC2 /* ProfileKey.swift in Sources */,
 				0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */,
 				0E7177B52299DF8F0055BBC2 /* EndpointDataSource.swift in Sources */,
+				0ECF12CE23061012008E4924 /* InAppHelper.swift in Sources */,
 				0E7177C12299DF8F0055BBC2 /* Reviewer.swift in Sources */,
 				0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */,
 				0E7177BD2299DF8F0055BBC2 /* TrustPolicy.swift in Sources */,
@@ -873,6 +878,7 @@
 				0E71781E2299E3160055BBC2 /* EndpointDataSource.swift in Sources */,
 				0E7178052299E2F90055BBC2 /* Reviewer.swift in Sources */,
 				0E71781F2299E3160055BBC2 /* ConnectionService.swift in Sources */,
+				0ECF12CF23061015008E4924 /* InAppHelper.swift in Sources */,
 				0E7178122299E3060055BBC2 /* InfrastructurePreset.swift in Sources */,
 				0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */,
 				0E7178202299E3160055BBC2 /* Credentials.swift in Sources */,

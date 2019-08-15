@@ -29,11 +29,11 @@ import TunnelKit
 public typealias Credentials = OpenVPN.Credentials
 
 public extension Credentials {
-    var isEmpty: Bool {
-        return username.isEmpty || password.isEmpty
-    }
+//    var isEmpty: Bool {
+//        return username.isEmpty || password.isEmpty
+//    }
     
-    var hasUsername: Bool {
+    var isValid: Bool {
         return !username.isEmpty
     }
     

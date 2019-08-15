@@ -488,7 +488,7 @@ public class ConnectionService: Codable {
         guard let creds = credentials(for: profile) else {
             return true
         }
-        return !creds.hasUsername
+        return !creds.isValid
     }
     
     public func credentials(for profile: ConnectionProfile) -> Credentials? {

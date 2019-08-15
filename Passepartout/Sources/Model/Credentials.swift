@@ -33,6 +33,10 @@ public extension Credentials {
         return username.isEmpty || password.isEmpty
     }
     
+    var hasUsername: Bool {
+        return !username.isEmpty
+    }
+    
     func trimmed() -> Credentials {
         let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let trimmedPassword = password.trimmingCharacters(in: .whitespacesAndNewlines)

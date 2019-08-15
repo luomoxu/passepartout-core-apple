@@ -71,6 +71,10 @@ public class Reviewer {
         defaults.removeObject(forKey: Keys.eventCount)
         defaults.set(currentVersion, forKey: Keys.lastVersion)
 
+        writeReview()
+    }
+
+    public func writeReview() {
         if #available(iOS 11, macOS 10.14, *) {
             SKStoreReviewController.requestReview()
         } else {

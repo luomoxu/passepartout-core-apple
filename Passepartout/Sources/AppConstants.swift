@@ -348,8 +348,4 @@ public class AppConstants {
             )
         ]
     }
-    
-    public struct Rating {
-        public static let eventCount = 3
-    }
 }

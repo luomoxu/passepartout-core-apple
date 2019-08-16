@@ -39,7 +39,7 @@ public class Reviewer {
     
     private let defaults: UserDefaults
     
-    public var eventCountBeforeRating = 3
+    public var eventCountBeforeRating: Int = .max
     
     private init() {
         defaults = .standard

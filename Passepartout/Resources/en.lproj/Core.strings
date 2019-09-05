@@ -121,7 +121,7 @@
 "service.cells.provider.pool.caption" = "Location";
 "service.cells.provider.preset.caption" = "Preset";
 "service.cells.vpn_survives_sleep.caption" = "Keep alive on sleep";
-"service.cells.vpn_resolves_hostname.caption" = "Resolve server hostname";
+"service.cells.vpn_resolves_hostname.caption" = "Resolve provider hostname";
 "service.cells.trusted_mobile.caption" = "Cellular network";
 "service.cells.trusted_policy.caption" = "Trust disables VPN";
 "service.cells.test_connectivity.caption" = "Test connectivity";

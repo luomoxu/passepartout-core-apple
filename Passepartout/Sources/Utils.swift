@@ -158,7 +158,7 @@ public class Utils {
 
 public extension FileManager {
     func userURL(for searchPath: SearchPathDirectory, appending: String?) -> URL {
-        let paths = urls(for: .documentDirectory, in: .userDomainMask)
+        let paths = urls(for: searchPath, in: .userDomainMask)
         var directory = paths[0]
         if let appending = appending {
             directory.appendPathComponent(appending)

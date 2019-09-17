@@ -41,7 +41,7 @@ public extension ConnectionService {
     
     static func migrateJSON(at url: URL) throws -> Data {
         let data = try Data(contentsOf: url)
-        guard var json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
             throw ApplicationError.migration
         }
 

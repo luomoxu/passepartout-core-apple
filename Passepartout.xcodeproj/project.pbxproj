@@ -90,10 +90,7 @@
 		0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177842299DF8F0055BBC2 /* PoolCategory.swift */; };
 		0E7178262299E3190055BBC2 /* ProfileKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177872299DF8F0055BBC2 /* ProfileKey.swift */; };
 		0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177862299DF8F0055BBC2 /* ProviderConnectionProfile.swift */; };
-		0E7178282299E31F0055BBC2 /* IntentDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177912299DF8F0055BBC2 /* IntentDispatcher.swift */; };
-		0E7178292299E3280055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
 		0E71782A2299E32D0055BBC2 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Core.strings */; };
-		0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7178362299E6A40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E71772F2299DF2D0055BBC2 /* PassepartoutCore.framework */; };
 		0E7178452299E6B40055BBC2 /* PassepartoutCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7177E02299E0980055BBC2 /* PassepartoutCore.framework */; };
 		0E71784B2299E7520055BBC2 /* ConnectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177CD2299DF9A0055BBC2 /* ConnectionServiceTests.swift */; };
@@ -634,7 +631,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3CAF7B229A82040008E5C8 /* API in Resources */,
-				0E71782B2299E32D0055BBC2 /* Intents.strings in Resources */,
 				0E71782A2299E32D0055BBC2 /* Core.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -895,10 +891,8 @@
 				0E7178072299E2F90055BBC2 /* Utils.swift in Sources */,
 				0E7178262299E3190055BBC2 /* ProfileKey.swift in Sources */,
 				0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */,
-				0E7178282299E31F0055BBC2 /* IntentDispatcher.swift in Sources */,
 				0E7178112299E3060055BBC2 /* Pool.swift in Sources */,
 				0E7178212299E3160055BBC2 /* TrustPolicy.swift in Sources */,
-				0E7178292299E3280055BBC2 /* Intents.intentdefinition in Sources */,
 				0E7178182299E3160055BBC2 /* TrustedNetworks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

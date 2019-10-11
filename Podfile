@@ -10,6 +10,7 @@ def shared_pods
     #pod_version $tunnelkit_name, $tunnelkit_specs, '~> 2.0.1'
     pod_git $tunnelkit_name, $tunnelkit_specs, 'd815f52'
     #pod_path $tunnelkit_name, $tunnelkit_specs, '..'
+    pod 'Convenience/Persistence', :git => 'https://github.com/keeshux/convenience', :commit => '9689317'
     pod 'SSZipArchive'
 end
 

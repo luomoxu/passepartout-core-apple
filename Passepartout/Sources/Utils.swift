@@ -48,17 +48,6 @@ public class Utils {
         return fmt
     }()
     
-    public static func versionString() -> String {
-        let info = Bundle.main.infoDictionary
-        guard let version = info?["CFBundleShortVersionString"] else {
-            fatalError("No bundle version?")
-        }
-        guard let build = info?["CFBundleVersion"] else {
-            fatalError("No bundle build number?")
-        }
-        return "\(version) (\(build))"
-    }
-    
     #if targetEnvironment(simulator)
     public static func hasCellularData() -> Bool {
         return true
@@ -87,7 +76,7 @@ public class Utils {
     #if targetEnvironment(simulator)
     public static func currentWifiNetworkName() -> String? {
 //        return nil
-        return ["FOO", "BAR", "WIFI"].customRandomElement()
+        return ["FOO", "BAR", "WIFI"].randomElement()
     }
     #else
     public static func currentWifiNetworkName() -> String? {
@@ -134,16 +123,6 @@ public class Utils {
         }.resume()
     }
     
-    public static func mailto(to: String, subject: String, body: String) -> URL? {
-        guard let escapedSubject = subject.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
-            return nil
-        }
-        guard let escapedBody = body.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
-            return nil
-        }
-        return URL(string: "mailto:\(to)?subject=\(escapedSubject)&body=\(escapedBody)")
-    }
-
     public static func localizedCountry(_ code: String) -> String {
         return Locale.current.localizedString(forRegionCode: code) ?? code
     }
@@ -153,24 +132,6 @@ public class Utils {
     }
     
     private init() {
-    }
-}
-
-public extension FileManager {
-    func userURL(for searchPath: SearchPathDirectory, appending: String?) -> URL {
-        let paths = urls(for: searchPath, in: .userDomainMask)
-        var directory = paths[0]
-        if let appending = appending {
-            directory.appendPathComponent(appending)
-        }
-        return directory
-    }
-
-    func modificationDate(of path: String) -> Date? {
-        guard let attrs = try? attributesOfItem(atPath: path) else {
-            return nil
-        }
-        return attrs[.modificationDate] as? Date
     }
 }
 
@@ -195,13 +156,6 @@ public extension Sequence {
             return try areInIncreasingOrder($0.element, $1.element) ||
                 ($0.offset < $1.offset && !areInIncreasingOrder($1.element, $0.element))
             }.map { $0.element }
-    }
-}
-
-public extension Array {
-    func customRandomElement() -> Element {
-        let i = Int(arc4random() % UInt32(count))
-        return self[i]
     }
 }
 
@@ -235,14 +189,5 @@ public extension URL {
 public extension Array where Element: CustomStringConvertible {
     func sortedCaseInsensitive() -> [Element] {
         return sorted { $0.description.lowercased() < $1.description.lowercased() }
-    }
-}
-
-public extension SKProduct {
-    var localizedPrice: String? {
-        let fmt = NumberFormatter()
-        fmt.numberStyle = .currency
-        fmt.locale = priceLocale
-        return fmt.string(from: price)
     }
 }

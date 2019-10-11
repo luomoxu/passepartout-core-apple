@@ -24,6 +24,7 @@
 //
 
 import Foundation
+import Convenience
 
 public class GroupConstants {
     public class App {

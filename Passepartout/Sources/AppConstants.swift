@@ -82,7 +82,7 @@ public class AppConstants {
             "https://www.instagram.com"
         ]
         
-        public static let connectivityURL = URL(string: connectivityStrings.customRandomElement())!
+        public static let connectivityURL = URL(string: connectivityStrings.randomElement()!)!
         
         public static let connectivityTimeout: TimeInterval = 10.0
     }

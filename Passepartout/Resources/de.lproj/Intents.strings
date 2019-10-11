@@ -1,6 +1,7 @@
 "0jRWn5" = "Entfernt Mobilfunknetz von vertrauten Netzwerken";
 
 "IeGsEq" = "VPN deaktivieren";
+"1ZRTCZ" = "VPN deaktivieren";
 
 "66bZBE" = "Mit Anbieter ${providerId}￼";
 
@@ -11,10 +12,11 @@
 "BKxs8X" = "Fügt aktuelles WLAN zu vertrauten Netzwerken hinzu";
 
 "NWWgCl" = "Mobilfunknetz vertrauen";
+"H4taev" = "Mobilfunknetz vertrauen";
 
 "KjkCfU" = "Connects to a specific location of a provider profile";
 
-"POyDPM" = "Verbinde mit VPN";
+"LA99yM" = "Verbinde mit VPN";
 
 "U6o81V" = "Verbinde mit ${profileId}";
 
@@ -25,14 +27,18 @@
 "eXXb2z" = "Verbindet mit einem Hostprofil";
 
 "yesvFP" = "Aktiviere VPN";
+"lQ6ziK" = "Aktiviere VPN";
 
 "POyDPM" = "Vertraue aktuellem WLAN";
+"m2E7SI" = "Vertraue aktuellem WLAN";
 
 "qo3Szz" = "Verbinde mit Anbieter-Ort";
 
 "0Wu9nb" = "Aktuellem WLAN nicht vertrauen";
+"rd1T8p" = "Aktuellem WLAN nicht vertrauen";
 
 "ggzKA2" = "Mobilfunknetz nicht vertrauen";
+"wB1iYX" = "Mobilfunknetz nicht vertrauen";
 
 "xY97Vu" = "Aktiviert den VPN-Dienst mit dem derzeitig benutzten Profil";
 

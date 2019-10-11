@@ -1,5 +1,6 @@
 "0jRWn5" = "从可信网络中移除蜂窝网络";
 
+"IeGsEq" = "禁用VPN";
 "1ZRTCZ" = "禁用VPN";
 
 "66bZBE" = "使用 ${providerId} 提供商配置";
@@ -10,6 +11,7 @@
 
 "BKxs8X" = "添加当前Wi-Fi到可信网络中";
 
+"NWWgCl" = "信任蜂窝网络";
 "H4taev" = "信任蜂窝网络";
 
 "KjkCfU" = "连接到指定地区的提供商配置";
@@ -24,14 +26,18 @@
 
 "eXXb2z" = "连接到主机配置";
 
+"yesvFP" = "启用VPN";
 "lQ6ziK" = "启用VPN";
 
+"POyDPM" = "信任当前Wi-Fi";
 "m2E7SI" = "信任当前Wi-Fi";
 
 "qo3Szz" = "连接到提供商的地区";
 
+"0Wu9nb" = "不信任当前Wi-Fi";
 "rd1T8p" = "不信任当前Wi-Fi";
 
+"ggzKA2" = "不信任当前蜂窝网络";
 "wB1iYX" = "不信任当前蜂窝网络";
 
 "xY97Vu" = "使用当前配置启用VPN服务";

@@ -1,6 +1,7 @@
 "0jRWn5" = "Remover celular de conexões seguras";
 
 "IeGsEq" = "Desativar VPN";
+"1ZRTCZ" = "Desativar VPN";
 
 "66bZBE" = "Com o provedor ${providerId}";
 
@@ -11,10 +12,11 @@
 "BKxs8X" = "Adicionar Wi-Fi atual em conexões seguras";
 
 "NWWgCl" = "Confiar em rede celular";
+"H4taev" = "Confiar em rede celular";
 
 "KjkCfU" = "Conectar em uma localização específica de um provedor";
 
-"POyDPM" = "Conectar VPN";
+"LA99yM" = "Conectar VPN";
 
 "U6o81V" = "Conectar ${profileId}";
 
@@ -25,14 +27,18 @@
 "eXXb2z" = "Conectar em um host";
 
 "yesvFP" = "Ativar VPN";
+"lQ6ziK" = "Ativar VPN";
 
 "POyDPM" = "Confiar na Wi-Fi atual";
+"m2E7SI" = "Confiar na Wi-Fi atual";
 
 "qo3Szz" = "Conectar em uma região do provedor";
 
 "0Wu9nb" = "Não confiar na Wi-Fi atual";
+"rd1T8p" = "Não confiar na Wi-Fi atual";
 
 "ggzKA2" = "Não confiar na conexão celular";
+"wB1iYX" = "Não confiar na conexão celular";
 
 "xY97Vu" = "Ativar o serviço VPN no perfil em uso";
 

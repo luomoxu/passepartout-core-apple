@@ -225,10 +225,6 @@ public class AppConstants {
             return comps.url!
         }
         
-        public static func review(withId id: String) -> URL {
-            return URL(string: "https://itunes.apple.com/app/id\(id)?action=write-review")!
-        }
-        
         public static let guidances: [Infrastructure.Name: String] = [
             .protonVPN: "https://account.protonvpn.com/settings",
             .windscribe: "https://windscribe.com/getconfig/openvpn"

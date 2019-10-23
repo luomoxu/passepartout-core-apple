@@ -139,7 +139,7 @@ public class GracefulVPN {
     }
 
     public func requestServerConfiguration(completionHandler: @escaping (Any?) -> Void) {
-        guard let vpn = vpn else {
+        guard let vpn = vpn, vpn.status == .connected else {
             completionHandler(nil)
             return
         }

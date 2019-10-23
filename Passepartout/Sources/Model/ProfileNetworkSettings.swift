@@ -83,6 +83,8 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
         return Proxy(address, port)
     }
     
+    public var proxyAutoConfigurationURL: URL?
+    
     public var proxyBypassDomains: [String]?
     
     public init() {
@@ -95,6 +97,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
         dnsServers = configuration.dnsServers
         proxyAddress = configuration.httpProxy?.address
         proxyPort = configuration.httpProxy?.port
+        proxyAutoConfigurationURL = configuration.proxyAutoConfigurationURL
         proxyBypassDomains = configuration.proxyBypassDomains
     }
 
@@ -116,6 +119,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
     public func copyProxy(from settings: ProfileNetworkSettings) {
         proxyAddress = settings.proxyAddress
         proxyPort = settings.proxyPort
+        proxyAutoConfigurationURL = settings.proxyAutoConfigurationURL
         proxyBypassDomains = settings.proxyBypassDomains?.filter { !$0.isEmpty }
     }
     
@@ -125,7 +129,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
         let comps: [String] = [
             "gw: \(gatewayPolicies?.description ?? "")",
             "dns: {domain: \(dnsDomainName ?? ""), servers: \(dnsServers?.description ?? "[]")}",
-            "proxy: {address: \(proxyAddress ?? ""), port: \(proxyPort?.description ?? ""), bypass: \(proxyBypassDomains?.description ?? "[]")}"
+            "proxy: {address: \(proxyAddress ?? ""), port: \(proxyPort?.description ?? ""), PAC: \(proxyAutoConfigurationURL?.absoluteString ?? ""), bypass: \(proxyBypassDomains?.description ?? "[]")}"
         ]
         return "{\(comps.joined(separator: ", "))}"
     }
@@ -168,6 +172,7 @@ extension OpenVPN.ConfigurationBuilder {
         case .server:
             httpProxy = nil
             httpsProxy = nil
+            proxyAutoConfigurationURL = nil
             proxyBypassDomains = nil
             
         case .manual:
@@ -175,9 +180,13 @@ extension OpenVPN.ConfigurationBuilder {
                 httpProxy = proxyServer
                 httpsProxy = proxyServer
                 proxyBypassDomains = settings.proxyBypassDomains?.filter { !$0.isEmpty }
+            } else if let pac = settings.proxyAutoConfigurationURL {
+                proxyAutoConfigurationURL = pac
+                proxyBypassDomains = settings.proxyBypassDomains?.filter { !$0.isEmpty }
             } else {
                 httpProxy = nil
                 httpsProxy = nil
+                proxyAutoConfigurationURL = nil
                 proxyBypassDomains = nil
             }
         }

@@ -127,6 +127,8 @@
 "service.cells.test_connectivity.caption" = "Test connectivity";
 "service.cells.data_count.caption" = "Exchanged data";
 "service.cells.data_count.none" = "Unavailable";
+"service.cells.server_configuration.caption" = "Server configuration";
+"service.cells.server_network.caption" = "Server network";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Mask network data";
 "service.cells.reconnect.caption" = "Reconnect";

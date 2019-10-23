@@ -219,6 +219,35 @@ public class StandardVPNProvider: VPNProvider {
         }
     }
     
+    public func requestServerConfiguration(completionHandler: @escaping (Any?) -> Void) {
+        find(with: bundleIdentifier) {
+            self.manager = $0
+            guard let session = self.manager?.connection as? NETunnelProviderSession else {
+                DispatchQueue.main.async {
+                    completionHandler(nil)
+                }
+                return
+            }
+            do {
+                try session.sendProviderMessage(OpenVPNTunnelProvider.Message.serverConfiguration.data) { (data) in
+                    guard let data = data, let cfg = try? JSONDecoder().decode(OpenVPN.Configuration.self, from: data) else {
+                        DispatchQueue.main.async {
+                            completionHandler(nil)
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        completionHandler(cfg)
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completionHandler(nil)
+                }
+            }
+        }
+    }
+    
     // MARK: Helpers
     
     private func find(with bundleIdentifier: String, completionHandler: @escaping (NETunnelProviderManager?) -> Void) {

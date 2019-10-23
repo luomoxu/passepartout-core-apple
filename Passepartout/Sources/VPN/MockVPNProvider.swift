@@ -78,4 +78,8 @@ public class MockVPNProvider: VPNProvider {
     public func requestBytesCount(completionHandler: @escaping ((UInt, UInt)?) -> Void) {
         completionHandler((0, 0))
     }
+
+    public func requestServerConfiguration(completionHandler: @escaping (Any?) -> Void) {
+        completionHandler(nil)
+    }
 }

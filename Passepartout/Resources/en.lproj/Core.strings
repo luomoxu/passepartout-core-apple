@@ -207,6 +207,8 @@
 "network_settings.dns.cells.domain.caption" = "Domain";
 "network_settings.proxy.title" = "Proxy";
 
+"server_network.cells.route.caption" = "Route";
+
 "debug_log.buttons.previous" = "Previous";
 "debug_log.buttons.next" = "Next";
 "debug_log.alerts.empty_log.message" = "The debug log is empty.";

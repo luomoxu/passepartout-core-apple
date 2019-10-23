@@ -81,4 +81,17 @@ class InfrastructureTests: XCTestCase {
         }
         XCTAssertNotEqual(sorted2, original)
     }
+    
+    func testLastModified() {
+        let fmt = DateFormatter()
+        fmt.timeZone = TimeZone(abbreviation: "GMT")
+        fmt.dateFormat = "EEE, dd LLL yyyy HH:mm:ss zzz"
+
+        let lmString = "Wed, 23 Oct 2019 17:06:54 GMT"
+
+        fmt.locale = Locale(identifier: "en")
+        XCTAssertNotNil(fmt.date(from: lmString))
+        fmt.locale = Locale(identifier: "fr-FR")
+        XCTAssertNil(fmt.date(from: lmString))
+    }
 }

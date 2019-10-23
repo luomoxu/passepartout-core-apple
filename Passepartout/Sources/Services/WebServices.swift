@@ -63,6 +63,7 @@ public class WebServices {
     
     private static let lmFormatter: DateFormatter = {
         let fmt = DateFormatter()
+        fmt.locale = Locale(identifier: "en")
         fmt.timeZone = TimeZone(abbreviation: "GMT")
         fmt.dateFormat = "EEE, dd LLL yyyy HH:mm:ss zzz"
         return fmt

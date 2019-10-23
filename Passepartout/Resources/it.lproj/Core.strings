@@ -223,3 +223,7 @@
 "label.license.error" = "Impossibile scaricare il contenuto completo della licenza.";
 "organizer.cells.profile.value.current" = "In uso";
 "service.welcome.message" = "Benvenuto in Passepartout!\n\nUsa il menu per aggiungere un nuovo profilo.";
+"service.cells.server_configuration.caption" = "Configurazione del server";
+"service.cells.server_network.caption" = "Rete del server";
+"service.alerts.configuration.disconnected" = "Configurazione non disponibile, assicurati di essere connesso/a alla VPN.";
+"server_network.cells.route.caption" = "Rotta";

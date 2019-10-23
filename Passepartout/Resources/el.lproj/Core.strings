@@ -223,3 +223,7 @@
 "label.license.error" = "Δεν είναι δυνατή η λήψη πλήρους περιεχομένου άδειας χρήσης.";
 "organizer.cells.profile.value.current" = "Σε χρήση";
 "service.welcome.message" = "Καλώς Ήλθατε στο Passepartout!\n\nΧρησιμοποιήστε τον διοργανωτή για να προσθέσετε ένα νέο προφίλ.";
+"service.cells.server_configuration.caption" = "Ρυθμίσεις Διακομιστή";
+"service.cells.server_network.caption" = "Δίκτυο Διακομιστή";
+"service.alerts.configuration.disconnected" = "Μη διαθέσιμη Ρύθμιση, επιβεβαιώστε ότι είστε συνδεδεμένοι στο VPN.";
+"server_network.cells.route.caption" = "Διαδρομή";

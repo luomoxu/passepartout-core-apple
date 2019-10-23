@@ -223,3 +223,7 @@
 "label.license.error" = "Не получается загрузить полную лицензию.";
 "organizer.cells.profile.value.current" = "Используется";
 "service.welcome.message" = "Добро пожаловать в Passepartout!\n\nИспользуйте организатор для добавления нового профиля.";
+"service.cells.server_configuration.caption" = "Конфигурация сервера";
+"service.cells.server_network.caption" = "Серверная сеть";
+"service.alerts.configuration.disconnected" = "Конфигурация недоступна, убедитесь, что вы подключены к VPN.";
+"server_network.cells.route.caption" = "Маршрут";

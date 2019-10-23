@@ -127,6 +127,8 @@
 "service.cells.test_connectivity.caption" = "Test connectivity";
 "service.cells.data_count.caption" = "Exchanged data";
 "service.cells.data_count.none" = "Unavailable";
+"service.cells.server_configuration.caption" = "Server configuration";
+"service.cells.server_network.caption" = "Server network";
 "service.cells.debug_log.caption" = "Debug log";
 "service.cells.masks_private_data.caption" = "Mask network data";
 "service.cells.reconnect.caption" = "Reconnect";
@@ -141,6 +143,7 @@
 "service.alerts.test_connectivity.title" = "Connectivity";
 "service.alerts.test_connectivity.messages.success" = "Your device is connected to the Internet!";
 "service.alerts.test_connectivity.messages.failure" = "Your device has no Internet connectivity, please review your profile parameters.";
+"service.alerts.configuration.disconnected" = "Configuration unavailable, make sure you are connected to the VPN.";
 "service.alerts.masks_private_data.messages.must_reconnect" = "In order to safely reset the current debug log and apply the new masking preference, you must reconnect to the VPN now.";
 "service.alerts.buttons.reconnect" = "Reconnect";
 "service.alerts.download.title" = "Download required";
@@ -203,6 +206,8 @@
 "network_settings.dns.title" = "DNS";
 "network_settings.dns.cells.domain.caption" = "Domain";
 "network_settings.proxy.title" = "Proxy";
+
+"server_network.cells.route.caption" = "Route";
 
 "debug_log.buttons.previous" = "Previous";
 "debug_log.buttons.next" = "Next";

@@ -47,6 +47,8 @@ public protocol VPNProvider: class {
     func requestDebugLog(fallback: (() -> String)?, completionHandler: @escaping (String) -> Void)
     
     func requestBytesCount(completionHandler: @escaping ((UInt, UInt)?) -> Void)
+
+    func requestServerConfiguration(completionHandler: @escaping (Any?) -> Void)
 }
 
 public extension Notification.Name {

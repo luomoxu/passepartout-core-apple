@@ -137,4 +137,12 @@ public class GracefulVPN {
         }
         vpn.requestBytesCount(completionHandler: completionHandler)
     }
+
+    public func requestServerConfiguration(completionHandler: @escaping (Any?) -> Void) {
+        guard let vpn = vpn, vpn.status == .connected else {
+            completionHandler(nil)
+            return
+        }
+        vpn.requestServerConfiguration(completionHandler: completionHandler)
+    }
 }

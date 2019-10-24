@@ -166,6 +166,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
 //                EndpointProtocol(.tcp, 443)
 //            ]
         }
+        sessionBuilder.routingPolicies = [.IPv4, .IPv6]
         builder.sessionConfiguration = sessionBuilder.build()
         
         return builder.build()

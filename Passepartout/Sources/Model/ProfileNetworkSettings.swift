@@ -93,7 +93,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
     
     public init(from configuration: OpenVPN.Configuration) {
         gatewayPolicies = configuration.routingPolicies
-        dnsDomainName = configuration.searchDomain
+        dnsDomainName = configuration.searchDomains?.first
         dnsServers = configuration.dnsServers
         proxyAddress = configuration.httpProxy?.address
         proxyPort = configuration.httpProxy?.port
@@ -156,11 +156,15 @@ extension OpenVPN.ConfigurationBuilder {
             
         case .server:
             dnsServers = nil
-            searchDomain = nil
+            searchDomains = nil
 
         case .manual:
             dnsServers = settings.dnsServers?.filter { !$0.isEmpty }
-            searchDomain = settings.dnsDomainName
+            if let dnsDomainName = settings.dnsDomainName {
+                searchDomains = [dnsDomainName]
+            } else {
+                searchDomains = nil
+            }
         }
     }
 

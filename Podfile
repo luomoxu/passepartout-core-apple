@@ -8,7 +8,7 @@ $tunnelkit_specs = ['Protocols/OpenVPN', 'Extra/LZO']
 
 def shared_pods
     #pod_version $tunnelkit_name, $tunnelkit_specs, '~> 2.0.1'
-    pod_git $tunnelkit_name, $tunnelkit_specs, '7608ae2'
+    pod_git $tunnelkit_name, $tunnelkit_specs, '4e77f5b'
     #pod_path $tunnelkit_name, $tunnelkit_specs, '..'
     pod 'Convenience/Persistence', :git => 'https://github.com/keeshux/convenience', :commit => '9689317'
     pod 'SSZipArchive'

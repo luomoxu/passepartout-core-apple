@@ -70,7 +70,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
 
     public var dnsServers: [String]?
     
-    public var dnsDomainName: String?
+    public var dnsSearchDomains: [String]?
     
     public var proxyAddress: String?
     
@@ -93,7 +93,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
     
     public init(from configuration: OpenVPN.Configuration) {
         gatewayPolicies = configuration.routingPolicies
-        dnsDomainName = configuration.searchDomains?.first
+        dnsSearchDomains = configuration.searchDomains
         dnsServers = configuration.dnsServers
         proxyAddress = configuration.httpProxy?.address
         proxyPort = configuration.httpProxy?.port
@@ -112,7 +112,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
     }
     
     public func copyDNS(from settings: ProfileNetworkSettings) {
-        dnsDomainName = settings.dnsDomainName
+        dnsSearchDomains = settings.dnsSearchDomains
         dnsServers = settings.dnsServers?.filter { !$0.isEmpty }
     }
     
@@ -128,7 +128,7 @@ public class ProfileNetworkSettings: Codable, CustomStringConvertible {
     public var description: String {
         let comps: [String] = [
             "gw: \(gatewayPolicies?.description ?? "")",
-            "dns: {domain: \(dnsDomainName ?? ""), servers: \(dnsServers?.description ?? "[]")}",
+            "dns: {domains: \(dnsSearchDomains?.description ?? "[]"), servers: \(dnsServers?.description ?? "[]")}",
             "proxy: {address: \(proxyAddress ?? ""), port: \(proxyPort?.description ?? ""), PAC: \(proxyAutoConfigurationURL?.absoluteString ?? ""), bypass: \(proxyBypassDomains?.description ?? "[]")}"
         ]
         return "{\(comps.joined(separator: ", "))}"
@@ -160,11 +160,7 @@ extension OpenVPN.ConfigurationBuilder {
 
         case .manual:
             dnsServers = settings.dnsServers?.filter { !$0.isEmpty }
-            if let dnsDomainName = settings.dnsDomainName {
-                searchDomains = [dnsDomainName]
-            } else {
-                searchDomains = nil
-            }
+            searchDomains = settings.dnsSearchDomains
         }
     }
 

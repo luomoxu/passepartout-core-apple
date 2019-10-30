@@ -197,6 +197,8 @@ public class AppConstants {
             public static let changelog = Repos.macos.appendingPathComponent("blob/master/CHANGELOG.md")
         }
         
+        public static let filetypes = ["public.content", "public.data"]
+
         public static let website = URL(string: "https://\(Domain.name)")!
         
         public static let faq = website.appendingPathComponent("faq")

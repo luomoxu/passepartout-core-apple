@@ -282,6 +282,11 @@ public class AppConstants {
 
         public static let all: [License] = [
             License(
+                "Kvitto",
+                "BSD",
+                "https://raw.githubusercontent.com/Cocoanetics/Kvitto/develop/LICENSE"
+            ),
+            License(
                 "lzo",
                 "GPLv2",
                 "https://www.gnu.org/licenses/gpl-2.0.txt"

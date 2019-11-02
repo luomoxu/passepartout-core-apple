@@ -39,12 +39,6 @@ public class AppConstants {
         }()
     }
 
-    public class Flags {
-        public static var isBeta = false
-
-        public static var isMockVPN = false
-    }
-
     public class Domain {
         public static let name = "passepartoutvpn.app"
     }

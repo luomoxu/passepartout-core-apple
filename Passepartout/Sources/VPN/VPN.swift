@@ -26,8 +26,12 @@
 import Foundation
 
 public class VPN {
+    
+    // set before accessing "shared"
+    public static var isMockVPN = false
+    
     public static let shared: VPNProvider = {
-        guard !AppConstants.Flags.isMockVPN else {
+        guard !isMockVPN else {
             return MockVPNProvider()
         }
         #if targetEnvironment(simulator)

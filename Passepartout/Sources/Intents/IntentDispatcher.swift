@@ -29,10 +29,6 @@ import SwiftyBeaver
 
 private let log = SwiftyBeaver.self
 
-public extension Notification.Name {
-    static let IntentDidUpdateService = Notification.Name("IntentDidUpdateService")
-}
-
 @available(iOS 12, *)
 public class IntentDispatcher {
     private class Groups {
@@ -41,6 +37,8 @@ public class IntentDispatcher {
         static let trust = "Trust"
     }
     
+    public static let didUpdateService = Notification.Name("IntentDispatcherDidUpdateService")
+
     // MARK: Intents
     
     public static func intentConnect(profile: ConnectionProfile) -> ConnectVPNIntent {
@@ -304,7 +302,7 @@ public class IntentDispatcher {
     //
     
     private static func notifyServiceUpdate() {
-        NotificationCenter.default.post(name: .IntentDidUpdateService, object: nil)
+        NotificationCenter.default.post(name: IntentDispatcher.didUpdateService, object: nil)
     }
 }
 

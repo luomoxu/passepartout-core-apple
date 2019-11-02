@@ -42,10 +42,6 @@ public protocol ConnectionServiceDelegate: class {
     func connectionService(didActivate profile: ConnectionProfile)
 }
 
-public extension Notification.Name {
-    static let ConnectionServiceDidUpdateDataCount = Notification.Name("ConnectionServiceDidUpdateDataCount")
-}
-
 public class ConnectionService: Codable {
     public enum CodingKeys: String, CodingKey {
         case build
@@ -62,6 +58,8 @@ public class ConnectionService: Codable {
     public struct NotificationKeys {
         public static let dataCount = "DataCount"
     }
+
+    public static let didUpdateDataCount = Notification.Name("ConnectionServiceDidUpdateDataCount")
 
     public var directory: String? = nil
     
@@ -611,7 +609,7 @@ public class ConnectionService: Codable {
         guard let dataCount = vpnDataCount else {
             return
         }
-        NotificationCenter.default.post(name: .ConnectionServiceDidUpdateDataCount, object: nil, userInfo: [NotificationKeys.dataCount: dataCount])
+        NotificationCenter.default.post(name: ConnectionService.didUpdateDataCount, object: nil, userInfo: [NotificationKeys.dataCount: dataCount])
     }
 
     public var vpnDataCount: (Int, Int)? {

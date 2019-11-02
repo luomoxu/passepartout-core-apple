@@ -159,6 +159,7 @@
 "configuration.cells.cipher.caption" = "加密";
 "configuration.cells.digest.caption" = "身份验证";
 "configuration.cells.digest.value.embedded" = "已包含";
+"configuration.cells.proxy_https.caption" = "代理（HTTPS）";
 "configuration.cells.compression_framing.caption" = "分帧";
 "configuration.cells.compression_framing.value.lzo" = "--comp-lzo";
 "configuration.cells.compression_framing.value.compress" = "--compress";

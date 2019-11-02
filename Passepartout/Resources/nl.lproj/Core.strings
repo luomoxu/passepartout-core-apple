@@ -223,3 +223,7 @@
 "label.license.error" = "Kan volledige licentie-inhoud niet downloaden.";
 "organizer.cells.profile.value.current" = "In gebruik";
 "service.welcome.message" = "Welkom bij Passepartout!\n\nGebruik de organizer om een nieuw profiel toe te voegen.";
+"service.cells.server_configuration.caption" = "Server configuratie";
+"service.cells.server_network.caption" = "Server netwerk";
+"service.alerts.configuration.disconnected" = "Configuratie niet beschikbaar, zorg ervoor dat u verbonden bent met de VPN.";
+"server_network.cells.route.caption" = "Route";

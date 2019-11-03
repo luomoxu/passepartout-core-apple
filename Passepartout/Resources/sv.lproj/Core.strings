@@ -73,7 +73,7 @@
 "service.sections.provider_infrastructure.footer" = "Senast uppdaterad på %@.";
 "service.sections.vpn_survives_sleep.footer" = "Inaktivera för att förbättra batterianvändningen, på bekostnad av tillfälliga avmattningar på grund av återuppkoppling.";
 "service.sections.vpn_resolves_hostname.footer" = "Föredragna i de flesta nätverk och krävs i vissa IPv6-nätverk. Inaktivera var DNS blockeras eller för att påskynda förhandlingar när DNS är långsamt att svara.";
-"service.sections.trusted.header" = "Trusted networks";
+"service.sections.trusted.header" = "Tillförlitliga nätverk";
 "service.sections.trusted.footer" = "När du advänder ett betrodat nätverk, VPNet stängs normalt och hålls bortkopplat. Avaktivera detta alternativet för att inte genomdriva sådant beteende.";
 "service.sections.diagnostics.header" = "Diagnostics";
 "service.sections.diagnostics.footer" = "Masking status kommer att fungera efter återanslutning. Nätverksdata är värdnamn, IP-adresser, routing, SSID. Referenser och privata nycklar loggas inte oavsett.";

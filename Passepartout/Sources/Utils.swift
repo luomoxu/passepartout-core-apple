@@ -76,7 +76,7 @@ public class Utils {
     #if targetEnvironment(simulator)
     public static func currentWifiNetworkName() -> String? {
 //        return nil
-        return ["FOO", "BAR", "WIFI"].randomElement()
+        return ["My Home Network", "Safe Wi-Fi", "Friend's House"].randomElement()
     }
     #else
     public static func currentWifiNetworkName() -> String? {

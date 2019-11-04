@@ -345,14 +345,4 @@ public class AppConstants {
             )
         ]
     }
-
-    public struct Rating {
-        public static let eventCount: Int = {
-            #if os(iOS)
-            return 3
-            #else
-            return 10
-            #endif
-        }()
-    }
 }

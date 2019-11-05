@@ -88,9 +88,10 @@ public class Utils {
             guard let iface = CNCopyCurrentNetworkInfo(name) as? [String: Any] else {
                 continue
             }
-            if let ssid = iface["SSID"] as? String {
-                return ssid
+            guard let ssid = iface[kCNNetworkInfoKeySSID as String] as? String else {
+                continue
             }
+            return ssid
         }
         return nil
         #else

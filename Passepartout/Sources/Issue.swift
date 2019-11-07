@@ -34,11 +34,12 @@ public struct Issue {
     
     public let configurationURL: URL?
     
-    public var description: String?
+    public let infrastructure: Infrastructure?
     
-    public init(debugLog: Bool, configurationURL: URL?) {
+    public init(debugLog: Bool, configurationURL: URL?, infrastructure: Infrastructure? = nil) {
         self.debugLog = debugLog
         self.configurationURL = configurationURL
+        self.infrastructure = infrastructure
     }
     
     public init(debugLog: Bool, profile: ConnectionProfile?) {
@@ -48,6 +49,7 @@ public struct Issue {
         } else {
             url = nil
         }
-        self.init(debugLog: debugLog, configurationURL: url)
+        let infrastructure = (profile as? ProviderConnectionProfile)?.infrastructure
+        self.init(debugLog: debugLog, configurationURL: url, infrastructure: infrastructure)
     }
 }

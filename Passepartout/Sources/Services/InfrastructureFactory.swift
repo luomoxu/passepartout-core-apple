@@ -271,17 +271,21 @@ private extension Infrastructure.Name {
     }
 }
 
-public extension ConnectionService {
-    func availableProviderNames() -> [Infrastructure.Name] {
-        var names = Set(InfrastructureFactory.shared.allNames)
-        var createdNames: [Infrastructure.Name] = []
+extension ConnectionService {
+    public func currentProviderNames() -> [Infrastructure.Name] {
+        var names: [Infrastructure.Name] = []
         ids(forContext: .provider).forEach {
             guard let name = Infrastructure.Name(rawValue: $0) else {
                 return
             }
-            createdNames.append(name)
+            names.append(name)
         }
-        names.formSymmetricDifference(createdNames)
+        return names
+    }
+
+    public func availableProviderNames() -> [Infrastructure.Name] {
+        var names = Set(InfrastructureFactory.shared.allNames)
+        names.formSymmetricDifference(currentProviderNames())
         return Array(names).sorted()
     }
 }

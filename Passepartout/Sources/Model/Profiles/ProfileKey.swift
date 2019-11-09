@@ -42,6 +42,11 @@ public struct ProfileKey: RawRepresentable, Hashable, Codable, CustomStringConve
         id = profile.id
     }
     
+    public init(_ name: Infrastructure.Name) {
+        context = .provider
+        id = name.rawValue
+    }
+    
     // MARK: RawRepresentable
     
     public var rawValue: String {

@@ -205,6 +205,10 @@ public class AppConstants {
         
         public static let patreon = URL(string: "https://www.patreon.com/keeshux")!
         
+        public static let alternativeTo = URL(string: "https://alternativeto.net/software/passepartout-vpn/")!
+        
+        public static let productHunt = URL(string: "https://www.producthunt.com/posts/passepartout-vpn/")!
+        
         private static let twitterHashtags = ["OpenVPN", "iOS", "macOS"]
         
         public static func twitterIntent(withMessage message: String) -> URL {

@@ -24,16 +24,14 @@
 //
 
 import Foundation
-import SwiftyBeaver
-
-private let log = SwiftyBeaver.self
+import Convenience
 
 public class WebServices {
     public enum Group: String {
         case network = "net"
     }
-    
-    public enum Endpoint {
+
+    public enum Endpoint: Convenience.Endpoint {
         case network(Infrastructure.Name)
         
         var path: String {
@@ -42,90 +40,28 @@ public class WebServices {
                 return "\(Group.network.rawValue)/\(name.webName)"
             }
         }
-    }
-    
-    public struct Response<T> {
-        public let value: T?
         
-        public let lastModifiedString: String?
+        // MARK: Endpoint
         
-        public var lastModified: Date? {
-            guard let string = lastModifiedString else {
-                return nil
-            }
-            return lmFormatter.date(from: string)
+        public var url: URL {
+            return AppConstants.Web.url(path: "\(path).json")
         }
-        
-        public let isCached: Bool
     }
-    
+
     public static let shared = WebServices()
     
-    private static let lmFormatter: DateFormatter = {
-        let fmt = DateFormatter()
-        fmt.locale = Locale(identifier: "en")
-        fmt.timeZone = TimeZone(abbreviation: "GMT")
-        fmt.dateFormat = "EEE, dd LLL yyyy HH:mm:ss zzz"
-        return fmt
-    }()
+    private let ws: ReadonlyWebServices
     
+    private init() {
+        ws = ReadonlyWebServices()
+        ws.timeout = AppConstants.Web.timeout
+    }
+
     public func network(with name: Infrastructure.Name, ifModifiedSince lastModified: Date?, completionHandler: @escaping (Response<Infrastructure>?, Error?) -> Void) {
-        var request = get(.network(name))
+        var request = ws.get(WebServices.Endpoint.network(name))
         if let lastModified = lastModified {
-            request.addValue(WebServices.lmFormatter.string(from: lastModified), forHTTPHeaderField: "If-Modified-Since")
+            request.addValue(ResponseParser.lastModifiedString(date: lastModified), forHTTPHeaderField: "If-Modified-Since")
         }
-        parse(Infrastructure.self, request: request, completionHandler: completionHandler)
-    }
-
-    private func get(_ endpoint: Endpoint) -> URLRequest {
-        let url = AppConstants.Web.url(path: "\(endpoint.path).json")
-        return URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: AppConstants.Web.timeout)
-    }
-    
-    private func parse<T: Decodable>(_ type: T.Type, request: URLRequest, completionHandler: @escaping (Response<T>?, Error?) -> Void) {
-        log.debug("GET \(request.url!)")
-        log.debug("Request headers: \(request.allHTTPHeaderFields?.description ?? "")")
-
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: request) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                log.error("Error (response): \(error?.localizedDescription ?? "nil")")
-                completionHandler(nil, error)
-                return
-            }
-
-            let statusCode = httpResponse.statusCode
-            log.debug("Response status: \(statusCode)")
-            if let responseHeaders = httpResponse.allHeaderFields as? [String: String] {
-                log.debug("Response headers: \(responseHeaders)")
-            }
-
-            // 304: cache hit
-            if statusCode == 304 {
-                log.debug("Response is cached")
-                completionHandler(Response(value: nil, lastModifiedString: nil, isCached: true), nil)
-                return
-            }
-
-            // 200: cache miss
-            let value: T
-            let lastModifiedString: String?
-            guard statusCode == 200, let data = data else {
-                log.error("Error (network): \(error?.localizedDescription ?? "nil")")
-                completionHandler(nil, error)
-                return
-            }
-            do {
-                value = try JSONDecoder().decode(type, from: data)
-            } catch let e {
-                log.error("Error (parsing): \(e)")
-                completionHandler(nil, error)
-                return
-            }
-            lastModifiedString = httpResponse.allHeaderFields["Last-Modified"] as? String
-
-            let response = Response(value: value, lastModifiedString: lastModifiedString, isCached: false)
-            completionHandler(response, nil)
-        }.resume()
+        ws.parse(Infrastructure.self, request: request, completionHandler: completionHandler)
     }
 }

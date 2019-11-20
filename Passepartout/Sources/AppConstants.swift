@@ -25,6 +25,7 @@
 
 import Foundation
 import TunnelKit
+import Convenience
 import SwiftyBeaver
 
 public class AppConstants {
@@ -163,7 +164,7 @@ public class AppConstants {
             public static let template = "I offer to translate to: "
         }
 
-        public static let authorByLanguage: [String: String] = [
+        public static let translators: [String: String] = [
             "de": "Christian Lederer",
             "el": "Konstantinos Koukoulakis",
             "en-US": "Davide De Rosa",
@@ -265,87 +266,61 @@ public class AppConstants {
         public static let api = githubRaw(repo: "api")
     }
 
-    public struct License {
-        public let name: String
-        
-        public let type: String
-        
-        public let url: URL
-        
-        public init(_ name: String, _ type: String, _ urlString: String) {
-            self.name = name
-            self.type = type
-            url = URL(string: urlString)!
-        }
+    public struct Credits {
+        public static let author = "Davide De Rosa"
 
-        public static let all: [License] = [
-            License(
+        public static let software: [Software] = [
+            Software(
                 "Kvitto",
-                "BSD",
-                "https://raw.githubusercontent.com/Cocoanetics/Kvitto/develop/LICENSE"
+                license: "BSD",
+                url: "https://raw.githubusercontent.com/Cocoanetics/Kvitto/develop/LICENSE"
             ),
-            License(
+            Software(
                 "lzo",
-                "GPLv2",
-                "https://www.gnu.org/licenses/gpl-2.0.txt"
+                license: "GPLv2",
+                url: "https://www.gnu.org/licenses/gpl-2.0.txt"
             ),
-            License(
+            Software(
                 "MBProgressHUD",
-                "MIT",
-                "https://raw.githubusercontent.com/jdg/MBProgressHUD/master/LICENSE"
+                license: "MIT",
+                url: "https://raw.githubusercontent.com/jdg/MBProgressHUD/master/LICENSE"
             ),
-            License(
+            Software(
                 "OpenSSL",
-                "OpenSSL",
-                "https://www.openssl.org/source/license.txt"
+                license: "OpenSSL",
+                url: "https://www.openssl.org/source/license.txt"
             ),
-            License(
+            Software(
                 "PIATunnel",
-                "MIT",
-                "https://raw.githubusercontent.com/pia-foss/tunnel-apple/master/LICENSE"
+                license: "MIT",
+                url: "https://raw.githubusercontent.com/pia-foss/tunnel-apple/master/LICENSE"
             ),
-            License(
+            Software(
                 "SSZipArchive",
-                "MIT",
-                "https://raw.githubusercontent.com/samsoffes/ssziparchive/master/LICENSE"
+                license: "MIT",
+                url: "https://raw.githubusercontent.com/samsoffes/ssziparchive/master/LICENSE"
             ),
-            License(
+            Software(
                 "SwiftGen",
-                "MIT",
-                "https://raw.githubusercontent.com/SwiftGen/SwiftGen/master/LICENCE"
+                license: "MIT",
+                url: "https://raw.githubusercontent.com/SwiftGen/SwiftGen/master/LICENCE"
             ),
-            License(
+            Software(
                 "SwiftyBeaver",
-                "MIT",
-                "https://raw.githubusercontent.com/SwiftyBeaver/SwiftyBeaver/master/LICENSE"
-            )
-        ]
-
-        public static var cachedContent: [String: String] = [:]
-    }
-    
-    public struct Notice {
-        public let name: String
-        
-        public let statement: String
-        
-        public init(_ name: String, _ statement: String) {
-            self.name = name
-            self.statement = statement
-        }
-        
-        public static let all: [Notice] = [
-            Notice(
+                license: "MIT",
+                url: "https://raw.githubusercontent.com/SwiftyBeaver/SwiftyBeaver/master/LICENSE"
+            ),
+            Software(
                 "Circle Icons",
-                "The logo is taken from the awesome Circle Icons set by Nick Roach."
+                notice: "The logo is taken from the awesome Circle Icons set by Nick Roach."
             ),
-            Notice(
+            Software(
                 "Country flags",
-                "The country flags are taken from: https://github.com/lipis/flag-icon-css/"
+                notice: "The country flags are taken from: https://github.com/lipis/flag-icon-css/"
             ),
-            Notice(
+            Software(
                 "OpenVPN",
-                "© 2002-2018 OpenVPN Inc. - OpenVPN is a registered trademark of OpenVPN Inc."
+                notice: "© 2002-2018 OpenVPN Inc. - OpenVPN is a registered trademark of OpenVPN Inc."
             )
         ]
     }

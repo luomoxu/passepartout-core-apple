@@ -29,14 +29,10 @@ public protocol Preferences {
     var resolvesHostname: Bool { get }
     
     var disconnectsOnSleep: Bool { get }
-    
-    var trustedNetworks: TrustedNetworks { get }
 }
 
 public class EditablePreferences: Preferences, Codable {
     public var resolvesHostname: Bool = true
     
     public var disconnectsOnSleep: Bool = false
-    
-    public var trustedNetworks: TrustedNetworks = TrustedNetworks()
 }

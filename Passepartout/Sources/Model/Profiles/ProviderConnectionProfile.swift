@@ -57,10 +57,6 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
 
     public var manualProtocol: EndpointProtocol?
     
-    public var networkChoices: ProfileNetworkChoices?
-    
-    public var manualNetworkSettings: ProfileNetworkSettings?
-    
     public var usesProviderEndpoint: Bool {
         return (manualAddress != nil) || (manualProtocol != nil)
     }
@@ -71,6 +67,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         presetId = ""
 
         username = nil
+        trustedNetworks = TrustedNetworks()
 
         poolId = infrastructure.defaultPool()?.id ?? infrastructure.defaults.pool
         presetId = infrastructure.defaults.preset
@@ -113,6 +110,12 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     public var requiresCredentials: Bool {
         return true
     }
+    
+    public var trustedNetworks: TrustedNetworks
+
+    public var networkChoices: ProfileNetworkChoices?
+    
+    public var manualNetworkSettings: ProfileNetworkSettings?
     
     public func generate(from configuration: OpenVPNTunnelProvider.Configuration, preferences: Preferences) throws -> OpenVPNTunnelProvider.Configuration {
         guard let pool = pool else {

@@ -38,6 +38,8 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         self.hostname = hostname
         let sessionConfiguration = OpenVPN.ConfigurationBuilder().build()
         parameters = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionConfiguration).build()
+
+        trustedNetworks = TrustedNetworks()
     }
     
     // MARK: ConnectionProfile

@@ -70,6 +70,8 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
 
         poolId = infrastructure.defaultPool()?.id ?? infrastructure.defaults.pool
         presetId = infrastructure.defaults.preset
+
+        trustedNetworks = TrustedNetworks()
     }
     
     public func setSupportedPreset() {

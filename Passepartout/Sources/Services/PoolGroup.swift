@@ -78,3 +78,15 @@ extension PoolGroup {
         return Utils.localizedCountry(country)
     }
 }
+
+extension PoolGroup {
+    public func uniqueId(in category: PoolCategory) -> String {
+        var components: [String] = []
+        components.append(category.name)
+        components.append(country)
+        if let area = area {
+            components.append(area)
+        }
+        return components.joined(separator: "/")
+    }
+}

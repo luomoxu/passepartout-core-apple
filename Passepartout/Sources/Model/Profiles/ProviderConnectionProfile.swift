@@ -61,6 +61,8 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         return (manualAddress != nil) || (manualProtocol != nil)
     }
     
+    public var favoriteGroupIds: [String]?
+
     public init(name: Infrastructure.Name) {
         self.name = name
         poolId = ""
@@ -72,6 +74,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         presetId = infrastructure.defaults.preset
 
         trustedNetworks = TrustedNetworks()
+        favoriteGroupIds = []
     }
     
     public func setSupportedPreset() {

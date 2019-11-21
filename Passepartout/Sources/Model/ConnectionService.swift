@@ -270,6 +270,11 @@ public class ConnectionService: Codable {
                     // XXX: fix unsupported preset
                     providerProfile.setSupportedPreset()
                     
+                    // XXX: patch empty favorites
+                    if providerProfile.favoriteGroupIds == nil {
+                        providerProfile.favoriteGroupIds = []
+                    }
+
                     profile = providerProfile
                     
                 case .host:

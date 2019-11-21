@@ -3,17 +3,17 @@ PODS:
   - Convenience/Persistence (0.0.1)
   - Convenience/WebServices (0.0.1):
     - SwiftyBeaver
-  - OpenSSL-Apple (1.1.0l.4)
-  - SSZipArchive (2.2.1)
-  - SwiftyBeaver (1.8.2)
-  - TunnelKit/AppExtension (2.1.0):
+  - OpenSSL-Apple (1.1.1d.5a)
+  - SSZipArchive (2.2.2)
+  - SwiftyBeaver (1.8.3)
+  - TunnelKit/AppExtension (2.1.1):
     - SwiftyBeaver
     - TunnelKit/Core
-  - TunnelKit/Core (2.1.0):
+  - TunnelKit/Core (2.1.1):
     - SwiftyBeaver
-  - TunnelKit/Extra/LZO (2.1.0)
-  - TunnelKit/Protocols/OpenVPN (2.1.0):
-    - OpenSSL-Apple (~> 1.1.0j.4)
+  - TunnelKit/Extra/LZO (2.1.1)
+  - TunnelKit/Protocols/OpenVPN (2.1.1):
+    - OpenSSL-Apple (~> 1.1.1d.5a)
     - TunnelKit/AppExtension
     - TunnelKit/Core
 
@@ -22,8 +22,8 @@ DEPENDENCIES:
   - Convenience/Persistence (from `https://github.com/keeshux/convenience`, commit `cfd2e57`)
   - Convenience/WebServices (from `https://github.com/keeshux/convenience`, commit `cfd2e57`)
   - SSZipArchive
-  - TunnelKit/Extra/LZO (from `https://github.com/passepartoutvpn/tunnelkit`, commit `4e77f5b`)
-  - TunnelKit/Protocols/OpenVPN (from `https://github.com/passepartoutvpn/tunnelkit`, commit `4e77f5b`)
+  - TunnelKit/Extra/LZO (from `https://github.com/passepartoutvpn/tunnelkit`, commit `8b17a13`)
+  - TunnelKit/Protocols/OpenVPN (from `https://github.com/passepartoutvpn/tunnelkit`, commit `8b17a13`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
     :commit: cfd2e57
     :git: https://github.com/keeshux/convenience
   TunnelKit:
-    :commit: 4e77f5b
+    :commit: 8b17a13
     :git: https://github.com/passepartoutvpn/tunnelkit
 
 CHECKOUT OPTIONS:
@@ -44,16 +44,16 @@ CHECKOUT OPTIONS:
     :commit: cfd2e57
     :git: https://github.com/keeshux/convenience
   TunnelKit:
-    :commit: 4e77f5b
+    :commit: 8b17a13
     :git: https://github.com/passepartoutvpn/tunnelkit
 
 SPEC CHECKSUMS:
   Convenience: 2c2c3b9a26ad86f4f9b33584648c8cd3e665792f
-  OpenSSL-Apple: f3d1668588ea8f06b076dcfa6177cd90452e3800
-  SSZipArchive: 8e859da2520142e09166bc9161967db296e9d02f
-  SwiftyBeaver: aaf2ebd7dac2e952991f46a82ed24ad642867ae2
-  TunnelKit: 5d2993370c756a5cbec77876e52088aa5dfafcd4
+  OpenSSL-Apple: 2c9efbc94e0a1ada434cc197b02bd70052a82281
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SwiftyBeaver: 3d3e93a12d648bd400b6f2948a7ef128b5b183c7
+  TunnelKit: e17f6d25a8f1a03404975baf27d41505f325e6be
 
-PODFILE CHECKSUM: 80440259813768db99ec273c4acffd45465b92db
+PODFILE CHECKSUM: 299c867114f0fa2dc950eebffed5758dac52e7c3
 
 COCOAPODS: 1.6.2

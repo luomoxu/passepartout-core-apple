@@ -297,6 +297,10 @@ public class ConnectionService: Codable {
         return profile
     }
     
+    public func allProfileKeys() -> [ProfileKey] {
+        return Array(cache.keys)
+    }
+    
     public func ids(forContext context: Context) -> [String] {
         return cache.keys.filter { $0.context == context }.map { $0.id }
     }

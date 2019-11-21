@@ -35,7 +35,14 @@ public class PlaceholderConnectionProfile: ConnectionProfile {
     
     public var requiresCredentials: Bool = false
     
-    public var trustedNetworks: TrustedNetworks!
+    public var trustedNetworks: TrustedNetworks! {
+        get {
+            fatalError("Getting trustedNetworks of a PlaceholderConnectionProfile")
+        }
+        set {
+            fatalError("Setting trustedNetworks of a PlaceholderConnectionProfile")
+        }
+    }
 
     public var networkChoices: ProfileNetworkChoices?
     

@@ -544,13 +544,13 @@ public class ConnectionService: Codable {
         
         var rules: [NEOnDemandRule] = []
         #if os(iOS)
-        if preferences.trustsMobileNetwork {
+        if preferences.trustedNetworks.includesMobile {
             let rule = policyRule()
             rule.interfaceTypeMatch = .cellular
             rules.append(rule)
         }
         #endif
-        let reallyTrustedWifis = Array(preferences.trustedWifis.filter { $1 }.keys)
+        let reallyTrustedWifis = Array(preferences.trustedNetworks.includedWiFis.filter { $1 }.keys)
         if !reallyTrustedWifis.isEmpty {
             let rule = policyRule()
             rule.interfaceTypeMatch = .wiFi
@@ -565,7 +565,7 @@ public class ConnectionService: Codable {
     }
     
     private func policyRule() -> NEOnDemandRule {
-        switch preferences.trustPolicy {
+        switch preferences.trustedNetworks.policy {
         case .ignore:
             return NEOnDemandRuleIgnore()
             

@@ -1,8 +1,8 @@
 //
-//  Preferences.swift
+//  TrustPolicy.swift
 //  Passepartout
 //
-//  Created by Davide De Rosa on 9/4/18.
+//  Created by Davide De Rosa on 11/21/19.
 //  Copyright (c) 2019 Davide De Rosa. All rights reserved.
 //
 //  https://github.com/passepartoutvpn
@@ -25,18 +25,15 @@
 
 import Foundation
 
-public protocol Preferences {
-    var resolvesHostname: Bool { get }
+public struct TrustedNetworks: Codable {
+    #if os(iOS)
+    public var includesMobile = false
+    #endif
     
-    var disconnectsOnSleep: Bool { get }
+    public var includedWiFis: [String: Bool] = [:]
     
-    var trustedNetworks: TrustedNetworks { get }
-}
+    public var policy: TrustPolicy = .disconnect
 
-public class EditablePreferences: Preferences, Codable {
-    public var resolvesHostname: Bool = true
-    
-    public var disconnectsOnSleep: Bool = false
-    
-    public var trustedNetworks: TrustedNetworks = TrustedNetworks()
+    public init() {
+    }
 }

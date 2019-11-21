@@ -237,7 +237,7 @@ public class IntentDispatcher {
             return
         }
         let service = TransientStore.shared.service
-        service.preferences.trustedWifis[currentWifi] = trust
+        service.preferences.trustedNetworks.includedWiFis[currentWifi] = trust
         TransientStore.shared.serialize(withProfiles: false)
         
         log.info("\(trust ? "Trusted" : "Untrusted") Wi-Fi: \(currentWifi)")
@@ -252,7 +252,7 @@ public class IntentDispatcher {
             return
         }
         let service = TransientStore.shared.service
-        service.preferences.trustsMobileNetwork = trust
+        service.preferences.trustedNetworks.includesMobile = trust
         TransientStore.shared.serialize(withProfiles: false)
 
         log.info("\(trust ? "Trusted" : "Untrusted") cellular network")

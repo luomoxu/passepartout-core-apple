@@ -42,7 +42,7 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
     
     var requiresCredentials: Bool { get }
     
-    var trustedNetworks: TrustedNetworks { get set }
+    var trustedNetworks: TrustedNetworks! { get set }
 
     var networkChoices: ProfileNetworkChoices? { get set }
     

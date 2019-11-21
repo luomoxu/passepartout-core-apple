@@ -67,7 +67,6 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         presetId = ""
 
         username = nil
-        trustedNetworks = TrustedNetworks()
 
         poolId = infrastructure.defaultPool()?.id ?? infrastructure.defaults.pool
         presetId = infrastructure.defaults.preset
@@ -111,7 +110,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         return true
     }
     
-    public var trustedNetworks: TrustedNetworks
+    public var trustedNetworks: TrustedNetworks!
 
     public var networkChoices: ProfileNetworkChoices?
     

@@ -38,7 +38,6 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         self.hostname = hostname
         let sessionConfiguration = OpenVPN.ConfigurationBuilder().build()
         parameters = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionConfiguration).build()
-        trustedNetworks = TrustedNetworks()
     }
     
     // MARK: ConnectionProfile
@@ -55,7 +54,7 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         return false
     }
     
-    public var trustedNetworks: TrustedNetworks
+    public var trustedNetworks: TrustedNetworks!
 
     public var networkChoices: ProfileNetworkChoices?
     

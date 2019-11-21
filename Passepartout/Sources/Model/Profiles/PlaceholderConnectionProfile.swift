@@ -35,7 +35,7 @@ public class PlaceholderConnectionProfile: ConnectionProfile {
     
     public var requiresCredentials: Bool = false
     
-    public var trustedNetworks: TrustedNetworks = TrustedNetworks()
+    public var trustedNetworks: TrustedNetworks!
 
     public var networkChoices: ProfileNetworkChoices?
     

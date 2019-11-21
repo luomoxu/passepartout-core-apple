@@ -289,6 +289,11 @@ public class ConnectionService: Codable {
             }
         }
         
+        // XXX: preload trusted networks in a backwards compatible manner (deserialization)
+        if profile?.trustedNetworks == nil {
+            profile?.trustedNetworks = TrustedNetworks()
+        }
+        
         return profile
     }
     

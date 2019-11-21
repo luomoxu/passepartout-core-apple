@@ -289,7 +289,16 @@ public class ConnectionService: Codable {
             }
         }
         
+        // XXX: preload trusted networks in a backwards compatible manner (deserialization)
+        if profile?.trustedNetworks == nil {
+            profile?.trustedNetworks = TrustedNetworks()
+        }
+        
         return profile
+    }
+    
+    public func allProfileKeys() -> [ProfileKey] {
+        return Array(cache.keys)
     }
     
     public func ids(forContext context: Context) -> [String] {
@@ -544,15 +553,15 @@ public class ConnectionService: Codable {
         
         var rules: [NEOnDemandRule] = []
         #if os(iOS)
-        if preferences.trustsMobileNetwork {
-            let rule = policyRule()
+        if profile.trustedNetworks.includesMobile {
+            let rule = policyRule(for: profile)
             rule.interfaceTypeMatch = .cellular
             rules.append(rule)
         }
         #endif
-        let reallyTrustedWifis = Array(preferences.trustedWifis.filter { $1 }.keys)
+        let reallyTrustedWifis = Array(profile.trustedNetworks.includedWiFis.filter { $1 }.keys)
         if !reallyTrustedWifis.isEmpty {
-            let rule = policyRule()
+            let rule = policyRule(for: profile)
             rule.interfaceTypeMatch = .wiFi
             rule.ssidMatch = reallyTrustedWifis
             rules.append(rule)
@@ -564,8 +573,8 @@ public class ConnectionService: Codable {
         return NetworkExtensionVPNConfiguration(protocolConfiguration: protocolConfiguration, onDemandRules: rules)
     }
     
-    private func policyRule() -> NEOnDemandRule {
-        switch preferences.trustPolicy {
+    private func policyRule(for profile: ConnectionProfile) -> NEOnDemandRule {
+        switch profile.trustedNetworks.policy {
         case .ignore:
             return NEOnDemandRuleIgnore()
             

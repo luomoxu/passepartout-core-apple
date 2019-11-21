@@ -29,26 +29,10 @@ public protocol Preferences {
     var resolvesHostname: Bool { get }
     
     var disconnectsOnSleep: Bool { get }
-    
-    #if os(iOS)
-    var trustsMobileNetwork: Bool { get }
-    #endif
-    
-    var trustedWifis: [String: Bool] { get }
-    
-    var trustPolicy: TrustPolicy { get }
 }
 
 public class EditablePreferences: Preferences, Codable {
     public var resolvesHostname: Bool = true
     
     public var disconnectsOnSleep: Bool = false
-    
-    #if os(iOS)
-    public var trustsMobileNetwork: Bool = false
-    #endif
-    
-    public var trustedWifis: [String: Bool] = [:]
-    
-    public var trustPolicy: TrustPolicy = .disconnect
 }

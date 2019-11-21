@@ -54,6 +54,8 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         return false
     }
     
+    public var trustedNetworks: TrustedNetworks!
+
     public var networkChoices: ProfileNetworkChoices?
     
     public var manualNetworkSettings: ProfileNetworkSettings?

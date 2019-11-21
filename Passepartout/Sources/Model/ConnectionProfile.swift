@@ -42,6 +42,8 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
     
     var requiresCredentials: Bool { get }
     
+    var trustedNetworks: TrustedNetworks! { get set }
+
     var networkChoices: ProfileNetworkChoices? { get set }
     
     var manualNetworkSettings: ProfileNetworkSettings? { get set }

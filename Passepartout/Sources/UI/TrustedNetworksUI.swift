@@ -73,12 +73,12 @@ public class TrustedNetworksUI {
         #endif
     }
 
-    public func load(from profile: ConnectionProfile) {
-        trustedWifis = profile.trustedNetworks.includedWiFis
+    public func load(from trustedNetworks: TrustedNetworks) {
+        trustedWifis = trustedNetworks.includedWiFis
         sortedWifis = trustedWifis.keys.sorted()
 
         #if os(iOS)
-        trustsMobileNetwork = profile.trustedNetworks.includesMobile
+        trustsMobileNetwork = trustedNetworks.includesMobile
         rows.removeAll()
         if hasMobileNetwork {
             rows.append(.trustsMobile)

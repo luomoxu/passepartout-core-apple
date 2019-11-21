@@ -31,4 +31,10 @@ public struct PoolCategory: Codable {
     public let groups: [PoolGroup]
 
     public let presets: [String]?
+    
+    public init(name: String, groups: [PoolGroup], presets: [String]?) {
+        self.name = name
+        self.groups = groups
+        self.presets = presets
+    }
 }

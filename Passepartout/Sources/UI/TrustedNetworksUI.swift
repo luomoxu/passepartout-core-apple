@@ -1,5 +1,5 @@
 //
-//  TrustedNetworks.swift
+//  TrustedNetworksUI.swift
 //  Passepartout
 //
 //  Created by Davide De Rosa on 6/21/18.
@@ -25,21 +25,21 @@
 
 import Foundation
 
-public protocol TrustedNetworksModelDelegate: class {
-    func trustedNetworksCouldDisconnect(_: TrustedNetworksModel) -> Bool
+public protocol TrustedNetworksUIDelegate: class {
+    func trustedNetworksCouldDisconnect(_: TrustedNetworksUI) -> Bool
 
-    func trustedNetworksShouldConfirmDisconnection(_: TrustedNetworksModel, triggeredAt rowIndex: Int, completionHandler: @escaping () -> Void)
+    func trustedNetworksShouldConfirmDisconnection(_: TrustedNetworksUI, triggeredAt rowIndex: Int, completionHandler: @escaping () -> Void)
 
-    func trustedNetworks(_: TrustedNetworksModel, shouldInsertWifiAt rowIndex: Int)
+    func trustedNetworks(_: TrustedNetworksUI, shouldInsertWifiAt rowIndex: Int)
     
-    func trustedNetworks(_: TrustedNetworksModel, shouldReloadWifiAt rowIndex: Int, isTrusted: Bool)
+    func trustedNetworks(_: TrustedNetworksUI, shouldReloadWifiAt rowIndex: Int, isTrusted: Bool)
 
-    func trustedNetworks(_: TrustedNetworksModel, shouldDeleteWifiAt rowIndex: Int)
+    func trustedNetworks(_: TrustedNetworksUI, shouldDeleteWifiAt rowIndex: Int)
 
-    func trustedNetworksShouldReinstall(_: TrustedNetworksModel)
+    func trustedNetworksShouldReinstall(_: TrustedNetworksUI)
 }
 
-public class TrustedNetworksModel {
+public class TrustedNetworksUI {
     public enum RowType {
         case trustsMobile
         
@@ -60,7 +60,7 @@ public class TrustedNetworksModel {
     public private(set) var rows: [RowType]
     #endif
     
-    public weak var delegate: TrustedNetworksModelDelegate?
+    public weak var delegate: TrustedNetworksUIDelegate?
     
     public init() {
         trustedWifis = [:]

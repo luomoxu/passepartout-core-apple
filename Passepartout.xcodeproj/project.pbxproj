@@ -27,7 +27,7 @@
 		0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */; };
 		0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */; };
 		0E7177AE2299DF8F0055BBC2 /* ConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */; };
-		0E7177AF2299DF8F0055BBC2 /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */; };
+		0E7177AF2299DF8F0055BBC2 /* TrustedNetworksUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworksUI.swift */; };
 		0E7177B02299DF8F0055BBC2 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777C2299DF8F0055BBC2 /* DebugLog.swift */; };
 		0E7177B12299DF8F0055BBC2 /* ProfileNetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */; };
 		0E7177B22299DF8F0055BBC2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777E2299DF8F0055BBC2 /* Preferences.swift */; };
@@ -72,7 +72,7 @@
 		0E7178152299E3160055BBC2 /* ConnectionService+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */; };
 		0E7178162299E3160055BBC2 /* ConnectionService+Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */; };
 		0E7178172299E3160055BBC2 /* ConnectionProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */; };
-		0E7178182299E3160055BBC2 /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */; };
+		0E7178182299E3160055BBC2 /* TrustedNetworksUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777B2299DF8F0055BBC2 /* TrustedNetworksUI.swift */; };
 		0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777C2299DF8F0055BBC2 /* DebugLog.swift */; };
 		0E71781A2299E3160055BBC2 /* ProfileNetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */; };
 		0E71781B2299E3160055BBC2 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71777E2299DF8F0055BBC2 /* Preferences.swift */; };
@@ -156,7 +156,7 @@
 		0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConnectionService+Configurations.swift"; sourceTree = "<group>"; };
 		0E7177792299DF8F0055BBC2 /* ConnectionService+Migration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConnectionService+Migration.swift"; sourceTree = "<group>"; };
 		0E71777A2299DF8F0055BBC2 /* ConnectionProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionProfile.swift; sourceTree = "<group>"; };
-		0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustedNetworks.swift; sourceTree = "<group>"; };
+		0E71777B2299DF8F0055BBC2 /* TrustedNetworksUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustedNetworksUI.swift; sourceTree = "<group>"; };
 		0E71777C2299DF8F0055BBC2 /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkSettings.swift; sourceTree = "<group>"; };
 		0E71777E2299DF8F0055BBC2 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -302,6 +302,7 @@
 				0E7177902299DF8F0055BBC2 /* Intents */,
 				0E7177772299DF8F0055BBC2 /* Model */,
 				0E7177922299DF8F0055BBC2 /* Services */,
+				0EB9EB6E23867C78009C0A1C /* UI */,
 				0E71776D2299DF8F0055BBC2 /* VPN */,
 				0E71778F2299DF8F0055BBC2 /* AppConstants.swift */,
 				0E7177762299DF8F0055BBC2 /* ApplicationError.swift */,
@@ -343,7 +344,6 @@
 				0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */,
 				0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */,
 				0E7177802299DF8F0055BBC2 /* TransientStore.swift */,
-				0E71777B2299DF8F0055BBC2 /* TrustedNetworks.swift */,
 				0E71778A2299DF8F0055BBC2 /* TrustPolicy.swift */,
 			);
 			path = Model;
@@ -426,6 +426,14 @@
 				0E7178442299E6B40055BBC2 /* Info.plist */,
 			);
 			path = "PassepartoutCoreTests-macOS";
+			sourceTree = "<group>";
+		};
+		0EB9EB6E23867C78009C0A1C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0E71777B2299DF8F0055BBC2 /* TrustedNetworksUI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		77D77BB6A93A19727196529B /* Frameworks */ = {
@@ -808,7 +816,7 @@
 				0E7177B32299DF8F0055BBC2 /* DataUnit.swift in Sources */,
 				0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */,
 				0E7177C82299DF8F0055BBC2 /* WebServices.swift in Sources */,
-				0E7177AF2299DF8F0055BBC2 /* TrustedNetworks.swift in Sources */,
+				0E7177AF2299DF8F0055BBC2 /* TrustedNetworksUI.swift in Sources */,
 				0E7177C92299DF8F0055BBC2 /* InfrastructureFactory.swift in Sources */,
 				0E7177B92299DF8F0055BBC2 /* ProviderConnectionProfile.swift in Sources */,
 				0E45E71222BE12CD00F19312 /* OpenVPNOptions.swift in Sources */,
@@ -885,7 +893,7 @@
 				0E7178272299E3190055BBC2 /* ProviderConnectionProfile.swift in Sources */,
 				0E7178112299E3060055BBC2 /* Pool.swift in Sources */,
 				0E7178212299E3160055BBC2 /* TrustPolicy.swift in Sources */,
-				0E7178182299E3160055BBC2 /* TrustedNetworks.swift in Sources */,
+				0E7178182299E3160055BBC2 /* TrustedNetworksUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -89,21 +89,27 @@ public class InfrastructureFactory {
     }
     
     public func loadCache() {
-        let cacheEntries: [URL]
-        let netPath = "\(AppConstants.Store.apiDirectory)/\(WebServices.Group.providers.rawValue)"
+        let apiPath = cachePath.appendingPathComponent(AppConstants.Store.apiDirectory)
+        let providersPath = apiPath.appendingPathComponent(WebServices.Group.providers.rawValue)
+        
+        log.debug("Loading cache from: \(providersPath)")
+        let providersEntries: [URL]
         do {
-            cacheEntries = try FileManager.default.contentsOfDirectory(
-                at: cachePath.appendingPathComponent(netPath),
-                includingPropertiesForKeys: nil
-            )
+            providersEntries = try FileManager.default.contentsOfDirectory(at: providersPath, includingPropertiesForKeys: nil)
         } catch let e {
-            log.warning("Error loading cache: \(e)")
+            log.warning("Error loading cache or nothing cached: \(e)")
             return
         }
 
         let decoder = JSONDecoder()
-        for entry in cacheEntries {
-            guard let data = try? Data(contentsOf: entry) else {
+        for entry in providersEntries {
+            let rawName = entry.lastPathComponent
+            guard let name = Infrastructure.Name(rawValue: rawName) else {
+                log.warning("Unrecognized infrastructure name: \(rawName)")
+                continue
+            }
+            let infraPath = WebServices.Endpoint.providerNetwork(name).apiURL(relativeTo: apiPath)
+            guard let data = try? Data(contentsOf: infraPath) else {
                 continue
             }
             let infra: Infrastructure
@@ -259,7 +265,7 @@ private extension Infrastructure.Name {
         let endpoint = WebServices.Endpoint.providerNetwork(self)
         
         // e.g. "API/v3", PIA="providers/pia/net.json" -> "API/v3/providers/pia/net.json"
-        return "\(AppConstants.Store.apiDirectory)/\(endpoint.path).\(endpoint.filetype)"
+        return "\(AppConstants.Store.apiDirectory)/\(endpoint.pathName).\(endpoint.fileType)"
     }
 
     var bundleURL: URL? {
@@ -267,7 +273,7 @@ private extension Infrastructure.Name {
         let endpoint = WebServices.Endpoint.providerNetwork(self)
 
         // e.g. "API/v3", PIA="net/pia" -> "[Bundle]:API/v3/providers/pia/net.json"
-        return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.path)", withExtension: endpoint.filetype)
+        return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.pathName)", withExtension: endpoint.fileType)
     }
 }
 

@@ -36,21 +36,25 @@ public class WebServices {
     public enum Endpoint: Convenience.Endpoint {
         case providerNetwork(Infrastructure.Name)
         
-        var path: String {
+        var pathName: String {
             switch self {
             case .providerNetwork(let name):
                 return "\(Group.providers.rawValue)/\(name.rawValue)/net"
             }
         }
         
-        var filetype: String {
+        var fileType: String {
             return "json"
         }
         
+        public func apiURL(relativeTo url: URL) -> URL {
+            return url.appendingPathComponent("\(pathName).\(fileType)")
+        }
+
         // MARK: Endpoint
-        
+
         public var url: URL {
-            return AppConstants.Web.apiURL(version: WebServices.version, path: "\(path).\(filetype)")
+            return AppConstants.Web.apiURL(version: WebServices.version, path: "\(pathName).\(fileType)")
         }
     }
 

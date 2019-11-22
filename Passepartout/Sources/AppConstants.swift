@@ -44,14 +44,10 @@ public class AppConstants {
         public static let name = "passepartoutvpn.app"
     }
     
-    public class API {
-        public static let version = "v2"
-    }
-    
     public class Store {
         public static let serviceFilename = "ConnectionService.json"
 
-        public static let apiDirectory = "API/\(API.version)"
+        public static let apiDirectory = "API/\(WebServices.version)"
 
         public static let providersDirectory = "Providers"
 
@@ -59,10 +55,8 @@ public class AppConstants {
     }
     
     public class Web {
-        private static let baseURL = Repos.api.appendingPathComponent(API.version)
-        
-        public static func url(path: String) -> URL {
-            return baseURL.appendingPathComponent(path)
+        public static func apiURL(version: String, path: String) -> URL {
+            return Repos.api.appendingPathComponent(version).appendingPathComponent(path)
         }
         
         public static let timeout: TimeInterval = 3.0

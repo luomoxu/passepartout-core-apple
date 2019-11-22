@@ -27,24 +27,30 @@ import Foundation
 import Convenience
 
 public class WebServices {
+    public static let version = "v3"
+    
     public enum Group: String {
-        case network = "net"
+        case providers
     }
 
     public enum Endpoint: Convenience.Endpoint {
-        case network(Infrastructure.Name)
+        case providerNetwork(Infrastructure.Name)
         
         var path: String {
             switch self {
-            case .network(let name):
-                return "\(Group.network.rawValue)/\(name.webName)"
+            case .providerNetwork(let name):
+                return "\(Group.providers.rawValue)/\(name.webName)/net"
             }
+        }
+        
+        var filetype: String {
+            return "json"
         }
         
         // MARK: Endpoint
         
         public var url: URL {
-            return AppConstants.Web.url(path: "\(path).json")
+            return AppConstants.Web.apiURL(version: WebServices.version, path: "\(path).\(filetype)")
         }
     }
 
@@ -57,8 +63,8 @@ public class WebServices {
         ws.timeout = AppConstants.Web.timeout
     }
 
-    public func network(with name: Infrastructure.Name, ifModifiedSince lastModified: Date?, completionHandler: @escaping (Response<Infrastructure>?, Error?) -> Void) {
-        var request = ws.get(WebServices.Endpoint.network(name))
+    public func providerNetwork(with name: Infrastructure.Name, ifModifiedSince lastModified: Date?, completionHandler: @escaping (Response<Infrastructure>?, Error?) -> Void) {
+        var request = ws.get(WebServices.Endpoint.providerNetwork(name))
         if let lastModified = lastModified {
             request.addValue(ResponseParser.lastModifiedString(date: lastModified), forHTTPHeaderField: "If-Modified-Since")
         }

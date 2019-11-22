@@ -30,15 +30,15 @@ public class Infrastructure: Codable {
     public enum Name: String, Codable, Comparable {
         case mullvad = "Mullvad"
         
-        case nordVPN = "NordVPN"
+        case nordvpn = "NordVPN"
 
         case pia = "PIA"
         
-        case protonVPN = "ProtonVPN"
+        case protonvpn = "ProtonVPN"
 
-        case tunnelBear = "TunnelBear"
+        case tunnelbear = "TunnelBear"
         
-        case vyprVPN = "VyprVPN"
+        case vyprvpn = "VyprVPN"
         
         case windscribe = "Windscribe"
     }
@@ -117,7 +117,7 @@ extension Infrastructure.Name {
     public func importExternalResources(from url: URL, completionHandler: @escaping () -> Void) {
         var task: () -> Void
         switch self {
-        case .nordVPN:
+        case .nordvpn:
             task = {
                 SSZipArchive.unzipFile(atPath: url.path, toDestination: self.externalURL.path)
             }

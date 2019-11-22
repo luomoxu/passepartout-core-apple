@@ -221,22 +221,22 @@ public class AppConstants {
         }
         
         public static let guidances: [Infrastructure.Name: String] = [
-            .protonVPN: "https://account.protonvpn.com/settings",
+            .protonvpn: "https://account.protonvpn.com/settings",
             .windscribe: "https://windscribe.com/getconfig/openvpn"
         ]
 
         public static let referrals: [Infrastructure.Name: String] = [
             .mullvad: "https://mullvad.net/en/account/create/",
-            .nordVPN: "https://go.nordvpn.net/SH21Z",
+            .nordvpn: "https://go.nordvpn.net/SH21Z",
             .pia: "https://www.privateinternetaccess.com/pages/buy-vpn/",
-            .protonVPN: "https://proton.go2cloud.org/SHZ",
-            .tunnelBear: "https://www.tunnelbear.com/",
-            .vyprVPN: "https://www.vyprvpn.com/",
+            .protonvpn: "https://proton.go2cloud.org/SHZ",
+            .tunnelbear: "https://www.tunnelbear.com/",
+            .vyprvpn: "https://www.vyprvpn.com/",
             .windscribe: "https://secure.link/kCsD0prd"
         ]
 
         public static let externalResources: [Infrastructure.Name: String] = [
-            .nordVPN: "https://downloads.nordcdn.com/configs/archives/certificates/servers.zip" // 9MB
+            .nordvpn: "https://downloads.nordcdn.com/configs/archives/certificates/servers.zip" // 9MB
         ]
     }
 

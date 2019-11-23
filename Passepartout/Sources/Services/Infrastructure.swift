@@ -27,22 +27,6 @@ import Foundation
 import SSZipArchive
 
 public class Infrastructure: Codable {
-    public enum Name: String, Codable, Comparable {
-        case mullvad
-        
-        case nordvpn
-
-        case pia
-        
-        case protonvpn
-
-        case tunnelbear
-        
-        case vyprvpn
-        
-        case windscribe
-    }
-    
     public struct Defaults: Codable {
         public let username: String?
 
@@ -100,14 +84,8 @@ public class Infrastructure: Codable {
 }
 
 extension Infrastructure.Name {
-    public static func <(lhs: Infrastructure.Name, rhs: Infrastructure.Name) -> Bool {
-        return lhs.rawValue < rhs.rawValue
-    }
-}
-
-extension Infrastructure.Name {
     public var externalURL: URL {
-        return GroupConstants.App.externalURL.appendingPathComponent(rawValue)
+        return GroupConstants.App.externalURL.appendingPathComponent(self)
     }
 
     public func importExternalResources(from url: URL, completionHandler: @escaping () -> Void) {

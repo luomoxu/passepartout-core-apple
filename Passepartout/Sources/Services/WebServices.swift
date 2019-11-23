@@ -39,7 +39,7 @@ public class WebServices {
         var pathName: String {
             switch self {
             case .providerNetwork(let name):
-                return "\(Group.providers.rawValue)/\(name.rawValue)/net"
+                return "\(Group.providers.rawValue)/\(name)/net"
             }
         }
         

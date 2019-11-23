@@ -57,17 +57,6 @@ public class InfrastructureFactory {
     
     public static let shared = InfrastructureFactory()
 
-    // manually pre-sorted
-    public let allNames: [Infrastructure.Name] = [
-        .mullvad,
-        .nordvpn,
-        .pia,
-        .protonvpn,
-        .tunnelbear,
-        .vyprvpn,
-        .windscribe
-    ]
-    
     private let bundle: [Infrastructure.Name: Infrastructure]
 
     private let cachePath: URL
@@ -78,7 +67,7 @@ public class InfrastructureFactory {
 
     private init() {
         var bundle: [Infrastructure.Name: Infrastructure] = [:]
-        allNames.forEach {
+        Infrastructure.Name.all.forEach {
             bundle[$0] = InfrastructureFactory.embedded(withName: $0)
         }
         self.bundle = bundle
@@ -103,11 +92,7 @@ public class InfrastructureFactory {
 
         let decoder = JSONDecoder()
         for entry in providersEntries {
-            let rawName = entry.lastPathComponent
-            guard let name = Infrastructure.Name(rawValue: rawName) else {
-                log.warning("Unrecognized infrastructure name: \(rawName)")
-                continue
-            }
+            let name = entry.lastPathComponent as Infrastructure.Name
             let infraPath = WebServices.Endpoint.providerNetwork(name).apiURL(relativeTo: apiPath)
             guard let data = try? Data(contentsOf: infraPath) else {
                 continue
@@ -280,16 +265,14 @@ extension ConnectionService {
     public func currentProviderNames() -> [Infrastructure.Name] {
         var names: [Infrastructure.Name] = []
         ids(forContext: .provider).forEach {
-            guard let name = Infrastructure.Name(rawValue: $0) else {
-                return
-            }
+            let name = $0 as Infrastructure.Name
             names.append(name)
         }
         return names
     }
 
     public func availableProviderNames() -> [Infrastructure.Name] {
-        var names = Set(InfrastructureFactory.shared.allNames)
+        var names = Set(Infrastructure.Name.all)
         names.formSymmetricDifference(currentProviderNames())
         return Array(names).sorted()
     }

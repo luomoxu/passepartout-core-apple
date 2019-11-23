@@ -106,7 +106,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     public let context: Context = .provider
 
     public var id: String {
-        return name.rawValue
+        return name
     }
     
     public var username: String?

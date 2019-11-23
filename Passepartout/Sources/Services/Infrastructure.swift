@@ -28,19 +28,19 @@ import SSZipArchive
 
 public class Infrastructure: Codable {
     public enum Name: String, Codable, Comparable {
-        case mullvad = "Mullvad"
+        case mullvad
         
-        case nordvpn = "NordVPN"
+        case nordvpn
 
-        case pia = "PIA"
+        case pia
         
-        case protonvpn = "ProtonVPN"
+        case protonvpn
 
-        case tunnelbear = "TunnelBear"
+        case tunnelbear
         
-        case vyprvpn = "VyprVPN"
+        case vyprvpn
         
-        case windscribe = "Windscribe"
+        case windscribe
     }
     
     public struct Defaults: Codable {
@@ -100,18 +100,14 @@ public class Infrastructure: Codable {
 }
 
 extension Infrastructure.Name {
-    public var webName: String {
-        return rawValue.lowercased()
-    }
-    
     public static func <(lhs: Infrastructure.Name, rhs: Infrastructure.Name) -> Bool {
-        return lhs.webName < rhs.webName
+        return lhs.rawValue < rhs.rawValue
     }
 }
 
 extension Infrastructure.Name {
     public var externalURL: URL {
-        return GroupConstants.App.externalURL.appendingPathComponent(webName)
+        return GroupConstants.App.externalURL.appendingPathComponent(rawValue)
     }
 
     public func importExternalResources(from url: URL, completionHandler: @escaping () -> Void) {

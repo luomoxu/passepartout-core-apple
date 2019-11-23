@@ -213,7 +213,7 @@
 "donation.alerts.purchase.success.title" = "Merci";
 "donation.alerts.purchase.success.message" = "Ceci signifie beaucoup pour moi et j'espère sincèrement que vous continuerez d'utiliser et de promouvoir cette app.";
 "donation.alerts.purchase.failure.message" = "Impossible de faire le don. %@";
-"share.message" = "Passepartout est un client OpenVPN simple d'utilisation et open source pour iOs et macOS";
+"share.message" = "Passepartout est un client OpenVPN simple d'utilisation et open source pour iOS et macOS";
 "version.title" = "Version";
 "version.labels.intro" = "Passepartout et TunnelKit sont codés et maintenu par Davide De Rosa (keeshux).\n\nLe code source de Passepartout et TunnelKit est publiquement disponible sur GitHub sous license GPLv3, vous pouvez trouver les liens sur la page d'accueil.\n\nPassepartout est un client non-officiel et n'est aucunement affilié avec OpenVPN Inc.";
 "credits.title" = "Crédits";

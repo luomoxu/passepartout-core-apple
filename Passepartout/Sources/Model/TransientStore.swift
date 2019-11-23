@@ -107,6 +107,7 @@ public class TransientStore {
             }
             service = try JSONDecoder().decode(ConnectionService.self, from: data)
             service.baseConfiguration = cfg
+            service.migrateProfiles()
             service.loadProfiles()
 
             // do migrations

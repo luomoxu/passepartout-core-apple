@@ -50,4 +50,43 @@ public extension ConnectionService {
 
         return try JSONSerialization.data(withJSONObject: json, options: [])
     }
+
+    func migrateProfiles() {
+
+        // migrate providers to lowercase names
+        guard let files = try? FileManager.default.contentsOfDirectory(at: providersURL, includingPropertiesForKeys: nil, options: []) else {
+            log.debug("No providers to migrate")
+            return
+        }
+        for entry in files {
+            let filename = entry.lastPathComponent
+
+            // old names contain at least an uppercase letter
+            guard let _ = filename.rangeOfCharacter(from: .uppercaseLetters) else {
+                continue
+            }
+            
+            log.debug("Migrating provider in \(filename) to new name")
+            do {
+                let data = try Data(contentsOf: entry)
+                guard var obj = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let name = obj["name"] as? String else {
+                    log.warning("Skipping provider \(filename), not a JSON or no 'name' key found")
+                    continue
+                }
+
+                // replace name and overwrite
+                obj["name"] = name.lowercased()
+                let migratedData = try JSONSerialization.data(withJSONObject: obj, options: [])
+                try? migratedData.write(to: entry)
+                
+                // rename file if it makes sense
+                let newEntry = entry.deletingLastPathComponent().appendingPathComponent(filename.lowercased())
+                try? FileManager.default.moveItem(at: entry, to: newEntry)
+
+                log.debug("Migrated provider: \(name)")
+            } catch let e {
+                log.warning("Unable to migrate provider \(filename): \(e)")
+            }
+        }
+    }
 }

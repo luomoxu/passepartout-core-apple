@@ -6,4 +6,3 @@
 **/*.xcodeproj/xcuserdata
 Pods
 .env.secret*
-Gemfile.lock

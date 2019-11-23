@@ -60,11 +60,11 @@ public class InfrastructureFactory {
     // manually pre-sorted
     public let allNames: [Infrastructure.Name] = [
         .mullvad,
-        .nordVPN,
+        .nordvpn,
         .pia,
-        .protonVPN,
-        .tunnelBear,
-        .vyprVPN,
+        .protonvpn,
+        .tunnelbear,
+        .vyprvpn,
         .windscribe
     ]
     
@@ -89,21 +89,27 @@ public class InfrastructureFactory {
     }
     
     public func loadCache() {
-        let cacheEntries: [URL]
-        let netPath = "\(AppConstants.Store.apiDirectory)/\(WebServices.Group.network.rawValue)"
+        let apiPath = cachePath.appendingPathComponent(AppConstants.Store.apiDirectory)
+        let providersPath = apiPath.appendingPathComponent(WebServices.Group.providers.rawValue)
+        
+        log.debug("Loading cache from: \(providersPath)")
+        let providersEntries: [URL]
         do {
-            cacheEntries = try FileManager.default.contentsOfDirectory(
-                at: cachePath.appendingPathComponent(netPath),
-                includingPropertiesForKeys: nil
-            )
+            providersEntries = try FileManager.default.contentsOfDirectory(at: providersPath, includingPropertiesForKeys: nil)
         } catch let e {
-            log.warning("Error loading cache: \(e)")
+            log.warning("Error loading cache or nothing cached: \(e)")
             return
         }
 
         let decoder = JSONDecoder()
-        for entry in cacheEntries {
-            guard let data = try? Data(contentsOf: entry) else {
+        for entry in providersEntries {
+            let rawName = entry.lastPathComponent
+            guard let name = Infrastructure.Name(rawValue: rawName) else {
+                log.warning("Unrecognized infrastructure name: \(rawName)")
+                continue
+            }
+            let infraPath = WebServices.Endpoint.providerNetwork(name).apiURL(relativeTo: apiPath)
+            guard let data = try? Data(contentsOf: infraPath) else {
                 continue
             }
             let infra: Infrastructure
@@ -151,7 +157,7 @@ public class InfrastructureFactory {
             }
         }
         
-        WebServices.shared.network(with: name, ifModifiedSince: ifModifiedSince) { (response, error) in
+        WebServices.shared.providerNetwork(with: name, ifModifiedSince: ifModifiedSince) { (response, error) in
             if error == nil {
                 self.lastUpdate[name] = Date()
             }
@@ -256,18 +262,18 @@ public class InfrastructureFactory {
 
 private extension Infrastructure.Name {
     var bundleRelativePath: String {
-        let endpoint = WebServices.Endpoint.network(self)
+        let endpoint = WebServices.Endpoint.providerNetwork(self)
         
-        // e.g. "API/v2", PIA="net/pia" -> "API/v2/net/pia.json"
-        return "\(AppConstants.Store.apiDirectory)/\(endpoint.path).json"
+        // e.g. "API/v3", PIA="providers/pia/net.json" -> "API/v3/providers/pia/net.json"
+        return "\(AppConstants.Store.apiDirectory)/\(endpoint.pathName).\(endpoint.fileType)"
     }
 
     var bundleURL: URL? {
         let bundle = Bundle(for: InfrastructureFactory.self)
-        let endpoint = WebServices.Endpoint.network(self)
+        let endpoint = WebServices.Endpoint.providerNetwork(self)
 
-        // e.g. "API/v2", PIA="net/pia" -> "[Bundle]:API/v2/net/pia.json"
-        return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.path)", withExtension: "json")
+        // e.g. "API/v3", PIA="net/pia" -> "[Bundle]:API/v3/providers/pia/net.json"
+        return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.pathName)", withExtension: endpoint.fileType)
     }
 }
 

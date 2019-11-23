@@ -71,11 +71,11 @@ public class ConnectionService: Codable {
         return url
     }
     
-    private var providersURL: URL {
+    var providersURL: URL {
         return rootURL.appendingPathComponent(AppConstants.Store.providersDirectory)
     }
 
-    private var hostsURL: URL {
+    var hostsURL: URL {
         return rootURL.appendingPathComponent(AppConstants.Store.hostsDirectory)
     }
     

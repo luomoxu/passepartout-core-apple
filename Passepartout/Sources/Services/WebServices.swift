@@ -56,6 +56,10 @@ public class WebServices {
         public var url: URL {
             return AppConstants.Web.apiURL(version: WebServices.version, path: "\(pathName).\(fileType)")
         }
+
+        public func bundleURL(in bundle: Bundle) -> URL? {
+            return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(pathName)", withExtension: fileType)
+        }
     }
 
     public static let shared = WebServices()

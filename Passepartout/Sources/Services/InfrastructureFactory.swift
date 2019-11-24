@@ -271,9 +271,8 @@ private extension Infrastructure.Name {
     var bundleURL: URL? {
         let bundle = Bundle(for: InfrastructureFactory.self)
         let endpoint = WebServices.Endpoint.providerNetwork(self)
-
-        // e.g. "API/v3", PIA="net/pia" -> "[Bundle]:API/v3/providers/pia/net.json"
-        return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(endpoint.pathName)", withExtension: endpoint.fileType)
+        
+        return endpoint.bundleURL(in: bundle)
     }
 }
 

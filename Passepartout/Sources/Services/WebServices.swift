@@ -34,10 +34,15 @@ public class WebServices {
     }
 
     public enum Endpoint: Convenience.Endpoint {
+        case providersIndex
+
         case providerNetwork(Infrastructure.Name)
         
         var pathName: String {
             switch self {
+            case .providersIndex:
+                return "\(Group.providers.rawValue)/index"
+
             case .providerNetwork(let name):
                 return "\(Group.providers.rawValue)/\(name)/net"
             }

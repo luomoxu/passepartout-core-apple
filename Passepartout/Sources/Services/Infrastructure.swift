@@ -45,7 +45,7 @@ public class Infrastructure: Codable {
 
     public let defaults: Defaults
     
-    public static func loaded(from url: URL) throws -> Infrastructure {
+    public static func from(url: URL) throws -> Infrastructure {
         let json = try Data(contentsOf: url)
         return try JSONDecoder().decode(Infrastructure.self, from: json)
     }

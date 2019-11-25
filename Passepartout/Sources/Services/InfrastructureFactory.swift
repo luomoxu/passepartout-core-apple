@@ -31,53 +31,58 @@ private let log = SwiftyBeaver.self
 // TODO: retain max N infrastructures at a time (LRU)
 
 public class InfrastructureFactory {
-    private static func embedded(withName name: Infrastructure.Name) -> Infrastructure {
-        guard let url = name.bundleURL else {
-            fatalError("Cannot find JSON for infrastructure '\(name)'")
-        }
-        do {
-            return try Infrastructure.loaded(from: url)
-        } catch let e {
-            fatalError("Cannot parse JSON for infrastructure '\(name)': \(e)")
-        }
-    }
-    
-    private static func isNewer(cachedEntry: URL, thanBundleWithName name: Infrastructure.Name) -> Bool {
-        guard let cacheDate = FileManager.default.modificationDate(of: cachedEntry.path) else {
-            return false
-        }
-        guard let bundleURL = name.bundleURL else {
-            return true
-        }
-        guard let bundleDate = FileManager.default.modificationDate(of: bundleURL.path) else {
-            return true
-        }
-        return cacheDate > bundleDate
-    }
-    
     public static let shared = InfrastructureFactory()
-
-    private let bundle: [Infrastructure.Name: Infrastructure]
 
     private let cachePath: URL
     
-    private var cache: [Infrastructure.Name: Infrastructure]
+    private var bundledMetadata: [Infrastructure.Metadata]
+
+    private var bundledInfrastructures: [Infrastructure.Name: Infrastructure]
+
+    private var cachedInfrastructures: [Infrastructure.Name: Infrastructure]
 
     private var lastUpdate: [Infrastructure.Name: Date]
 
     private init() {
-        var bundle: [Infrastructure.Name: Infrastructure] = [:]
-        Infrastructure.Name.all.forEach {
-            bundle[$0] = InfrastructureFactory.embedded(withName: $0)
-        }
-        self.bundle = bundle
-
         cachePath = GroupConstants.App.cachesURL
-        cache = [:]
+        bundledMetadata = []
+        bundledInfrastructures = [:]
+        cachedInfrastructures = [:]
         lastUpdate = [:]
     }
     
-    public func loadCache() {
+    // MARK: Storage
+    
+    public func preload() {
+        loadMetadata()
+        loadInfrastructures()
+    }
+    
+    public func loadMetadata() {
+        
+        // FIXME: try load index from cache first
+        
+        // try load index from bundle
+        guard let url = InfrastructureFactory.bundledMetadataURL else {
+            return
+        }
+        let decoder = JSONDecoder()
+        do {
+            let metadataData = try Data(contentsOf: url)
+            bundledMetadata = try decoder.decode([Infrastructure.Metadata].self, from: metadataData)
+            log.debug("Loaded metadata from bundle: \(bundledMetadata)")
+        } catch let e {
+            log.error("Unable to load index from bundle: \(e)")
+        }
+
+        // load bundled infrastructure for each metadata
+        bundledInfrastructures.removeAll()
+        bundledMetadata.forEach {
+            bundledInfrastructures[$0.name] = InfrastructureFactory.bundledInfrastructure(withName: $0.name)
+        }
+    }
+
+    public func loadInfrastructures() {
         let apiPath = cachePath.appendingPathComponent(AppConstants.Store.apiDirectory)
         let providersPath = apiPath.appendingPathComponent(WebServices.Group.providers.rawValue)
         
@@ -92,7 +97,7 @@ public class InfrastructureFactory {
 
         let decoder = JSONDecoder()
         for entry in providersEntries {
-            let name = entry.lastPathComponent as Infrastructure.Name
+            let name = entry.lastPathComponent
             let infraPath = WebServices.Endpoint.providerNetwork(name).apiURL(relativeTo: apiPath)
             guard let data = try? Data(contentsOf: infraPath) else {
                 continue
@@ -109,26 +114,47 @@ public class InfrastructureFactory {
             }
 
             // supersede if older than embedded
-            guard InfrastructureFactory.isNewer(cachedEntry: entry, thanBundleWithName: infra.name) else {
+            guard InfrastructureFactory.isCachedEntryNewer(at: entry, thanBundledWithName: infra.name) else {
                 log.warning("Bundle is newer than cache, superseding cache for \(infra.name)")
-                cache[infra.name] = bundle[infra.name]
+                cachedInfrastructures[infra.name] = bundledInfrastructures[infra.name]
                 continue
             }
 
-            cache[infra.name] = infra
+            cachedInfrastructures[infra.name] = infra
             log.debug("Loading cache for \(infra.name)")
         }
     }
     
-    public func get(_ name: Infrastructure.Name) -> Infrastructure {
-        guard let infra = cache[name] ?? bundle[name] else {
+    public func allMetadata() -> [Infrastructure.Metadata] {
+        return bundledMetadata
+    }
+    
+    public func metadata(forName name: Infrastructure.Name) -> Infrastructure.Metadata? {
+        return bundledMetadata.first(where: { $0.name == name})
+    }
+
+    public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure {
+        guard let infra = cachedInfrastructures[name] ?? bundledInfrastructures[name] else {
             fatalError("No infrastructure embedded nor cached for '\(name)'")
         }
         return infra
     }
+    
+    private static func bundledInfrastructure(withName name: Infrastructure.Name) -> Infrastructure {
+        guard let url = name.bundleURL else {
+            fatalError("Cannot find JSON for infrastructure '\(name)'")
+        }
+        do {
+            return try Infrastructure.from(url: url)
+        } catch let e {
+            fatalError("Cannot parse JSON for infrastructure '\(name)': \(e)")
+        }
+    }
+    
+    // MARK: Web services
 
     public func update(_ name: Infrastructure.Name, notBeforeInterval minInterval: TimeInterval?, completionHandler: @escaping ((Infrastructure, Date)?, Error?) -> Void) -> Bool {
-        let ifModifiedSince = modificationDate(for: name)
+        let ifModifiedSince = modificationDate(forName: name)
         
         if let lastInfrastructureUpdate = lastUpdate[name] {
             log.debug("Last update for \(name): \(lastUpdate)")
@@ -178,7 +204,7 @@ public class InfrastructureFactory {
             }
             
             var isNewer = true
-            if let bundleDate = self.bundleModificationDate(for: name) {
+            if let bundleDate = self.bundleModificationDate(forName: name) {
                 log.verbose("Bundle date: \(bundleDate)")
                 log.verbose("Web date:    \(lastModified)")
 
@@ -201,22 +227,11 @@ public class InfrastructureFactory {
         return true
     }
 
-    public func modificationDate(for name: Infrastructure.Name) -> Date? {
-        let optBundleDate = bundleModificationDate(for: name)
-        guard let cacheDate = cacheModificationDate(for: name) else {
-            return optBundleDate
-        }
-        guard let bundleDate = optBundleDate else {
-            return cacheDate
-        }
-        return max(cacheDate, bundleDate)
-    }
-    
     private func save(_ name: Infrastructure.Name, with infrastructure: Infrastructure, lastModified: Date) {
-        cache[name] = infrastructure
+        cachedInfrastructures[name] = infrastructure
         
         let fm = FileManager.default
-        let url = cacheURL(for: name)
+        let url = cacheURL(forName: name)
         do {
             let parent = url.deletingLastPathComponent()
             try fm.createDirectory(at: parent, withIntermediateDirectories: true, attributes: nil)
@@ -227,21 +242,56 @@ public class InfrastructureFactory {
             log.error("Error saving cache: \(e)")
         }
     }
+
+    // MARK: URLs
     
-    private func cacheURL(for name: Infrastructure.Name) -> URL {
+    private func cacheURL(forName name: Infrastructure.Name) -> URL {
         return cachePath.appendingPathComponent(name.bundleRelativePath)
     }
+    
+    private static var bundledMetadataURL: URL? {
+        let bundle = Bundle(for: Infrastructure.self)
+        let endpoint = WebServices.Endpoint.providersIndex
 
-    private func cacheModificationDate(for name: Infrastructure.Name) -> Date? {
-        let url = cacheURL(for: name)
+        return endpoint.bundleURL(in: bundle)
+    }
+
+    // MARK: Modification dates
+
+    public func modificationDate(forName name: Infrastructure.Name) -> Date? {
+        let optBundleDate = bundleModificationDate(forName: name)
+        guard let cacheDate = cacheModificationDate(forName: name) else {
+            return optBundleDate
+        }
+        guard let bundleDate = optBundleDate else {
+            return cacheDate
+        }
+        return max(cacheDate, bundleDate)
+    }
+    
+    private func cacheModificationDate(forName name: Infrastructure.Name) -> Date? {
+        let url = cacheURL(forName: name)
         return FileManager.default.modificationDate(of: url.path)
     }
 
-    private func bundleModificationDate(for name: Infrastructure.Name) -> Date? {
+    private func bundleModificationDate(forName name: Infrastructure.Name) -> Date? {
         guard let url = name.bundleURL else {
             return nil
         }
         return FileManager.default.modificationDate(of: url.path)
+    }
+
+    private static func isCachedEntryNewer(at url: URL, thanBundledWithName name: Infrastructure.Name) -> Bool {
+        guard let cacheDate = FileManager.default.modificationDate(of: url.path) else {
+            return false
+        }
+        guard let bundleURL = name.bundleURL else {
+            return true
+        }
+        guard let bundleDate = FileManager.default.modificationDate(of: bundleURL.path) else {
+            return true
+        }
+        return cacheDate > bundleDate
     }
 }
 
@@ -263,17 +313,11 @@ private extension Infrastructure.Name {
 
 extension ConnectionService {
     public func currentProviderNames() -> [Infrastructure.Name] {
-        var names: [Infrastructure.Name] = []
-        ids(forContext: .provider).forEach {
-            let name = $0 as Infrastructure.Name
-            names.append(name)
-        }
-        return names
+        return ids(forContext: .provider)
     }
 
-    public func availableProviderNames() -> [Infrastructure.Name] {
-        var names = Set(Infrastructure.Name.all)
-        names.formSymmetricDifference(currentProviderNames())
-        return Array(names).sorted()
+    public func availableProviders() -> [Infrastructure.Metadata] {
+        let names = Set(currentProviderNames())
+        return InfrastructureFactory.shared.allMetadata().filter { !names.contains($0.name) }
     }
 }

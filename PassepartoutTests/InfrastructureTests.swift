@@ -28,7 +28,7 @@ import TunnelKit
 @testable import PassepartoutCore
 
 class InfrastructureTests: XCTestCase {
-    private let infra = InfrastructureFactory.shared.get(.pia)
+    private let infra = InfrastructureFactory.shared.infrastructure(forName: .pia)
 
     override func setUp() {
     }
@@ -93,5 +93,10 @@ class InfrastructureTests: XCTestCase {
         XCTAssertNotNil(fmt.date(from: lmString))
         fmt.locale = Locale(identifier: "fr-FR")
         XCTAssertNil(fmt.date(from: lmString))
+    }
+
+    func testProvidersIndex() {
+        XCTAssertNotNil(InfrastructureFactory.shared.metadata(forName: "nordvpn"))
+        XCTAssertNil(InfrastructureFactory.shared.metadata(forName: "expressvpn"))
     }
 }

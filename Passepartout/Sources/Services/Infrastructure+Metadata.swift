@@ -1,5 +1,5 @@
 //
-//  Infrastructure+Name.swift
+//  Infrastructure+Metadata.swift
 //  Passepartout
 //
 //  Created by Davide De Rosa on 11/24/19.
@@ -29,21 +29,32 @@ import SwiftyBeaver
 private let log = SwiftyBeaver.self
 
 extension Infrastructure {
-    public typealias Name = String
-}
+    public struct Metadata: Codable, Hashable, Comparable, CustomStringConvertible {
+        public let name: Name
+        
+        // MARK: CustomStringConvertible
 
-extension Infrastructure.Name {
-    public static let mullvad = "mullvad"
+        public let description: String
 
-    public static let nordvpn = "nordvpn"
+        public init(_ name: Name, _ description: String) {
+            self.name = name
+            self.description = description
+        }
+        
+        // MARK: Hashable
+        
+        public func hash(into hasher: inout Hasher) {
+            name.hash(into: &hasher)
+        }
+        
+        public static func ==(lhs: Infrastructure.Metadata, rhs: Infrastructure.Metadata) -> Bool {
+            return lhs.name == rhs.name
+        }
 
-    public static let pia = "pia"
+        // MARK: Comparable
 
-    public static let protonvpn = "protonvpn"
-
-    public static let tunnelbear = "tunnelbear"
-
-    public static let vyprvpn = "vyprvpn"
-
-    public static let windscribe = "windscribe"
+        public static func <(lhs: Infrastructure.Metadata, rhs: Infrastructure.Metadata) -> Bool {
+            return lhs.name < rhs.name
+        }
+    }
 }

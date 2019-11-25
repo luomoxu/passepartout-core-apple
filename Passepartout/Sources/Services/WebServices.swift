@@ -80,6 +80,13 @@ public class WebServices {
         ws.timeout = AppConstants.Web.timeout
     }
 
+    public func providersIndex(completionHandler: @escaping ([Infrastructure.Metadata]?, Error?) -> Void) {
+        let request = ws.get(WebServices.Endpoint.providersIndex)
+        ws.parse([Infrastructure.Metadata].self, request: request) {
+            completionHandler($0?.value, $1)
+        }
+    }
+
     public func providerNetwork(with name: Infrastructure.Name, ifModifiedSince lastModified: Date?, completionHandler: @escaping (Response<Infrastructure>?, Error?) -> Void) {
         var request = ws.get(WebServices.Endpoint.providerNetwork(name))
         if let lastModified = lastModified {

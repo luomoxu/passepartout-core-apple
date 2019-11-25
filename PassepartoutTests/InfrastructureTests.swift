@@ -98,7 +98,16 @@ class InfrastructureTests: XCTestCase {
     }
 
     func testProvidersIndex() {
-        XCTAssertNotNil(InfrastructureFactory.shared.metadata(forName: "nordvpn"))
-        XCTAssertNil(InfrastructureFactory.shared.metadata(forName: "expressvpn"))
+        let ifactory = InfrastructureFactory.shared
+        XCTAssertNotNil(ifactory.metadata(forName: "nordvpn"))
+        XCTAssertNil(ifactory.metadata(forName: "expressvpn"))
+
+        let update = expectation(description: "updateIndex")
+        ifactory.updateIndex { _ in
+            update.fulfill()
+        }
+        waitForExpectations(timeout: 10.0) { _ in
+            print(ifactory.allMetadata)
+        }
     }
 }

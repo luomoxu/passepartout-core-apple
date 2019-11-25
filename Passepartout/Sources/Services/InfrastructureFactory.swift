@@ -155,6 +155,15 @@ public class InfrastructureFactory {
     
     // MARK: Web services
 
+    public func updateIndex(completionHandler: @escaping (Error?) -> Void) {
+        WebServices.shared.providersIndex {
+            if let response = $0 {
+                self.saveIndex(with: response)
+            }
+            completionHandler($1)
+        }
+    }
+
     public func update(_ name: Infrastructure.Name, notBeforeInterval minInterval: TimeInterval?, completionHandler: @escaping ((Infrastructure, Date)?, Error?) -> Void) -> Bool {
         let ifModifiedSince = modificationDate(forName: name)
         
@@ -227,6 +236,18 @@ public class InfrastructureFactory {
             }
         }
         return true
+    }
+
+    private func saveIndex(with metadata: [Infrastructure.Metadata]) {
+        allMetadata = metadata
+        
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(metadata)
+            try data.write(to: cacheMetadataURL)
+        } catch let e {
+            log.error("Error saving index to cache: \(e)")
+        }
     }
 
     private func save(_ name: Infrastructure.Name, with infrastructure: Infrastructure, lastModified: Date) {

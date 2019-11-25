@@ -28,9 +28,11 @@ import TunnelKit
 @testable import PassepartoutCore
 
 class InfrastructureTests: XCTestCase {
-    private let infra = InfrastructureFactory.shared.infrastructure(forName: .pia)
+    private var infra: Infrastructure!
 
     override func setUp() {
+        InfrastructureFactory.shared.preload()
+        infra = InfrastructureFactory.shared.infrastructure(forName: .pia)
     }
 
     override func tearDown() {

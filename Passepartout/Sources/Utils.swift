@@ -128,6 +128,16 @@ public class Utils {
         return Locale.current.localizedString(forRegionCode: code) ?? code
     }
 
+    public static func isFile(at url1: URL, newerThanFileAt url2: URL?) -> Bool {
+        guard let date1 = FileManager.default.modificationDate(of: url1.path) else {
+            return false
+        }
+        guard let url2 = url2, let date2 = FileManager.default.modificationDate(of: url2.path) else {
+            return true
+        }
+        return date1 > date2
+    }
+
     private init() {
     }
 }

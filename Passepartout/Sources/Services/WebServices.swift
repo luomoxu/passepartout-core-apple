@@ -52,18 +52,22 @@ public class WebServices {
             return "json"
         }
         
+        var path: String {
+            return "\(pathName).\(fileType)"
+        }
+        
         public func apiURL(relativeTo url: URL) -> URL {
-            return url.appendingPathComponent("\(pathName).\(fileType)")
+            return url.appendingPathComponent(AppConstants.Store.apiDirectory).appendingPathComponent(path)
+        }
+        
+        public func bundleURL(in bundle: Bundle) -> URL? {
+            return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(pathName)", withExtension: fileType)
         }
 
         // MARK: Endpoint
 
         public var url: URL {
-            return AppConstants.Web.apiURL(version: WebServices.version, path: "\(pathName).\(fileType)")
-        }
-
-        public func bundleURL(in bundle: Bundle) -> URL? {
-            return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(pathName)", withExtension: fileType)
+            return AppConstants.Web.apiURL(version: WebServices.version, path: path)
         }
     }
 

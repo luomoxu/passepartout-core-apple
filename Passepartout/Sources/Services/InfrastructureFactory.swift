@@ -326,4 +326,10 @@ extension ConnectionService {
         let names = Set(currentProviderNames())
         return InfrastructureFactory.shared.allMetadata.filter { !names.contains($0.name) }
     }
+
+    public func hasAvailableProviders() -> Bool {
+        var allNames = Set(InfrastructureFactory.shared.allMetadata.map { $0.name })
+        allNames.subtract(currentProviderNames())
+        return !allNames.isEmpty
+    }
 }

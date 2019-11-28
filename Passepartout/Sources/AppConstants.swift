@@ -166,6 +166,7 @@ public class AppConstants {
             "fr-FR": "Julien Laniel",
             "it": "Davide De Rosa",
             "nl": "Norbert de Vreede",
+            "pl": "Piotr Książek",
             "pt-BR": "Helder Santana",
             "ru": "Alexander Korobynikov",
             "sv": "Henry Gross-Hellsen",

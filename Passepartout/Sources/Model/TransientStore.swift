@@ -38,6 +38,8 @@ public class TransientStore {
         // migrations
         
         static let didMigrateHostsRoutingPolicies = "DidMigrateHostsRoutingPolicies"
+        
+        static let didMigrateDynamicProviders = "DidMigrateDynamicProviders"
     }
     
     public static let shared = TransientStore()
@@ -75,6 +77,15 @@ public class TransientStore {
         }
     }
     
+    public static var didMigrateDynamicProviders: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.didMigrateDynamicProviders)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.didMigrateDynamicProviders)
+        }
+    }
+
     public static var baseVPNConfiguration: OpenVPNTunnelProvider.ConfigurationBuilder {
         let sessionBuilder = OpenVPN.ConfigurationBuilder()
         var builder = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionBuilder.build())
@@ -107,10 +118,16 @@ public class TransientStore {
             }
             service = try JSONDecoder().decode(ConnectionService.self, from: data)
             service.baseConfiguration = cfg
-            service.migrateProfiles()
+
+            // pre-load migrations
+            if !TransientStore.didMigrateDynamicProviders {
+                service.migrateProvidersToLowercase()
+                TransientStore.didMigrateDynamicProviders = true
+            }
+
             service.loadProfiles()
 
-            // do migrations
+            // post-load migrations
             if !TransientStore.didMigrateHostsRoutingPolicies {
                 if service.reloadHostProfilesFromConfigurationFiles() {
                     service.saveProfiles()

@@ -51,7 +51,7 @@ public extension ConnectionService {
         return try JSONSerialization.data(withJSONObject: json, options: [])
     }
 
-    func migrateProfiles() {
+    func migrateProvidersToLowercase() {
 
         // migrate providers to lowercase names
         guard let files = try? FileManager.default.contentsOfDirectory(at: providersURL, includingPropertiesForKeys: nil, options: []) else {

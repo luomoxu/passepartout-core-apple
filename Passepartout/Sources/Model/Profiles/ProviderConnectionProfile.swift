@@ -30,7 +30,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     public let name: Infrastructure.Name
 
     public var infrastructure: Infrastructure {
-        return InfrastructureFactory.shared.get(name)
+        return InfrastructureFactory.shared.infrastructure(forName: name)
     }
 
     public var poolId: String {
@@ -106,7 +106,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     public let context: Context = .provider
 
     public var id: String {
-        return name.rawValue
+        return name
     }
     
     public var username: String?

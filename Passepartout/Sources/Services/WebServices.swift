@@ -34,12 +34,17 @@ public class WebServices {
     }
 
     public enum Endpoint: Convenience.Endpoint {
+        case providersIndex
+
         case providerNetwork(Infrastructure.Name)
         
         var pathName: String {
             switch self {
+            case .providersIndex:
+                return "\(Group.providers.rawValue)/index"
+
             case .providerNetwork(let name):
-                return "\(Group.providers.rawValue)/\(name.rawValue)/net"
+                return "\(Group.providers.rawValue)/\(name)/net"
             }
         }
         
@@ -47,14 +52,22 @@ public class WebServices {
             return "json"
         }
         
+        var path: String {
+            return "\(pathName).\(fileType)"
+        }
+        
         public func apiURL(relativeTo url: URL) -> URL {
-            return url.appendingPathComponent("\(pathName).\(fileType)")
+            return url.appendingPathComponent(AppConstants.Store.apiDirectory).appendingPathComponent(path)
+        }
+        
+        public func bundleURL(in bundle: Bundle) -> URL? {
+            return bundle.url(forResource: "\(AppConstants.Store.apiDirectory)/\(pathName)", withExtension: fileType)
         }
 
         // MARK: Endpoint
 
         public var url: URL {
-            return AppConstants.Web.apiURL(version: WebServices.version, path: "\(pathName).\(fileType)")
+            return AppConstants.Web.apiURL(version: WebServices.version, path: path)
         }
     }
 
@@ -65,6 +78,13 @@ public class WebServices {
     private init() {
         ws = ReadonlyWebServices()
         ws.timeout = AppConstants.Web.timeout
+    }
+
+    public func providersIndex(completionHandler: @escaping ([Infrastructure.Metadata]?, Error?) -> Void) {
+        let request = ws.get(WebServices.Endpoint.providersIndex)
+        ws.parse([Infrastructure.Metadata].self, request: request) {
+            completionHandler($0?.value, $1)
+        }
     }
 
     public func providerNetwork(with name: Infrastructure.Name, ifModifiedSince lastModified: Date?, completionHandler: @escaping (Response<Infrastructure>?, Error?) -> Void) {

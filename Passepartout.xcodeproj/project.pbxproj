@@ -101,6 +101,10 @@
 		0E7178522299E7550055BBC2 /* ConnectionService.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177CE2299DF9A0055BBC2 /* ConnectionService.json */; };
 		0E7178552299E8120055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178542299E8120055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E7178562299E8170055BBC2 /* Passepartout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7178532299E8090055BBC2 /* Passepartout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EA84512238A9A0500EFC500 /* Infrastructure+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84511238A9A0500EFC500 /* Infrastructure+Name.swift */; };
+		0EA84513238A9A0E00EFC500 /* Infrastructure+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84511238A9A0500EFC500 /* Infrastructure+Name.swift */; };
+		0EA84517238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84516238C2A1100EFC500 /* Infrastructure+Metadata.swift */; };
+		0EA84518238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84516238C2A1100EFC500 /* Infrastructure+Metadata.swift */; };
 		0EB9EB7023867CEA009C0A1C /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9EB6F23867CEA009C0A1C /* TrustedNetworks.swift */; };
 		0EEF233C2321A82D000AEBE3 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF233B2321A82D000AEBE3 /* Issue.swift */; };
 		0EEF233D2321A82D000AEBE3 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF233B2321A82D000AEBE3 /* Issue.swift */; };
@@ -196,6 +200,8 @@
 		0E7178442299E6B40055BBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E7178532299E8090055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
 		0E7178542299E8120055BBC2 /* Passepartout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passepartout.h; sourceTree = "<group>"; };
+		0EA84511238A9A0500EFC500 /* Infrastructure+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Infrastructure+Name.swift"; sourceTree = "<group>"; };
+		0EA84516238C2A1100EFC500 /* Infrastructure+Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Infrastructure+Metadata.swift"; sourceTree = "<group>"; };
 		0EB9EB6F23867CEA009C0A1C /* TrustedNetworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedNetworks.swift; sourceTree = "<group>"; };
 		0EEF233B2321A82D000AEBE3 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		0EF795ED22B8D5D700262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Intents.strings; sourceTree = "<group>"; };
@@ -376,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				0E7177942299DF8F0055BBC2 /* Infrastructure.swift */,
+				0EA84516238C2A1100EFC500 /* Infrastructure+Metadata.swift */,
+				0EA84511238A9A0500EFC500 /* Infrastructure+Name.swift */,
 				0E7177982299DF8F0055BBC2 /* InfrastructureFactory.swift */,
 				0E7177962299DF8F0055BBC2 /* InfrastructurePreset.swift */,
 				0E7177952299DF8F0055BBC2 /* Pool.swift */,
@@ -839,6 +847,7 @@
 				0E7177BA2299DF8F0055BBC2 /* ProfileKey.swift in Sources */,
 				0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */,
 				0E7177B52299DF8F0055BBC2 /* EndpointDataSource.swift in Sources */,
+				0EA84512238A9A0500EFC500 /* Infrastructure+Name.swift in Sources */,
 				0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */,
 				0E7177BD2299DF8F0055BBC2 /* TrustPolicy.swift in Sources */,
 				0E7177AE2299DF8F0055BBC2 /* ConnectionProfile.swift in Sources */,
@@ -850,6 +859,7 @@
 				0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */,
 				0E7177A72299DF8F0055BBC2 /* VPNProvider.swift in Sources */,
 				0E7177A52299DF8F0055BBC2 /* VPNStatus.swift in Sources */,
+				0EA84517238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */,
 				0E7177A42299DF8F0055BBC2 /* MockVPNProvider.swift in Sources */,
 				0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */,
 				0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */,
@@ -866,6 +876,7 @@
 				0E71780C2299E2FD0055BBC2 /* VPNProvider.swift in Sources */,
 				0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */,
 				0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */,
+				0EA84513238A9A0E00EFC500 /* Infrastructure+Name.swift in Sources */,
 				0E7178242299E3190055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
 				0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */,
 				0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */,
@@ -888,6 +899,7 @@
 				0E7178122299E3060055BBC2 /* InfrastructurePreset.swift in Sources */,
 				0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */,
 				0E7178202299E3160055BBC2 /* Credentials.swift in Sources */,
+				0EA84518238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */,
 				0E7178152299E3160055BBC2 /* ConnectionService+Configurations.swift in Sources */,
 				0E7178232299E3190055BBC2 /* HostConnectionProfile.swift in Sources */,
 				0E7178032299E2F90055BBC2 /* ApplicationError.swift in Sources */,

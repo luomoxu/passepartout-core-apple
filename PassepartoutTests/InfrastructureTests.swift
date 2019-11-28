@@ -28,9 +28,11 @@ import TunnelKit
 @testable import PassepartoutCore
 
 class InfrastructureTests: XCTestCase {
-    private let infra = InfrastructureFactory.shared.get(.pia)
+    private var infra: Infrastructure!
 
     override func setUp() {
+        InfrastructureFactory.shared.preload()
+        infra = InfrastructureFactory.shared.infrastructure(forName: .pia)
     }
 
     override func tearDown() {
@@ -93,5 +95,19 @@ class InfrastructureTests: XCTestCase {
         XCTAssertNotNil(fmt.date(from: lmString))
         fmt.locale = Locale(identifier: "fr-FR")
         XCTAssertNil(fmt.date(from: lmString))
+    }
+
+    func testProvidersIndex() {
+        let ifactory = InfrastructureFactory.shared
+        XCTAssertNotNil(ifactory.metadata(forName: "nordvpn"))
+        XCTAssertNil(ifactory.metadata(forName: "expressvpn"))
+
+        let update = expectation(description: "updateIndex")
+        ifactory.updateIndex { _ in
+            update.fulfill()
+        }
+        waitForExpectations(timeout: 10.0) { _ in
+            print(ifactory.allMetadata)
+        }
     }
 }

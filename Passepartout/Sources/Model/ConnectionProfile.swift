@@ -54,6 +54,17 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
 }
 
 public extension ConnectionProfile {
+    var screenTitle: String {
+        if let providerProfile = self as? ProviderConnectionProfile {
+            if let metadata = InfrastructureFactory.shared.metadata(forName: providerProfile.name) {
+                return metadata.description
+            }
+        }
+        return id
+    }
+}
+
+public extension ConnectionProfile {
     var passwordKey: String? {
         guard let username = username else {
             return nil

@@ -106,6 +106,7 @@
 "organizer.alerts.cannot_donate.message" = "There is no payment method configured on this device.";
 "organizer.alerts.delete_vpn_profile.message" = "Do you really want to erase the VPN configuration from your device settings? This may fix some broken VPN states and will not affect your provider and host profiles.";
 
+"wizards.provider.cells.update_list.caption" = "Update list";
 "wizards.host.alerts.existing.message" = "A host profile with the same title already exists. Replace it?";
 
 "service.welcome.message" = "Welcome to Passepartout!\n\nUse the organizer to add a new profile.";

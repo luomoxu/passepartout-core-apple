@@ -107,6 +107,11 @@ public class InfrastructureFactory {
         for entry in cacheProvidersEntries {
             let name = entry.lastPathComponent
 
+            // skip *.json (index.json presumably)
+            guard !name.hasSuffix(".json") else {
+                continue
+            }
+
             // pick cache if newer
             if Utils.isFile(at: entry, newerThanFileAt: name.bundleURL) {
                 let infraPath = WebServices.Endpoint.providerNetwork(name).apiURL(relativeTo: cachePath)

@@ -35,7 +35,7 @@ public class InfrastructureFactory {
 
     private let cachePath: URL
     
-    fileprivate(set) var allMetadata: [Infrastructure.Metadata]
+    fileprivate var cachedMetadata: [Infrastructure.Metadata]
 
     private var cachedInfrastructures: [Infrastructure.Name: Infrastructure]
 
@@ -43,7 +43,7 @@ public class InfrastructureFactory {
 
     private init() {
         cachePath = GroupConstants.App.cachesURL
-        allMetadata = []
+        cachedMetadata = []
         cachedInfrastructures = [:]
         lastUpdate = [:]
     }
@@ -62,8 +62,8 @@ public class InfrastructureFactory {
         if Utils.isFile(at: cacheMetadataURL, newerThanFileAt: bundledMetadataURL) {
             do {
                 let indexData = try Data(contentsOf: cacheMetadataURL)
-                allMetadata = try decoder.decode([Infrastructure.Metadata].self, from: indexData)
-                log.debug("Loaded metadata from cache: \(allMetadata)")
+                cachedMetadata = try decoder.decode([Infrastructure.Metadata].self, from: indexData)
+                log.debug("Loaded metadata from cache: \(cachedMetadata)")
                 return
             } catch let e {
                 log.warning("No index in cache: \(e)")
@@ -78,8 +78,8 @@ public class InfrastructureFactory {
         }
         do {
             let indexData = try Data(contentsOf: bundleURL)
-            allMetadata = try decoder.decode([Infrastructure.Metadata].self, from: indexData)
-            log.debug("Loaded index from bundle: \(allMetadata)")
+            cachedMetadata = try decoder.decode([Infrastructure.Metadata].self, from: indexData)
+            log.debug("Loaded index from bundle: \(cachedMetadata)")
         } catch let e {
             log.error("Unable to load index from bundle: \(e)")
         }
@@ -96,7 +96,7 @@ public class InfrastructureFactory {
         } catch let e {
             log.warning("Error loading cache or nothing cached: \(e)")
 
-            allMetadata.forEach {
+            cachedMetadata.forEach {
                 cachedInfrastructures[$0.name] = bundledInfrastructure(withName: $0.name)
                 log.debug("Loaded infrastructure \($0.name) from bundle")
             }
@@ -136,8 +136,12 @@ public class InfrastructureFactory {
         }
     }
     
+    public var allMetadata: [Infrastructure.Metadata] {
+        return cachedMetadata
+    }
+    
     public func metadata(forName name: Infrastructure.Name) -> Infrastructure.Metadata? {
-        return allMetadata.first(where: { $0.name == name})
+        return cachedMetadata.first(where: { $0.name == name})
     }
 
     public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure {
@@ -244,7 +248,7 @@ public class InfrastructureFactory {
     }
 
     private func saveIndex(with metadata: [Infrastructure.Metadata]) {
-        allMetadata = metadata
+        cachedMetadata = metadata
         
         let encoder = JSONEncoder()
         do {
@@ -324,11 +328,11 @@ extension ConnectionService {
 
     public func availableProviders() -> [Infrastructure.Metadata] {
         let names = Set(currentProviderNames())
-        return InfrastructureFactory.shared.allMetadata.filter { !names.contains($0.name) }
+        return InfrastructureFactory.shared.cachedMetadata.filter { !names.contains($0.name) }
     }
 
     public func hasAvailableProviders() -> Bool {
-        var allNames = Set(InfrastructureFactory.shared.allMetadata.map { $0.name })
+        var allNames = Set(InfrastructureFactory.shared.cachedMetadata.map { $0.name })
         allNames.subtract(currentProviderNames())
         return !allNames.isEmpty
     }

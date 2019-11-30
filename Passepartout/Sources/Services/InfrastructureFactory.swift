@@ -144,11 +144,8 @@ public class InfrastructureFactory {
         return cachedMetadata.first(where: { $0.name == name})
     }
 
-    public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure {
-        guard let infra = cachedInfrastructures[name] else {
-            fatalError("No infrastructure found for '\(name)'")
-        }
-        return infra
+    public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure? {
+        return cachedInfrastructures[name]
     }
     
     private func bundledInfrastructure(withName name: Infrastructure.Name) -> Infrastructure {

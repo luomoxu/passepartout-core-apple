@@ -144,11 +144,8 @@ public class InfrastructureFactory {
         return cachedMetadata.first(where: { $0.name == name})
     }
 
-    public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure {
-        guard let infra = cachedInfrastructures[name] else {
-            fatalError("No infrastructure found for '\(name)'")
-        }
-        return infra
+    public func infrastructure(forName name: Infrastructure.Name) -> Infrastructure? {
+        return cachedInfrastructures[name]
     }
     
     private func bundledInfrastructure(withName name: Infrastructure.Name) -> Infrastructure {
@@ -250,10 +247,13 @@ public class InfrastructureFactory {
     private func saveIndex(with metadata: [Infrastructure.Metadata]) {
         cachedMetadata = metadata
         
-        let encoder = JSONEncoder()
+        let fm = FileManager.default
+        let url = cacheMetadataURL
         do {
-            let data = try encoder.encode(metadata)
-            try data.write(to: cacheMetadataURL)
+            let parent = url.deletingLastPathComponent()
+            try fm.createDirectory(at: parent, withIntermediateDirectories: true, attributes: nil)
+            let data = try JSONEncoder().encode(metadata)
+            try data.write(to: url)
         } catch let e {
             log.error("Error saving index to cache: \(e)")
         }

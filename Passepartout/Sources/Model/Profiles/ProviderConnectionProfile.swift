@@ -30,7 +30,10 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     public let name: Infrastructure.Name
 
     public var infrastructure: Infrastructure {
-        return InfrastructureFactory.shared.infrastructure(forName: name)
+        guard let infra = InfrastructureFactory.shared.infrastructure(forName: name) else {
+            fatalError("No infrastructure found for '\(name)'")
+        }
+        return infra
     }
 
     public var poolId: String {

@@ -54,7 +54,7 @@ public class AppConstants {
         public static let hostsDirectory = "Hosts"
     }
     
-    public class Web {
+    public class Services {
         public static func apiURL(version: String, path: String) -> URL {
             return Repos.api.appendingPathComponent(version).appendingPathComponent(path)
         }

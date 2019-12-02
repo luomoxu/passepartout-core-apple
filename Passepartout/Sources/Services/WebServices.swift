@@ -67,7 +67,7 @@ public class WebServices {
         // MARK: Endpoint
 
         public var url: URL {
-            return AppConstants.Web.apiURL(version: WebServices.version, path: path)
+            return AppConstants.Services.apiURL(version: WebServices.version, path: path)
         }
     }
 
@@ -77,7 +77,7 @@ public class WebServices {
     
     private init() {
         ws = ReadonlyWebServices()
-        ws.timeout = AppConstants.Web.timeout
+        ws.timeout = AppConstants.Services.timeout
     }
 
     public func providersIndex(completionHandler: @escaping ([Infrastructure.Metadata]?, Error?) -> Void) {

@@ -32,15 +32,12 @@ extension Infrastructure {
     public struct Metadata: Codable, Hashable, Comparable, CustomStringConvertible {
         public let name: Name
         
+        public let inApp: String?
+        
         // MARK: CustomStringConvertible
 
         public let description: String
 
-        public init(_ name: Name, _ description: String) {
-            self.name = name
-            self.description = description
-        }
-        
         // MARK: Hashable
         
         public func hash(into hasher: inout Hasher) {

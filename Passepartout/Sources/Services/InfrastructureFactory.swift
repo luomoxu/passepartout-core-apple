@@ -134,6 +134,14 @@ public class InfrastructureFactory {
             cachedInfrastructures[name] = bundledInfrastructure(withName: name)
             log.debug("Loaded infrastructure \(name) from bundle")
         }
+
+        // fill up with bundled
+        cachedMetadata.forEach {
+            if cachedInfrastructures[$0.name] == nil {
+                cachedInfrastructures[$0.name] = bundledInfrastructure(withName: $0.name)
+                log.debug("Loaded infrastructure \($0.name) from bundle")
+            }
+        }
     }
     
     public var allMetadata: [Infrastructure.Metadata] {

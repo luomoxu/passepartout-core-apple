@@ -227,3 +227,4 @@
 "service.cells.server_network.caption" = "服务端网络";
 "service.alerts.configuration.disconnected" = "配置不可用，请确认你已连接到VPN。";
 "server_network.cells.route.caption" = "路由";
+"wizards.provider.cells.update_list.caption" = "更新列表";

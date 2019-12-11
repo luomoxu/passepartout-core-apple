@@ -612,6 +612,7 @@
 				ru,
 				nl,
 				pt,
+				pl,
 			);
 			mainGroup = 0E7177252299DF2D0055BBC2;
 			productRefGroup = 0E7177302299DF2D0055BBC2 /* Products */;

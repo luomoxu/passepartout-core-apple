@@ -223,7 +223,8 @@
 "credits.sections.notices.header" = "注意";
 "credits.sections.translations.header" = "翻译";
 "label.license.error" = "不能下载到完整的许可证内容。";
-"service.cells.server_configuration.caption" = "服务器配置";
-"service.cells.server_network.caption" = "服务器网络";
-"service.alerts.configuration.disconnected" = "配置不可用，请确保您已连接到VPN。";
-"server_network.cells.route.caption" = "路线";
+"service.cells.server_configuration.caption" = "服务端配置";
+"service.cells.server_network.caption" = "服务端网络";
+"service.alerts.configuration.disconnected" = "配置不可用，请确认你已连接到VPN。";
+"server_network.cells.route.caption" = "路由";
+"wizards.provider.cells.update_list.caption" = "更新列表";

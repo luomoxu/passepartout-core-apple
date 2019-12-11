@@ -227,3 +227,4 @@
 "service.cells.server_network.caption" = "Red del servidor";
 "service.alerts.configuration.disconnected" = "Configuración no disponible, asegúrate de estar conectad@ a la VPN.";
 "server_network.cells.route.caption" = "Ruta";
+"wizards.provider.cells.update_list.caption" = "Actualizar lista";

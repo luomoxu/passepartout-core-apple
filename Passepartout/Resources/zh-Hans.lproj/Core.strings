@@ -132,7 +132,7 @@
 "service.alerts.download.failed" = "下载配置文件失败。 %@";
 "service.alerts.download.hud.extracting" = "提取文件中，请等待...";
 "account.title" = "账户";
-"account.sections.guidance.footer.infrastructure.mullvad" = "使用你的%@网站认证信息。你的用户名一般是数字。";
+"account.sections.guidance.footer.infrastructure.mullvad" = "使用你的%@网站认证信息。你的用户名一般是数字 (没有空格)。";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "使用你的%@网站认证信息。你的用户名一般是你的e-mail。";
 "account.sections.guidance.footer.infrastructure.pia" = "使用你的%@网站认证信息。你的用户名一般是数字且带有前缀\"p\"。";
 "account.sections.guidance.footer.infrastructure.protonvpn" = "在网站的\"Account > OpenVPN / IKEv2 Username\"部分找到你的%@的认证信息。";

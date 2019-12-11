@@ -109,7 +109,7 @@
 "service.alerts.download.message" = "%@ requiere la descarga de fichero de configuración adicionales.\n\nConfirmar para empezar la descarga.";
 "service.alerts.download.failed" = "Imposible descargar los ficheros de configuración. %@";
 "service.alerts.download.hud.extracting" = "Extrayendo ficheros, por favor ten paciencia...";
-"account.sections.guidance.footer.infrastructure.mullvad" = "Usa tus credenciales de la web %@. Normalmente tu usuario es numérico.";
+"account.sections.guidance.footer.infrastructure.mullvad" = "Usa tus credenciales de la web %@. Normalmente tu usuario es numérico (sin espacios).";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Usa tus credenciales de la web %@. Normalmente tu usuario es tu e-mail.";
 "account.sections.guidance.footer.infrastructure.pia" = "Usa tus credenciales de la web %@. Normalmente tu usuario es numérico con un prefijo \"p\".";
 "account.sections.guidance.footer.infrastructure.protonvpn" = "Encuentra tus credenciales %@ en la sección \"Account > OpenVPN / IKEv2 Username\" de la web.";

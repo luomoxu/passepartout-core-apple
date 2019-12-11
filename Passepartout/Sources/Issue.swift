@@ -34,12 +34,12 @@ public struct Issue {
     
     public let configurationURL: URL?
     
-    public let infrastructure: Infrastructure?
+    public let infrastructureMetadata: Infrastructure.Metadata?
     
-    public init(debugLog: Bool, configurationURL: URL?, infrastructure: Infrastructure? = nil) {
+    public init(debugLog: Bool, configurationURL: URL?, infrastructureMetadata: Infrastructure.Metadata? = nil) {
         self.debugLog = debugLog
         self.configurationURL = configurationURL
-        self.infrastructure = infrastructure
+        self.infrastructureMetadata = infrastructureMetadata
     }
     
     public init(debugLog: Bool, profile: ConnectionProfile?) {
@@ -49,7 +49,10 @@ public struct Issue {
         } else {
             url = nil
         }
-        let infrastructure = (profile as? ProviderConnectionProfile)?.infrastructure
-        self.init(debugLog: debugLog, configurationURL: url, infrastructure: infrastructure)
+        var infrastructureMetadata: Infrastructure.Metadata?
+        if let name = (profile as? ProviderConnectionProfile)?.name {
+            infrastructureMetadata = InfrastructureFactory.shared.metadata(forName: name)
+        }
+        self.init(debugLog: debugLog, configurationURL: url, infrastructureMetadata: infrastructureMetadata)
     }
 }

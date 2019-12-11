@@ -323,6 +323,12 @@ public class InfrastructureFactory {
     }
 }
 
+extension Infrastructure {
+    public var metadata: Metadata? {
+        return InfrastructureFactory.shared.metadata(forName: name)
+    }
+}
+
 private extension Infrastructure.Name {
     var bundleURL: URL? {
         return WebServices.Endpoint.providerNetwork(self).bundleURL(in: Bundle(for: InfrastructureFactory.self))

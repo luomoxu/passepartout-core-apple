@@ -227,5 +227,5 @@
 "service.cells.server_network.caption" = "Δίκτυο Διακομιστή";
 "service.alerts.configuration.disconnected" = "Μη διαθέσιμη Ρύθμιση, επιβεβαιώστε ότι είστε συνδεδεμένοι στο VPN.";
 "server_network.cells.route.caption" = "Διαδρομή";
-"wizards.provider.cells.update_list.caption" = "Λίστα ενημερώσεων";
+"wizards.provider.cells.update_list.caption" = "Αναβάθμιση Λίστας";
 "wizards.provider.alerts.unavailable.message" = "Δεν ήταν δυνατή η λήψη της υποδομής του παρόχου, δοκιμάστε ξανά αργότερα.";

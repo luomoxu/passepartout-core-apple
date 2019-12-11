@@ -159,7 +159,7 @@ public class AppConstants {
         }
 
         public static let translators: [String: String] = [
-            "de": "Christian Lederer",
+            "de": "Christian Lederer, Theodor Tietze",
             "el": "Konstantinos Koukoulakis",
             "en-US": "Davide De Rosa",
             "es": "Davide De Rosa, Elena Vivó",

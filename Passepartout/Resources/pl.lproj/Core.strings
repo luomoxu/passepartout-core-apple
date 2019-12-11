@@ -107,6 +107,7 @@
 "organizer.alerts.delete_vpn_profile.message" = "Na pewno chcesz usunąć konfigurację VPN z urządzenia? Może to naprawić błędy z statusem VPN i nie będzie miało wpływu na konfigurację usługodawców/hostów.";
 
 "wizards.provider.cells.update_list.caption" = "Zaktualizuj listę";
+"wizards.provider.alerts.unavailable.message" = "Nie można pobrać infrastruktury dostawcy, spróbuj ponownie później.";
 "wizards.host.alerts.existing.message" = "Profil hosta z taką nazwą już istnieje. Nadpisać profil?";
 
 "service.welcome.message" = "Witaj w  Passepartout!\n\nUżyj organizera by utworzyć nowy profil.";

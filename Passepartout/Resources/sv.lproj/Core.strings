@@ -228,3 +228,4 @@
 "service.alerts.configuration.disconnected" = "Konfiguration otillgänglig. Se till att du är kopplad till VPN:et.";
 "server_network.cells.route.caption" = "Rutt";
 "wizards.provider.cells.update_list.caption" = "Uppdatera listan";
+"wizards.provider.alerts.unavailable.message" = "Det gick inte att ladda ner leverantörens infrastruktur, försök igen senare.";

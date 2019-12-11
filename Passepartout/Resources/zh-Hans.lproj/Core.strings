@@ -228,3 +228,4 @@
 "service.alerts.configuration.disconnected" = "配置不可用，请确认你已连接到VPN。";
 "server_network.cells.route.caption" = "路由";
 "wizards.provider.cells.update_list.caption" = "更新列表";
+"wizards.provider.alerts.unavailable.message" = "无法下载提供商基础架构，请稍后重试。";

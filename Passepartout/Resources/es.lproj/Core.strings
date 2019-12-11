@@ -228,3 +228,4 @@
 "service.alerts.configuration.disconnected" = "Configuración no disponible, asegúrate de estar conectad@ a la VPN.";
 "server_network.cells.route.caption" = "Ruta";
 "wizards.provider.cells.update_list.caption" = "Actualizar lista";
+"wizards.provider.alerts.unavailable.message" = "No fue posible bajar la infraestructura del proveedor, por favor reinténtalo más tarde.";

@@ -228,3 +228,4 @@
 "service.alerts.configuration.disconnected" = "Конфигурация недоступна, проверьте подключение к VPN.";
 "server_network.cells.route.caption" = "Маршрут";
 "wizards.provider.cells.update_list.caption" = "Обновить список";
+"wizards.provider.alerts.unavailable.message" = "Не удалось загрузить инфраструктуру провайдера, повторите попытку позже.";

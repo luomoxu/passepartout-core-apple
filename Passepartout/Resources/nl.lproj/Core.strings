@@ -228,3 +228,4 @@
 "service.alerts.configuration.disconnected" = "Configuratie niet beschikbaar, zorg ervoor dat u verbonden bent met de VPN.";
 "server_network.cells.route.caption" = "Route";
 "wizards.provider.cells.update_list.caption" = "Lijst bijwerken";
+"wizards.provider.alerts.unavailable.message" = "Kon de provider-infrastructuur niet downloaden, probeer het later opnieuw.";

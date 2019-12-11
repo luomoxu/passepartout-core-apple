@@ -227,3 +227,4 @@
 "service.cells.server_network.caption" = "Server nätverk";
 "service.alerts.configuration.disconnected" = "Konfiguration otillgänglig. Se till att du är kopplad till VPN:et.";
 "server_network.cells.route.caption" = "Rutt";
+"wizards.provider.cells.update_list.caption" = "Uppdatera listan";

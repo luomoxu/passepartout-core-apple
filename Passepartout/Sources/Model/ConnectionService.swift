@@ -534,12 +534,21 @@ public class ConnectionService: Codable {
         }
         
         var cfg = try profile.generate(from: baseConfiguration, preferences: preferences)
-
+        
         // override network settings
         if let choices = profile.networkChoices, let settings = profile.manualNetworkSettings {
             var builder = cfg.builder()
             var sessionBuilder = builder.sessionConfiguration.builder()
-            sessionBuilder.applyGateway(from: choices, settings: settings)
+
+            // enforce default gateway for providers unless "Manual"
+            if type(of: profile) == ProviderConnectionProfile.self {
+                if choices.gateway == .manual {
+                    sessionBuilder.applyGateway(from: choices, settings: settings)
+                }
+            } else {
+                sessionBuilder.applyGateway(from: choices, settings: settings)
+            }
+            
             sessionBuilder.applyDNS(from: choices, settings: settings)
             sessionBuilder.applyProxy(from: choices, settings: settings)
             builder.sessionConfiguration = sessionBuilder.build()

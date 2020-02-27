@@ -53,6 +53,8 @@ public class ConnectionService: Codable {
         case activeProfileKey
         
         case preferences
+        
+        case hostTitles
     }
     
     public struct NotificationKeys {
@@ -91,7 +93,10 @@ public class ConnectionService: Codable {
     
     private var cache: [ProfileKey: ConnectionProfile]
     
-    public private(set) var activeProfileKey: ProfileKey? {
+    // XXX: access needed by +Migration
+    var hostTitles: [String: String]
+    
+    public internal(set) var activeProfileKey: ProfileKey? {
         willSet {
             if let oldProfile = activeProfile {
                 delegate?.connectionService(willDeactivate: oldProfile)
@@ -134,6 +139,7 @@ public class ConnectionService: Codable {
         preferences = EditablePreferences()
 
         cache = [:]
+        hostTitles = [:]
     }
     
     // MARK: Codable
@@ -154,6 +160,7 @@ public class ConnectionService: Codable {
         preferences = try container.decode(EditablePreferences.self, forKey: .preferences)
 
         cache = [:]
+        hostTitles = try container.decode([String: String].self, forKey: .hostTitles)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -165,6 +172,7 @@ public class ConnectionService: Codable {
         try container.encode(baseConfiguration, forKey: .baseConfiguration)
         try container.encodeIfPresent(activeProfileKey, forKey: .activeProfileKey)
         try container.encode(preferences, forKey: .preferences)
+        try container.encode(hostTitles, forKey: .hostTitles)
     }
     
     // MARK: Serialization

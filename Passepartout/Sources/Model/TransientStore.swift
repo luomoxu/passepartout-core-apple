@@ -40,6 +40,8 @@ public class TransientStore {
         static let didMigrateHostsRoutingPolicies = "DidMigrateHostsRoutingPolicies"
         
         static let didMigrateDynamicProviders = "DidMigrateDynamicProviders"
+
+        static let didMigrateHostsToUUID = "DidMigrateHostsToUUID"
     }
     
     public static let shared = TransientStore()
@@ -86,6 +88,15 @@ public class TransientStore {
         }
     }
 
+    public static var didMigrateHostsToUUID: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.didMigrateHostsToUUID)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.didMigrateHostsToUUID)
+        }
+    }
+
     public static var baseVPNConfiguration: OpenVPNTunnelProvider.ConfigurationBuilder {
         let sessionBuilder = OpenVPN.ConfigurationBuilder()
         var builder = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionBuilder.build())
@@ -111,11 +122,17 @@ public class TransientStore {
         
         let cfg = TransientStore.baseVPNConfiguration.build()
         do {
-            let data = try Data(contentsOf: TransientStore.serviceURL)
+            var data = try Data(contentsOf: TransientStore.serviceURL)
             if let content = String(data: data, encoding: .utf8) {
                 log.verbose("Service JSON:")
                 log.verbose(content)
             }
+
+            // pre-parsing migrations
+            if let migratedData = TransientStore.migratedDataIfNecessary(fromData: data) {
+                data = migratedData
+            }
+            
             service = try JSONDecoder().decode(ConnectionService.self, from: data)
             service.baseConfiguration = cfg
 
@@ -123,6 +140,10 @@ public class TransientStore {
             if !TransientStore.didMigrateDynamicProviders {
                 service.migrateProvidersToLowercase()
                 TransientStore.didMigrateDynamicProviders = true
+            }
+            if !TransientStore.didMigrateHostsToUUID {
+                service.migrateHostsToUUID()
+                TransientStore.didMigrateHostsToUUID = true
             }
 
             service.loadProfiles()
@@ -184,6 +205,30 @@ public class TransientStore {
         }
         if hasMigrated {
             log.debug("Documents migrated to App Group")
+        }
+    }
+
+    private static func migratedDataIfNecessary(fromData data: Data) -> Data? {
+        guard !TransientStore.didMigrateHostsToUUID else {
+            return data
+        }
+
+        guard var json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            return nil
+        }
+
+        // do JSON migrations here
+        migrateHostTitles(&json)
+
+        guard let migratedData = try? JSONSerialization.data(withJSONObject: json, options: []) else {
+            return nil
+        }
+        return migratedData
+    }
+
+    private static func migrateHostTitles(_ json: inout [String: Any]) {
+        if json["hostTitles"] == nil {
+            json["hostTitles"] = [:]
         }
     }
 }

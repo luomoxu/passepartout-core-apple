@@ -336,6 +336,9 @@ private extension Infrastructure.Name {
 }
 
 extension ConnectionService {
+
+    // FIXME: drop the following 3 and create ConnectionService+Title extension with .title(forProfile:)
+
     public func currentProviderNames() -> [Infrastructure.Name] {
         return ids(forContext: .provider)
     }

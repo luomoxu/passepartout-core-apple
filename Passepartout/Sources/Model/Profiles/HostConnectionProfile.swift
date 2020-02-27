@@ -34,6 +34,7 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
     public var parameters: OpenVPNTunnelProvider.Configuration
 
     public init(title: String, hostname: String) {
+        id = UUID().uuidString
         self.title = title
         self.hostname = hostname
         let sessionConfiguration = OpenVPN.ConfigurationBuilder().build()
@@ -46,9 +47,7 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     public let context: Context = .host
     
-    public var id: String {
-        return title
-    }
+    public let id: String
     
     public var username: String?
     

@@ -89,4 +89,68 @@ public extension ConnectionService {
             }
         }
     }
+    
+    func migrateHostsToUUID() {
+        guard let files = try? FileManager.default.contentsOfDirectory(at: hostsURL, includingPropertiesForKeys: nil, options: []) else {
+            log.debug("No hosts to migrate")
+            return
+        }
+
+        // initialize titles mapping
+        hostTitles = [:]
+        
+        for entry in files {
+            let filename = entry.lastPathComponent
+            guard filename.hasSuffix(".json") else {
+                continue
+            }
+
+            log.debug("Migrating host \(filename) to UUID-based")
+            do {
+                let data = try Data(contentsOf: entry)
+                guard var obj = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let title = obj["title"] as? String else {
+                    log.warning("Skipping host \(filename), not a JSON or no 'title' key found")
+                    continue
+                }
+                
+                // pick unique id
+                let uuid = UUID().uuidString
+                
+                // remove title from JSON (will move to index)
+                obj["id"] = uuid
+//                obj.removeValue(forKey: "title")
+
+                // save mapping for later
+                hostTitles[uuid] = title
+                
+                // migrate active profile if necessary (= it's a host)
+                if let key = activeProfileKey, key.context == .host && key.id == title {
+                    activeProfileKey = ProfileKey(.host, uuid)
+                }
+
+                // replace name and overwrite
+                let migratedData = try JSONSerialization.data(withJSONObject: obj, options: [])
+                try? migratedData.write(to: entry)
+                
+                let parent = entry.deletingLastPathComponent()
+                
+                // rename file to UUID
+                let newFilename = "\(uuid).json"
+                let newEntry = parent.appendingPathComponent(newFilename)
+                try? FileManager.default.moveItem(at: entry, to: newEntry)
+                
+                // rename associated .ovpn (if any)
+                let ovpnFilename = "\(title).ovpn"
+                let ovpnNewFilename = "\(uuid).ovpn"
+                try? FileManager.default.moveItem(
+                    at: parent.appendingPathComponent(ovpnFilename),
+                    to: parent.appendingPathComponent(ovpnNewFilename)
+                )
+
+                log.debug("Migrated host: \(filename) -> \(newFilename)")
+            } catch let e {
+                log.warning("Unable to migrate host \(filename): \(e)")
+            }
+        }
+    }
 }

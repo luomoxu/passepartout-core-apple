@@ -624,3 +624,28 @@ public class ConnectionService: Codable {
         return baseConfiguration.dataCount(in: appGroup)
     }
 }
+
+public extension ConnectionService {
+    func screenTitle(forHostId id: String) -> String {
+        return screenTitle(ProfileKey(.host, id))
+    }
+
+    func screenTitle(forProviderName name: Infrastructure.Name) -> String {
+        return screenTitle(ProfileKey(.provider, name))
+    }
+
+    func screenTitle(_ key: ProfileKey) -> String {
+        switch key.context {
+        case .provider:
+            if let metadata = InfrastructureFactory.shared.metadata(forName: key.id) {
+                return metadata.description
+            }
+            
+        case .host:
+            if let title = hostTitles[key.id] {
+                return title
+            }
+        }
+        return key.id
+    }
+}

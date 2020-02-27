@@ -626,6 +626,26 @@ public class ConnectionService: Codable {
 }
 
 public extension ConnectionService {
+    func providerNames() -> [Infrastructure.Name] {
+        return ids(forContext: .provider)
+    }
+    
+    func hostIds() -> [String] {
+        return ids(forContext: .host)
+    }
+
+    func sortedProviderNames() -> [Infrastructure.Name] {
+        return providerNames().sorted()
+    }
+
+    func sortedHostIds() -> [String] {
+        return hostIds().sorted {
+            let title1 = screenTitle(ProfileKey(.host, $0))
+            let title2 = screenTitle(ProfileKey(.host, $1))
+            return title1.lowercased() < title2.lowercased()
+        }
+    }
+
     func screenTitle(forHostId id: String) -> String {
         return screenTitle(ProfileKey(.host, id))
     }

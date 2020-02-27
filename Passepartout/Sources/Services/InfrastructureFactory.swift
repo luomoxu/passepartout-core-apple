@@ -336,36 +336,14 @@ private extension Infrastructure.Name {
 }
 
 extension ConnectionService {
-
-    // FIXME: drop the following 3 and create ConnectionService+Title extension with .title(forProfile:)
-
-    public func currentProviderNames() -> [Infrastructure.Name] {
-        return ids(forContext: .provider)
-    }
-    
-    public func currentProviderMetadata() -> [Infrastructure.Metadata] {
-        var current: [Infrastructure.Metadata] = []
-        for name in currentProviderNames() {
-            guard let metadata = InfrastructureFactory.shared.metadata(forName: name) else {
-                continue
-            }
-            current.append(metadata)
-        }
-        return current
-    }
-
-    public func currentHostNames() -> [String] {
-        return ids(forContext: .host)
-    }
-
     public func availableProviders() -> [Infrastructure.Metadata] {
-        let names = Set(currentProviderNames())
+        let names = Set(ids(forContext: .provider))
         return InfrastructureFactory.shared.cachedMetadata.filter { !names.contains($0.name) }
     }
 
     public func hasAvailableProviders() -> Bool {
         var allNames = Set(InfrastructureFactory.shared.cachedMetadata.map { $0.name })
-        allNames.subtract(currentProviderNames())
+        allNames.subtract(ids(forContext: .provider))
         return !allNames.isEmpty
     }
 }

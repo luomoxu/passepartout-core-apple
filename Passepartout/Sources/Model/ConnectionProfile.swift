@@ -49,8 +49,6 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
     var manualNetworkSettings: ProfileNetworkSettings? { get set }
     
     func generate(from configuration: OpenVPNTunnelProvider.Configuration, preferences: Preferences) throws -> OpenVPNTunnelProvider.Configuration
-
-    func with(newId: String) -> ConnectionProfile
 }
 
 public extension ConnectionProfile {

@@ -33,7 +33,7 @@ private let log = SwiftyBeaver.self
 public protocol ConnectionServiceDelegate: class {
     func connectionService(didAdd profile: ConnectionProfile)
 
-    func connectionService(didRename oldProfile: ConnectionProfile, to newProfile: ConnectionProfile)
+    func connectionService(didRename profile: ConnectionProfile, to newTitle: String)
 
     func connectionService(didRemoveProfileWithKey key: ProfileKey)
 
@@ -390,65 +390,36 @@ public class ConnectionService: Codable {
         return true
     }
     
-    public func addOrReplaceProfile(_ profile: ConnectionProfile, credentials: Credentials?) {
+    public func addOrReplaceProfile(_ profile: ConnectionProfile, credentials: Credentials?, title: String? = nil) {
         let key = ProfileKey(profile)
         cache[key] = profile
         try? setCredentials(credentials, for: profile)
         if cache.count == 1 {
             activeProfileKey = key
         }
+        // associate host title
+        if key.context == .host {
+            hostTitles[key.id] = title
+        }
+
         delegate?.connectionService(didAdd: profile)
 
         // serialization (can fail)
         saveProfile(profile, withEncoder: JSONEncoder(), checkDirectories: true)
     }
 
-    @discardableResult
-    public func renameProfile(_ key: ProfileKey, to newId: String) -> ConnectionProfile? {
-        guard newId != key.id else {
-            return nil
+    public func renameProfile(_ key: ProfileKey, to newTitle: String) {
+        precondition(key.context == .host, "Can only rename a HostConnectionProfile")
+        guard let profile = cache[key] else {
+            return
         }
 
-        // WARNING: can be a placeholder
-        guard let oldProfile = cache[key] else {
-            return nil
-        }
-
-        let fm = FileManager.default
-        let temporaryDelegate = delegate
-        delegate = nil
-
-        // 1. add renamed profile
-        let newProfile = oldProfile.with(newId: newId)
-        let newKey = ProfileKey(newProfile)
-        let sameCredentials = credentials(for: oldProfile)
-        addOrReplaceProfile(newProfile, credentials: sameCredentials)
-
-        // 2. rename .ovpn (if present)
-        if let cfgFrom = configurationURL(for: key) {
-            let cfgTo = targetConfigurationURL(for: newKey)
-            try? fm.removeItem(at: cfgTo)
-            try? fm.moveItem(at: cfgFrom, to: cfgTo)
-        }
-
-        // 3. remove old entry
-        let formerlyActiveProfileKey = activeProfileKey
-        removeProfile(key)
-
-        // 4. replace active key (if active)
-        if key == formerlyActiveProfileKey {
-            activeProfileKey = newKey
-        }
-
-        delegate = temporaryDelegate
-        delegate?.connectionService(didRename: oldProfile, to: newProfile)
-        
-        return newProfile
+        hostTitles[key.id] = newTitle
+        delegate?.connectionService(didRename: profile, to: newTitle)
     }
 
-    @discardableResult
-    public func renameProfile(_ profile: ConnectionProfile, to id: String) -> ConnectionProfile? {
-        return renameProfile(ProfileKey(profile), to: id)
+    public func renameProfile(_ profile: ConnectionProfile, to newTitle: String) {
+        renameProfile(ProfileKey(profile), to: newTitle)
     }
     
     public func removeProfile(_ key: ProfileKey) {
@@ -460,6 +431,9 @@ public class ConnectionService: Codable {
             activeProfileKey = nil
         }
         cache.removeValue(forKey: key)
+        if key.context == .host {
+            hostTitles.removeValue(forKey: key.id)
+        }
         removeCredentials(for: profile)
 
         delegate?.connectionService(didRemoveProfileWithKey: key)

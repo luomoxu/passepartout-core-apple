@@ -476,6 +476,18 @@ public class ConnectionService: Codable {
         activeProfileKey = ProfileKey(profile)
     }
     
+    public func existingHostId(withTitle title: String) -> String? {
+        for id in hostTitles.keys {
+            guard let _ = cache[ProfileKey(.host, id)] else {
+                continue
+            }
+            if hostTitles[id] == title {
+                return id
+            }
+        }
+        return nil
+    }
+    
     // MARK: Credentials
     
     public func needsCredentials(for profile: ConnectionProfile) -> Bool {

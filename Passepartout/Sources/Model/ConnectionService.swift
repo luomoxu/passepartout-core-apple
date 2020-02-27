@@ -424,10 +424,11 @@ public class ConnectionService: Codable {
         }
 
         // 3. remove old entry
+        let formerlyActiveProfileKey = activeProfileKey
         removeProfile(key)
 
         // 4. replace active key (if active)
-        if key == activeProfileKey {
+        if key == formerlyActiveProfileKey {
             activeProfileKey = newKey
         }
 

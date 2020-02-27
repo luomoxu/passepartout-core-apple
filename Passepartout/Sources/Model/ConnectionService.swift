@@ -397,7 +397,9 @@ public class ConnectionService: Codable {
 
     @discardableResult
     public func renameProfile(_ key: ProfileKey, to newId: String) -> ConnectionProfile? {
-        precondition(newId != key.id)
+        guard newId != key.id else {
+            return nil
+        }
 
         // WARNING: can be a placeholder
         guard let oldProfile = cache[key] else {

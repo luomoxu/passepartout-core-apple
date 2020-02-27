@@ -339,6 +339,21 @@ extension ConnectionService {
     public func currentProviderNames() -> [Infrastructure.Name] {
         return ids(forContext: .provider)
     }
+    
+    public func currentProviderMetadata() -> [Infrastructure.Metadata] {
+        var current: [Infrastructure.Metadata] = []
+        for name in currentProviderNames() {
+            guard let metadata = InfrastructureFactory.shared.metadata(forName: name) else {
+                continue
+            }
+            current.append(metadata)
+        }
+        return current
+    }
+
+    public func currentHostNames() -> [String] {
+        return ids(forContext: .host)
+    }
 
     public func availableProviders() -> [Infrastructure.Metadata] {
         let names = Set(currentProviderNames())

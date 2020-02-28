@@ -140,6 +140,8 @@ public class ConnectionService: Codable {
 
         cache = [:]
         hostTitles = [:]
+
+        ensureDirectoriesExistence()
     }
     
     // MARK: Codable
@@ -161,6 +163,8 @@ public class ConnectionService: Codable {
 
         cache = [:]
         hostTitles = try container.decode([String: String].self, forKey: .hostTitles)
+
+        ensureDirectoriesExistence()
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -179,9 +183,6 @@ public class ConnectionService: Codable {
     
     public func loadProfiles() {
         let fm = FileManager.default
-        try? fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
-        try? fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
-        
         do {
             let files = try fm.contentsOfDirectory(at: providersURL, includingPropertiesForKeys: nil, options: [])
 //            log.debug("Found \(files.count) provider files: \(files)")
@@ -218,23 +219,27 @@ public class ConnectionService: Codable {
     
     public func saveProfiles() {
         let encoder = JSONEncoder()
-        ensureDirectoriesExistence()
-
         for profile in cache.values {
-            saveProfile(profile, withEncoder: encoder, checkDirectories: false)
+            saveProfile(profile, withEncoder: encoder)
         }
     }
     
     private func ensureDirectoriesExistence() {
         let fm = FileManager.default
-        try? fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
-        try? fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
+        do {
+            try fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
+        } catch let e {
+            log.warning("Could not create providers folder: \(e) (\(providersURL))")
+        }
+        do {
+            try fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
+        } catch let e {
+            log.warning("Could not create hosts folder: \(e) (\(hostsURL))")
+        }
+        
     }
     
-    private func saveProfile(_ profile: ConnectionProfile, withEncoder encoder: JSONEncoder, checkDirectories: Bool) {
-        if checkDirectories {
-            ensureDirectoriesExistence()
-        }
+    private func saveProfile(_ profile: ConnectionProfile, withEncoder encoder: JSONEncoder) {
         do {
             let url = profileURL(ProfileKey(profile))
             var optData: Data?
@@ -411,7 +416,7 @@ public class ConnectionService: Codable {
         delegate?.connectionService(didAdd: profile)
 
         // serialization (can fail)
-        saveProfile(profile, withEncoder: JSONEncoder(), checkDirectories: true)
+        saveProfile(profile, withEncoder: JSONEncoder())
     }
 
     public func renameProfile(_ key: ProfileKey, to newTitle: String) {

@@ -208,6 +208,12 @@ public class ConnectionService: Codable {
         } catch let e {
             log.warning("Could not list host contents: \(e) (\(hostsURL))")
         }
+        
+        // clean up hostTitles if necessary
+        let staleHostIds = hostTitles.keys.filter { cache[ProfileKey(.host, $0)] == nil }
+        staleHostIds.forEach {
+            hostTitles.removeValue(forKey: $0)
+        }
     }
     
     public func saveProfiles() {

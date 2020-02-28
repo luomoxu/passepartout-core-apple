@@ -18,7 +18,7 @@
 
 "LA99yM" = "Σύνδεση VPN";
 
-"U6o81V" = "Σύνδεση στο ${profileId}";
+"U6o81V" = "Σύνδεση στο ${profileTitle}";
 
 "WnTPFg" = "Σύνδεση σε ${poolName}";
 

@@ -41,10 +41,11 @@ public class IntentDispatcher {
 
     // MARK: Intents
     
-    public static func intentConnect(profile: ConnectionProfile) -> ConnectVPNIntent {
+    public static func intentConnect(profile: ConnectionProfile, title: String?) -> ConnectVPNIntent {
         let intent = ConnectVPNIntent()
         intent.context = profile.context.rawValue
         intent.profileId = profile.id
+        intent.profileTitle = title ?? profile.id
         return intent
     }
     
@@ -82,12 +83,12 @@ public class IntentDispatcher {
 
     // MARK: Donations
     
-    public static func donateConnection(with profile: ConnectionProfile) {
+    public static func donateConnection(with profile: ConnectionProfile, title: String?) {
         let genericIntent: INIntent
         if let provider = profile as? ProviderConnectionProfile, let pool = provider.pool {
             genericIntent = intentMoveTo(profile: provider, pool: pool)
         } else {
-            genericIntent = intentConnect(profile: profile)
+            genericIntent = intentConnect(profile: profile, title: title)
         }
         
         let interaction = INInteraction(intent: genericIntent, response: nil)

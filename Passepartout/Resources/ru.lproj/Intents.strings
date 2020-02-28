@@ -18,7 +18,7 @@
 
 "LA99yM" = "Подключиться к VPN";
 
-"U6o81V" = "Подключиться к ${profileId}";
+"U6o81V" = "Подключиться к ${profileTitle}";
 
 "WnTPFg" = "Подключиться к ${poolName}";
 

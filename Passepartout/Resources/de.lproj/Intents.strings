@@ -18,7 +18,7 @@
 
 "LA99yM" = "Verbinde mit VPN";
 
-"U6o81V" = "Verbinde mit ${profileId}";
+"U6o81V" = "Verbinde mit ${profileTitle}";
 
 "WnTPFg" = "Verbinde mit ${poolName}";
 

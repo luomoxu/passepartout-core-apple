@@ -18,7 +18,7 @@
 
 "LA99yM" = "Koppla till VPN";
 
-"U6o81V" = "Koppla till ${profileId}";
+"U6o81V" = "Koppla till ${profileTitle}";
 
 "WnTPFg" = "Koppla till ${poolName}";
 

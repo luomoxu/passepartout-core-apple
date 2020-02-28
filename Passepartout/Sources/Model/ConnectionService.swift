@@ -33,7 +33,7 @@ private let log = SwiftyBeaver.self
 public protocol ConnectionServiceDelegate: class {
     func connectionService(didAdd profile: ConnectionProfile)
 
-    func connectionService(didRename oldProfile: ConnectionProfile, to newProfile: ConnectionProfile)
+    func connectionService(didRename profile: ConnectionProfile, to newTitle: String)
 
     func connectionService(didRemoveProfileWithKey key: ProfileKey)
 
@@ -53,6 +53,8 @@ public class ConnectionService: Codable {
         case activeProfileKey
         
         case preferences
+        
+        case hostTitles
     }
     
     public struct NotificationKeys {
@@ -91,7 +93,10 @@ public class ConnectionService: Codable {
     
     private var cache: [ProfileKey: ConnectionProfile]
     
-    public private(set) var activeProfileKey: ProfileKey? {
+    // XXX: access needed by +Migration
+    var hostTitles: [String: String]
+    
+    public internal(set) var activeProfileKey: ProfileKey? {
         willSet {
             if let oldProfile = activeProfile {
                 delegate?.connectionService(willDeactivate: oldProfile)
@@ -134,6 +139,9 @@ public class ConnectionService: Codable {
         preferences = EditablePreferences()
 
         cache = [:]
+        hostTitles = [:]
+
+        ensureDirectoriesExistence()
     }
     
     // MARK: Codable
@@ -154,6 +162,9 @@ public class ConnectionService: Codable {
         preferences = try container.decode(EditablePreferences.self, forKey: .preferences)
 
         cache = [:]
+        hostTitles = try container.decode([String: String].self, forKey: .hostTitles)
+
+        ensureDirectoriesExistence()
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -165,15 +176,13 @@ public class ConnectionService: Codable {
         try container.encode(baseConfiguration, forKey: .baseConfiguration)
         try container.encodeIfPresent(activeProfileKey, forKey: .activeProfileKey)
         try container.encode(preferences, forKey: .preferences)
+        try container.encode(hostTitles, forKey: .hostTitles)
     }
     
     // MARK: Serialization
     
     public func loadProfiles() {
         let fm = FileManager.default
-        try? fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
-        try? fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
-        
         do {
             let files = try fm.contentsOfDirectory(at: providersURL, includingPropertiesForKeys: nil, options: [])
 //            log.debug("Found \(files.count) provider files: \(files)")
@@ -200,27 +209,37 @@ public class ConnectionService: Codable {
         } catch let e {
             log.warning("Could not list host contents: \(e) (\(hostsURL))")
         }
+        
+        // clean up hostTitles if necessary
+        let staleHostIds = hostTitles.keys.filter { cache[ProfileKey(.host, $0)] == nil }
+        staleHostIds.forEach {
+            hostTitles.removeValue(forKey: $0)
+        }
     }
     
     public func saveProfiles() {
         let encoder = JSONEncoder()
-        ensureDirectoriesExistence()
-
         for profile in cache.values {
-            saveProfile(profile, withEncoder: encoder, checkDirectories: false)
+            saveProfile(profile, withEncoder: encoder)
         }
     }
     
     private func ensureDirectoriesExistence() {
         let fm = FileManager.default
-        try? fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
-        try? fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
+        do {
+            try fm.createDirectory(at: providersURL, withIntermediateDirectories: false, attributes: nil)
+        } catch let e {
+            log.warning("Could not create providers folder: \(e) (\(providersURL))")
+        }
+        do {
+            try fm.createDirectory(at: hostsURL, withIntermediateDirectories: false, attributes: nil)
+        } catch let e {
+            log.warning("Could not create hosts folder: \(e) (\(hostsURL))")
+        }
+        
     }
     
-    private func saveProfile(_ profile: ConnectionProfile, withEncoder encoder: JSONEncoder, checkDirectories: Bool) {
-        if checkDirectories {
-            ensureDirectoriesExistence()
-        }
+    private func saveProfile(_ profile: ConnectionProfile, withEncoder encoder: JSONEncoder) {
         do {
             let url = profileURL(ProfileKey(profile))
             var optData: Data?
@@ -382,65 +401,36 @@ public class ConnectionService: Codable {
         return true
     }
     
-    public func addOrReplaceProfile(_ profile: ConnectionProfile, credentials: Credentials?) {
+    public func addOrReplaceProfile(_ profile: ConnectionProfile, credentials: Credentials?, title: String? = nil) {
         let key = ProfileKey(profile)
         cache[key] = profile
         try? setCredentials(credentials, for: profile)
         if cache.count == 1 {
             activeProfileKey = key
         }
+        // associate host title
+        if key.context == .host {
+            hostTitles[key.id] = title
+        }
+
         delegate?.connectionService(didAdd: profile)
 
         // serialization (can fail)
-        saveProfile(profile, withEncoder: JSONEncoder(), checkDirectories: true)
+        saveProfile(profile, withEncoder: JSONEncoder())
     }
 
-    @discardableResult
-    public func renameProfile(_ key: ProfileKey, to newId: String) -> ConnectionProfile? {
-        guard newId != key.id else {
-            return nil
+    public func renameProfile(_ key: ProfileKey, to newTitle: String) {
+        precondition(key.context == .host, "Can only rename a HostConnectionProfile")
+        guard let profile = cache[key] else {
+            return
         }
 
-        // WARNING: can be a placeholder
-        guard let oldProfile = cache[key] else {
-            return nil
-        }
-
-        let fm = FileManager.default
-        let temporaryDelegate = delegate
-        delegate = nil
-
-        // 1. add renamed profile
-        let newProfile = oldProfile.with(newId: newId)
-        let newKey = ProfileKey(newProfile)
-        let sameCredentials = credentials(for: oldProfile)
-        addOrReplaceProfile(newProfile, credentials: sameCredentials)
-
-        // 2. rename .ovpn (if present)
-        if let cfgFrom = configurationURL(for: key) {
-            let cfgTo = targetConfigurationURL(for: newKey)
-            try? fm.removeItem(at: cfgTo)
-            try? fm.moveItem(at: cfgFrom, to: cfgTo)
-        }
-
-        // 3. remove old entry
-        let formerlyActiveProfileKey = activeProfileKey
-        removeProfile(key)
-
-        // 4. replace active key (if active)
-        if key == formerlyActiveProfileKey {
-            activeProfileKey = newKey
-        }
-
-        delegate = temporaryDelegate
-        delegate?.connectionService(didRename: oldProfile, to: newProfile)
-        
-        return newProfile
+        hostTitles[key.id] = newTitle
+        delegate?.connectionService(didRename: profile, to: newTitle)
     }
 
-    @discardableResult
-    public func renameProfile(_ profile: ConnectionProfile, to id: String) -> ConnectionProfile? {
-        return renameProfile(ProfileKey(profile), to: id)
+    public func renameProfile(_ profile: ConnectionProfile, to newTitle: String) {
+        renameProfile(ProfileKey(profile), to: newTitle)
     }
     
     public func removeProfile(_ key: ProfileKey) {
@@ -452,6 +442,9 @@ public class ConnectionService: Codable {
             activeProfileKey = nil
         }
         cache.removeValue(forKey: key)
+        if key.context == .host {
+            hostTitles.removeValue(forKey: key.id)
+        }
         removeCredentials(for: profile)
 
         delegate?.connectionService(didRemoveProfileWithKey: key)
@@ -492,6 +485,18 @@ public class ConnectionService: Codable {
     
     public func activateProfile(_ profile: ConnectionProfile) {
         activeProfileKey = ProfileKey(profile)
+    }
+    
+    public func existingHostId(withTitle title: String) -> String? {
+        for id in hostTitles.keys {
+            guard let _ = cache[ProfileKey(.host, id)] else {
+                continue
+            }
+            if hostTitles[id] == title {
+                return id
+            }
+        }
+        return nil
     }
     
     // MARK: Credentials
@@ -640,5 +645,50 @@ public class ConnectionService: Codable {
 
     public var vpnDataCount: (Int, Int)? {
         return baseConfiguration.dataCount(in: appGroup)
+    }
+}
+
+public extension ConnectionService {
+    func providerNames() -> [Infrastructure.Name] {
+        return ids(forContext: .provider)
+    }
+    
+    func hostIds() -> [String] {
+        return ids(forContext: .host)
+    }
+
+    func sortedProviderNames() -> [Infrastructure.Name] {
+        return providerNames().sorted()
+    }
+
+    func sortedHostIds() -> [String] {
+        return hostIds().sorted {
+            let title1 = screenTitle(ProfileKey(.host, $0))
+            let title2 = screenTitle(ProfileKey(.host, $1))
+            return title1.lowercased() < title2.lowercased()
+        }
+    }
+
+    func screenTitle(forHostId id: String) -> String {
+        return screenTitle(ProfileKey(.host, id))
+    }
+
+    func screenTitle(forProviderName name: Infrastructure.Name) -> String {
+        return screenTitle(ProfileKey(.provider, name))
+    }
+
+    func screenTitle(_ key: ProfileKey) -> String {
+        switch key.context {
+        case .provider:
+            if let metadata = InfrastructureFactory.shared.metadata(forName: key.id) {
+                return metadata.description
+            }
+            
+        case .host:
+            if let title = hostTitles[key.id] {
+                return title
+            }
+        }
+        return key.id
     }
 }

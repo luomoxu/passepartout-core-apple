@@ -52,10 +52,6 @@ public class PlaceholderConnectionProfile: ConnectionProfile {
         fatalError("Generating configuration from a PlaceholderConnectionProfile")
     }
     
-    public func with(newId: String) -> ConnectionProfile {
-        return PlaceholderConnectionProfile(context, newId)
-    }
-    
     public var mainAddress: String? = nil
     
     public var addresses: [String] = []

@@ -49,19 +49,6 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
     var manualNetworkSettings: ProfileNetworkSettings? { get set }
     
     func generate(from configuration: OpenVPNTunnelProvider.Configuration, preferences: Preferences) throws -> OpenVPNTunnelProvider.Configuration
-
-    func with(newId: String) -> ConnectionProfile
-}
-
-public extension ConnectionProfile {
-    var screenTitle: String {
-        if let providerProfile = self as? ProviderConnectionProfile {
-            if let metadata = InfrastructureFactory.shared.metadata(forName: providerProfile.name) {
-                return metadata.description
-            }
-        }
-        return id
-    }
 }
 
 public extension ConnectionProfile {

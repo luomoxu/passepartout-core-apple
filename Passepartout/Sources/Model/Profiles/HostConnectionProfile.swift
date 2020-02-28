@@ -27,14 +27,12 @@ import Foundation
 import TunnelKit
 
 public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
-    public var title: String
-
     public let hostname: String
     
     public var parameters: OpenVPNTunnelProvider.Configuration
 
-    public init(title: String, hostname: String) {
-        self.title = title
+    public init(hostname: String) {
+        id = UUID().uuidString
         self.hostname = hostname
         let sessionConfiguration = OpenVPN.ConfigurationBuilder().build()
         parameters = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionConfiguration).build()
@@ -46,9 +44,7 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     public let context: Context = .host
     
-    public var id: String {
-        return title
-    }
+    public let id: String
     
     public var username: String?
     
@@ -81,13 +77,6 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         builder.sessionConfiguration = sessionBuilder.build()
 
         return builder.build()
-    }
-    
-    public func with(newId: String) -> ConnectionProfile {
-        let profile = HostConnectionProfile(title: newId, hostname: hostname)
-        profile.username = username
-        profile.parameters = parameters
-        return profile
     }
 }
 

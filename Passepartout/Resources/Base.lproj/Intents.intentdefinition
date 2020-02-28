@@ -9,11 +9,11 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>CM6KGi</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>19A536g</string>
+	<string>19D76</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>11A420a</string>
+	<string>11C504</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>11.0</string>
+	<string>11.3.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -24,19 +24,19 @@
 			<key>INIntentDescriptionID</key>
 			<string>eXXb2z</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>5</integer>
+			<integer>6</integer>
 			<key>INIntentName</key>
 			<string>ConnectVPN</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key>context,profileId</key>
+				<key>profileId,profileTitle,context</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Connect to ${profileId}</string>
+					<string>Connect to ${profileTitle}</string>
 					<key>INIntentParameterCombinationTitleID</key>
 					<string>U6o81V</string>
 				</dict>
@@ -70,6 +70,21 @@
 					<string>profileId</string>
 					<key>INIntentParameterTag</key>
 					<integer>4</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>3</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataCapitalization</key>
+						<string>Sentences</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>profileTitle</string>
+					<key>INIntentParameterTag</key>
+					<integer>6</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>

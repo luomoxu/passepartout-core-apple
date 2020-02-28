@@ -181,10 +181,6 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         
         return builder.build()
     }
-
-    public func with(newId: String) -> ConnectionProfile {
-        fatalError("Cannot rename a ProviderConnectionProfile")
-    }
 }
 
 public extension ProviderConnectionProfile {

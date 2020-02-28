@@ -18,7 +18,7 @@
 
 "LA99yM" = "Conectar con el VPN";
 
-"U6o81V" = "Conectar con ${profileId}";
+"U6o81V" = "Conectar con ${profileTitle}";
 
 "WnTPFg" = "Conectar con ${poolName}";
 

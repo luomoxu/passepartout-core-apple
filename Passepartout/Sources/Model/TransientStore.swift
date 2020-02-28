@@ -161,6 +161,11 @@ public class TransientStore {
                 withAppGroup: GroupConstants.App.groupId,
                 baseConfiguration: cfg
             )
+            
+            // fresh install, skip all migrations
+            TransientStore.didMigrateHostsRoutingPolicies = true
+            TransientStore.didMigrateDynamicProviders = true
+            TransientStore.didMigrateHostsToUUID = true
 
 //            // hardcoded loading
 //            _ = service.addProfile(ProviderConnectionProfile(name: .pia), credentials: nil)

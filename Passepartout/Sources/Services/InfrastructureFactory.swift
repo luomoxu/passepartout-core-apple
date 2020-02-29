@@ -294,7 +294,7 @@ public class InfrastructureFactory {
     }
     
     private var bundledMetadataURL: URL? {
-        return WebServices.Endpoint.providersIndex.bundleURL(in: Bundle(for: Infrastructure.self))
+        return WebServices.Endpoint.providersIndex.bundleURL(in: Bundle(for: InfrastructureFactory.self))
     }
 
     // MARK: Modification dates

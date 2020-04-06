@@ -179,6 +179,7 @@
 "vpn.errors.network" = "Rede alterada";
 "vpn.errors.routing" = "Rota necessária";
 "vpn.errors.gateway" = "Sem gateway";
+"vpn.errors.shutdown" = "Servidor desligado";
 "issue_reporter.title" = "Reportar problema";
 "issue_reporter.message" = "O log de suas últimas conexões é crucial para resolver problemas de conectividade e é completamemnte anônimo.\n\nO arquivo de conexão .ovpn, se existente, é anexado sem nenhum dado sensitivo.\n\nPor favor, verique o anexos de email se necessário.";
 "issue_reporter.buttons.accept" = "Eu concordo";

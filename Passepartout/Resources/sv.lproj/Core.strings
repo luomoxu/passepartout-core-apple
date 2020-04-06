@@ -179,6 +179,7 @@
 "vpn.errors.network" = "Nätverk ändrat";
 "vpn.errors.routing" = "Saknad routing";
 "vpn.errors.gateway" = "Ingen gateway";
+"vpn.errors.shutdown" = "Servern stängs av";
 "issue_reporter.title" = "Rapportera problem";
 "issue_reporter.message" = "Felsökningsloggen för dina senaste anslutningar är avgörande för att lösa dina anslutningsproblem och är helt anonym. \n\nHanteringsfilen .ovpn är eventuellt bifogad av någon känslig data. \n\nPresentera dubbelkolla e-postbilagorna om du är osäker. ";
 "issue_reporter.buttons.accept" = "Jag förstår";

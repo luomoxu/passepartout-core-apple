@@ -61,6 +61,7 @@
 "vpn.errors.network" = "Sieć zmieniona";
 "vpn.errors.routing" = "Brak routingu";
 "vpn.errors.gateway" = "Brak bramy domyślnej";
+"vpn.errors.shutdown" = "Serwer został zamknięty";
 
 "parsed_file.alerts.malformed.message" = "Plik konfiguracyjny zawiera źle zformułowaną opcję (%@).";
 "parsed_file.alerts.missing.message" = "Plik konfiguracyjny nie nawiera potrzebnej opcji (%@).";

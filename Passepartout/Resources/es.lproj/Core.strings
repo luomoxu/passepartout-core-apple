@@ -179,6 +179,7 @@
 "vpn.errors.network" = "Cambio de red";
 "vpn.errors.routing" = "Sin rutas";
 "vpn.errors.gateway" = "Sin puerta de enlace";
+"vpn.errors.shutdown" = "Servidor apagado";
 "issue_reporter.title" = "Reportar incidencia";
 "issue_reporter.message" = "El registro de debug de tus últimas conexiones es primordial para resolver tus problemas de conectividad y es completamente anónimo.\n\nSi hay un fichero de configuración .ovpn, se adjuntará sin ningún dato sensible.\n\nSi no estás segur@, por favor revisa los adjuntos del e-mail.";
 "issue_reporter.buttons.accept" = "Entendido";

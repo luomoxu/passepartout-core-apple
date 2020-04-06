@@ -179,6 +179,7 @@
 "vpn.errors.network" = "Netzwerk geändert";
 "vpn.errors.routing" = "Kein Routing";
 "vpn.errors.gateway" = "Kein Gateway";
+"vpn.errors.shutdown" = "Server heruntergefahren";
 "issue_reporter.title" = "Problem melden";
 "issue_reporter.message" = "Das Debug-Log deiner letzten Verbindung ist notwendig um dein Verbindungs-Problem zu untersuchen und ist vollständig anonymisiert.\n\nDie .ovpn-Konfigurations-Datei, sofern vorhanden, wird anonymisiert von jeglichen sensiblen Daten, angehangen.\n\nBitte prüfe im Zweifelsfall die Email-Anhänge.";
 "issue_reporter.buttons.accept" = "Ich verstehe";

@@ -56,6 +56,7 @@
 "vpn.errors.network" = "网络更改";
 "vpn.errors.routing" = "缺少路由";
 "vpn.errors.gateway" = "无网关";
+"vpn.errors.shutdown" = "服务器关闭";
 "parsed_file.alerts.malformed.message" = "此配置文件包含格式错误的选项(%@)。";
 "parsed_file.alerts.missing.message" = "此配置文件缺少必须的选项(%@)。";
 "parsed_file.alerts.unsupported.message" = "此配置文件包含不支持的选项(%@)。";

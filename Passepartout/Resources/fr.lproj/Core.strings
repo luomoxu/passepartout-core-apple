@@ -179,6 +179,7 @@
 "vpn.errors.network" = "Réseau modifié";
 "vpn.errors.routing" = "Routage manquant";
 "vpn.errors.gateway" = "Aucune passerelle";
+"vpn.errors.shutdown" = "Arrêt du serveur";
 "issue_reporter.title" = "Rapporter un problème";
 "issue_reporter.message" = "Le journal débogage de votre dernière connection est crucial pour résoudre vos problèmes de connection et est entièrement anonyme.\n\nLe fichier de configuration .ovpn, si disponible, est attaché et supprimé de toute information confidentielle.\n\nVeuillez contre-vérifier les fichiers attachés au courriel si incertain.";
 "issue_reporter.buttons.accept" = "Je comprends";

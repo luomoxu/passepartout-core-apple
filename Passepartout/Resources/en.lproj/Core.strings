@@ -61,6 +61,7 @@
 "vpn.errors.network" = "Network changed";
 "vpn.errors.routing" = "Missing routing";
 "vpn.errors.gateway" = "No gateway";
+"vpn.errors.shutdown" = "Server shutdown";
 
 "parsed_file.alerts.malformed.message" = "The configuration file contains a malformed option (%@).";
 "parsed_file.alerts.missing.message" = "The configuration file lacks a required option (%@).";

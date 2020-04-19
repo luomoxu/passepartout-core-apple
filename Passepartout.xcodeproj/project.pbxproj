@@ -738,24 +738,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Convenience-iOS/Convenience.framework",
-				"${PODS_ROOT}/OpenSSL-Apple/frameworks/iPhone/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive-iOS/SSZipArchive.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver-iOS/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/TunnelKit-iOS/TunnelKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Convenience.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TunnelKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-iOS/Pods-PassepartoutCoreTests-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -768,24 +755,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Convenience-macOS/Convenience.framework",
-				"${PODS_ROOT}/OpenSSL-Apple/frameworks/MacOSX/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/SSZipArchive-macOS/SSZipArchive.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver-macOS/SwiftyBeaver.framework",
-				"${BUILT_PRODUCTS_DIR}/TunnelKit-macOS/TunnelKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Convenience.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TunnelKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PassepartoutCoreTests-macOS/Pods-PassepartoutCoreTests-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -227,6 +227,7 @@ public class AppConstants {
         ]
 
         public static let referrals: [Infrastructure.Name: String] = [
+            .hideme: "https://member.hide.me/en/checkout?plan=new_default_prices&coupon=6CB-BDB-802&duration=24",
             .mullvad: "https://mullvad.net/en/account/create/",
             .nordvpn: "https://go.nordvpn.net/SH21Z",
             .pia: "https://www.privateinternetaccess.com/pages/buy-vpn/",

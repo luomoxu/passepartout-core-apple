@@ -109,6 +109,7 @@
 "service.alerts.download.message" = "%@ requiert le téléchargement de fichiers de configuration supplémentaires.\n\nConfirmer le début du téléchargement.";
 "service.alerts.download.failed" = "Échec de téléchargement des fichiers de configuration. %@";
 "service.alerts.download.hud.extracting" = "Extraction des fichiers, veuillez patienter...";
+"account.sections.guidance.footer.infrastructure.hideme" = "Utilisez votre identifiants web de %@.";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement numérique (sans espaces).";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement votre courriel.";
 "account.sections.guidance.footer.infrastructure.pia" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement numérique avec le préfixe \"p\" ";

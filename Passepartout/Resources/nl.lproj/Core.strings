@@ -109,6 +109,7 @@
 "service.alerts.download.message" = "%@ vereist het downloaden van extra configuratiebestanden.\n\nBevestig om het downloaden te starten.";
 "service.alerts.download.failed" = "Downloaden van configuratiebestanden is mislukt. %@";
 "service.alerts.download.hud.extracting" = "Bestanden uitpakken, even geduld...";
+"account.sections.guidance.footer.infrastructure.hideme" = "Gebruik de inloggegevens van %@.";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Gebruik de inloggegevens van %@. Uw gebruikersnaam is meestal numeriek (zonder ruimte).";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Gebruik de inloggegevens van %@. Uw gebruikersnaam is meestal uw e-mailadres.";
 "account.sections.guidance.footer.infrastructure.pia" = "Gebruik de inloggegevens van %@. Uw gebruikersnaam is meestal numeriek met \"p\" als voorvoegsel.";

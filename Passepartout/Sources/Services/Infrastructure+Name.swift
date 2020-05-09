@@ -33,6 +33,8 @@ extension Infrastructure {
 }
 
 extension Infrastructure.Name {
+    public static let hideme = "hideme"
+
     public static let mullvad = "mullvad"
 
     public static let nordvpn = "nordvpn"

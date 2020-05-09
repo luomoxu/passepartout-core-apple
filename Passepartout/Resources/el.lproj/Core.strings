@@ -109,6 +109,7 @@
 "service.alerts.download.message" = "%@ απαιτεί τη λήψη πρόσθετων αρχείων ρυθμίσεων.\n\nΕπιβεβαιώστε για να ξεκινήσετε τη λήψη.";
 "service.alerts.download.failed" = "Αποτυχία λήψης αρχείων ρυθμίσεων. %@";
 "service.alerts.download.hud.extracting" = "Εξάγοντας τα αρχεία, παρακαλώ να είστε υπομονετικοί...";
+"account.sections.guidance.footer.infrastructure.hideme" = "Χρησιμοποιήστε τα διαπιστευτήρια ιστοτόπου %@.";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Χρησιμοποιήστε τα διαπιστευτήρια ιστοτόπου %@. Το όνομα χρήστη είναι συνήθως αριθμητικό (χωρίς διαστήματα).";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Χρησιμοποιήστε τα διαπιστευτήρια ιστοτόπου %@. Το όνομα χρήστη είναι συνήθως το ηλεκτρονικό σας ταχυδρομείο.";
 "account.sections.guidance.footer.infrastructure.pia" = "Χρησιμοποιήστε τα διαπιστευτήρια ιστοτόπου %@. Το όνομα χρήστη είναι συνήθως αριθμητικό με πρόθεμα \"p\".";

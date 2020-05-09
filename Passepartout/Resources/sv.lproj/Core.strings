@@ -109,6 +109,7 @@
 "service.alerts.download.message" = "%@ kräver nedladdning av ytterligare konfigurationsfiler. \n\nKontrollera för att starta nedladdningen.";
 "service.alerts.download.failed" = "Misslyckades med att ladda ner konfigurationsfiler. %@";
 "service.alerts.download.hud.extracting" = "Extraherar filer, var så tålmodig ...";
+"account.sections.guidance.footer.infrastructure.hideme" = "Använd dina %@ webbplatsuppgifter.";
 "account.sections.guidance.footer.infrastructure.mullvad" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis numeriskt (utan utrymmen).";
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis ditt e-postmeddelande.";
 "account.sections.guidance.footer.infrastructure.pia" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis numeriskt med ett prefix för \" p \".";

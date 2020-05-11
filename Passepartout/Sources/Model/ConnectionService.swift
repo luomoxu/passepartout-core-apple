@@ -404,15 +404,14 @@ public class ConnectionService: Codable {
     public func addOrReplaceProfile(_ profile: ConnectionProfile, credentials: Credentials?, title: String? = nil) {
         let key = ProfileKey(profile)
         cache[key] = profile
-        try? setCredentials(credentials, for: profile)
-        if cache.count == 1 {
-            activeProfileKey = key
-        }
-        // associate host title
         if key.context == .host {
             hostTitles[key.id] = title
         }
+        try? setCredentials(credentials, for: profile)
 
+        if cache.count == 1 {
+            activeProfileKey = key
+        }
         delegate?.connectionService(didAdd: profile)
 
         // serialization (can fail)

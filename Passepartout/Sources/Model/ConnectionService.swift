@@ -498,6 +498,13 @@ public class ConnectionService: Codable {
         return nil
     }
     
+    public func hostProfile(withTitle title: String) -> HostConnectionProfile? {
+        guard let id = existingHostId(withTitle: title) else {
+            return nil
+        }
+        return profile(withContext: .host, id: id) as? HostConnectionProfile
+    }
+    
     // MARK: Credentials
     
     public func needsCredentials(for profile: ConnectionProfile) -> Bool {

@@ -232,6 +232,7 @@ public class AppConstants {
             .nordvpn: "https://go.nordvpn.net/SH21Z",
             .pia: "https://www.privateinternetaccess.com/pages/buy-vpn/",
             .protonvpn: "https://proton.go2cloud.org/SHZ",
+            .torguard: "https://torguard.net/",
             .tunnelbear: "https://www.tunnelbear.com/",
             .vyprvpn: "https://www.vyprvpn.com/",
             .windscribe: "https://secure.link/kCsD0prd"

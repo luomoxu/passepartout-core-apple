@@ -114,7 +114,6 @@
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis ditt e-postmeddelande.";
 "account.sections.guidance.footer.infrastructure.pia" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis numeriskt med ett prefix för \" p \".";
 "account.sections.guidance.footer.infrastructure.protonvpn" = "Hitta dina %@ credentials i avsnittet \" Konto> OpenVPN / IKEv2 Användarnamn \"på webbplatsen.";
-"account.sections.guidance.footer.infrastructure.torguard" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis ditt e-postmeddelande.";
 "account.sections.guidance.footer.infrastructure.tunnelbear" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis ditt e-postmeddelande.";
 "account.sections.guidance.footer.infrastructure.vyprvpn" = "Använd dina %@ webbplatsuppgifter. Ditt användarnamn är vanligtvis ditt e-postmeddelande.";
 "account.sections.guidance.footer.infrastructure.windscribe" = "Hitta din %@ credentials i OpenVPN Config Generator på webbplatsen.";

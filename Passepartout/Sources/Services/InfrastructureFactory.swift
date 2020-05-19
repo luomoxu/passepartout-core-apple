@@ -97,7 +97,11 @@ public class InfrastructureFactory {
             log.warning("Error loading cache or nothing cached: \(e)")
 
             cachedMetadata.forEach {
-                cachedInfrastructures[$0.name] = bundledInfrastructure(withName: $0.name)
+                guard let infra = bundledInfrastructure(withName: $0.name) else {
+                    log.warning("Missing infrastructure \($0.name) from bundle")
+                    return
+                }
+                cachedInfrastructures[$0.name] = infra
                 log.debug("Loaded infrastructure \($0.name) from bundle")
             }
             return
@@ -131,14 +135,23 @@ public class InfrastructureFactory {
                 log.warning("Bundle is newer than cache, superseding cache for \(name)")
             }
 
-            cachedInfrastructures[name] = bundledInfrastructure(withName: name)
+            // fall back to bundle
+            guard let infra = bundledInfrastructure(withName: name) else {
+                log.warning("Missing infrastructure \(name) from bundle")
+                continue
+            }
+            cachedInfrastructures[name] = infra
             log.debug("Loaded infrastructure \(name) from bundle")
         }
 
         // fill up with bundled
         cachedMetadata.forEach {
             if cachedInfrastructures[$0.name] == nil {
-                cachedInfrastructures[$0.name] = bundledInfrastructure(withName: $0.name)
+                guard let infra = bundledInfrastructure(withName: $0.name) else {
+                    log.warning("Missing infrastructure \($0.name) from bundle")
+                    return
+                }
+                cachedInfrastructures[$0.name] = infra
                 log.debug("Loaded infrastructure \($0.name) from bundle")
             }
         }
@@ -156,9 +169,9 @@ public class InfrastructureFactory {
         return cachedInfrastructures[name]
     }
     
-    private func bundledInfrastructure(withName name: Infrastructure.Name) -> Infrastructure {
+    private func bundledInfrastructure(withName name: Infrastructure.Name) -> Infrastructure? {
         guard let url = name.bundleURL else {
-            fatalError("Cannot find JSON for infrastructure '\(name)'")
+            return nil
         }
         do {
             return try Infrastructure.from(url: url)

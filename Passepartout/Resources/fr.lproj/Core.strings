@@ -114,6 +114,7 @@
 "account.sections.guidance.footer.infrastructure.nordvpn" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement votre courriel.";
 "account.sections.guidance.footer.infrastructure.pia" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement numérique avec le préfixe \"p\" ";
 "account.sections.guidance.footer.infrastructure.protonvpn" = "Trouvez votre identifiant web %@ dans la section du site web \"Account > OpenVPN / IKEv2 nom d'utilisateur\" ";
+"account.sections.guidance.footer.infrastructure.torguard" = "Utilisez vos informations d'identification de service %@, qui peuvent différer des informations d'identification du web.";
 "account.sections.guidance.footer.infrastructure.tunnelbear" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement votre courriel.";
 "account.sections.guidance.footer.infrastructure.vyprvpn" = "Utilisez votre identifiants web de %@. Votre nom d'utilisateur est normalement votre courriel.";
 "account.sections.guidance.footer.infrastructure.windscribe" = "Trouver votre identifiant %@ dans la section web Générateur de configuration OpenVPN.";

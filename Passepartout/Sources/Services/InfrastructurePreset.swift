@@ -73,6 +73,8 @@ public class InfrastructurePreset: Codable {
         
         case keepAliveSeconds = "ping"
 
+        case keepAliveTimeoutSeconds = "pingTimeout"
+
         case renegotiatesAfterSeconds = "reneg"
 
         case tlsWrap = "wrap"
@@ -180,6 +182,7 @@ public class InfrastructurePreset: Codable {
         sessionBuilder.clientKey = try cfgContainer.decodeIfPresent(OpenVPN.CryptoContainer.self, forKey: .clientKey)
         sessionBuilder.tlsWrap = try cfgContainer.decodeIfPresent(OpenVPN.TLSWrap.self, forKey: .tlsWrap)
         sessionBuilder.keepAliveInterval = try cfgContainer.decodeIfPresent(TimeInterval.self, forKey: .keepAliveSeconds)
+        sessionBuilder.keepAliveTimeout = try cfgContainer.decodeIfPresent(TimeInterval.self, forKey: .keepAliveTimeoutSeconds)
         sessionBuilder.renegotiatesAfter = try cfgContainer.decodeIfPresent(TimeInterval.self, forKey: .renegotiatesAfterSeconds)
         sessionBuilder.endpointProtocols = try cfgContainer.decode([EndpointProtocol].self, forKey: .endpointProtocols)
         sessionBuilder.checksEKU = try cfgContainer.decodeIfPresent(Bool.self, forKey: .checksEKU) ?? false
@@ -223,6 +226,7 @@ public class InfrastructurePreset: Codable {
         try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.clientKey, forKey: .clientKey)
         try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.tlsWrap, forKey: .tlsWrap)
         try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.keepAliveInterval, forKey: .keepAliveSeconds)
+        try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.keepAliveTimeout, forKey: .keepAliveTimeoutSeconds)
         try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.renegotiatesAfter, forKey: .renegotiatesAfterSeconds)
         try cfgContainer.encode(endpointProtocols, forKey: .endpointProtocols)
         try cfgContainer.encodeIfPresent(configuration.sessionConfiguration.checksEKU, forKey: .checksEKU)

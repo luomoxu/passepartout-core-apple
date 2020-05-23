@@ -35,7 +35,13 @@ public protocol EndpointDataSource {
     
     var canCustomizeEndpoint: Bool { get }
     
-    var customAddress: String? { get }
+    var customAddress: String? { get set }
     
-    var customProtocol: EndpointProtocol? { get }
+    var customProtocol: EndpointProtocol? { get set }
+}
+
+public extension EndpointDataSource {
+    var usesCustomEndpoint: Bool {
+        return (customAddress != nil) || (customProtocol != nil)
+    }
 }

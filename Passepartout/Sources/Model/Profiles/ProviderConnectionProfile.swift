@@ -56,13 +56,9 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         return infrastructure.preset(for: presetId)
     }
     
-    public var manualAddress: String?
+    public var customAddress: String?
 
-    public var manualProtocol: EndpointProtocol?
-    
-    public var usesProviderEndpoint: Bool {
-        return (manualAddress != nil) || (manualProtocol != nil)
-    }
+    public var customProtocol: EndpointProtocol?
     
     public var favoriteGroupIds: [String]?
 
@@ -92,15 +88,15 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     private func validateEndpoint() {
         guard let pool = pool, let preset = preset else {
-            manualAddress = nil
-            manualProtocol = nil
+            customAddress = nil
+            customProtocol = nil
             return
         }
-        if let address = manualAddress, !pool.hasAddress(address) {
-            manualAddress = nil
+        if let address = customAddress, !pool.hasAddress(address) {
+            customAddress = nil
         }
-        if let proto = manualProtocol, !preset.hasProtocol(proto) {
-            manualProtocol = nil
+        if let proto = customProtocol, !preset.hasProtocol(proto) {
+            customProtocol = nil
         }
     }
     
@@ -147,7 +143,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
             throw ApplicationError.externalResources
         }
 
-        if let address = manualAddress {
+        if let address = customAddress {
             builder.prefersResolvedAddresses = true
             builder.resolvedAddresses = [address]
         } else if builder.sessionConfiguration.hostname == nil {
@@ -159,7 +155,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         }
         
         var sessionBuilder = builder.sessionConfiguration.builder()
-        if let proto = manualProtocol {
+        if let proto = customProtocol {
             sessionBuilder.endpointProtocols = [proto]
         } else {
             
@@ -212,13 +208,5 @@ public extension ProviderConnectionProfile {
     
     var canCustomizeEndpoint: Bool {
         return true
-    }
-    
-    var customAddress: String? {
-        return manualAddress
-    }
-
-    var customProtocol: EndpointProtocol? {
-        return manualProtocol
     }
 }

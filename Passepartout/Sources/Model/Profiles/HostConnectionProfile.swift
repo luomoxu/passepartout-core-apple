@@ -31,6 +31,10 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     public var parameters: OpenVPNTunnelProvider.Configuration
 
+    public var customAddress: String?
+
+    public var customProtocol: EndpointProtocol?
+    
     public init(hostname: String) {
         id = UUID().uuidString
         self.hostname = hostname
@@ -70,10 +74,29 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         builder.debugLogFormat = configuration.debugLogFormat
         builder.masksPrivateData = configuration.masksPrivateData
 
+        if let address = customAddress {
+            builder.prefersResolvedAddresses = true
+            builder.resolvedAddresses = [address]
+        }
+        
         // forcibly override hostname with profile hostname (never nil)
         var sessionBuilder = builder.sessionConfiguration.builder()
         sessionBuilder.hostname = hostname
         sessionBuilder.tlsSecurityLevel = 0 // lowest, tolerate widest range of certificates
+
+        if let proto = customProtocol {
+            sessionBuilder.endpointProtocols = [proto]
+        } else {
+            
+            // restrict "Any" protocol to UDP, unless there are no UDP endpoints
+            let allEndpoints = builder.sessionConfiguration.endpointProtocols
+            var endpoints = allEndpoints?.filter { $0.socketType == .udp }
+            if endpoints?.isEmpty ?? true {
+                endpoints = allEndpoints
+            }
+            sessionBuilder.endpointProtocols = endpoints
+        }
+
         builder.sessionConfiguration = sessionBuilder.build()
 
         return builder.build()
@@ -100,14 +123,6 @@ public extension HostConnectionProfile {
     }
     
     var canCustomizeEndpoint: Bool {
-        return false
-    }
-
-    var customAddress: String? {
-        return nil
-    }
-    
-    var customProtocol: EndpointProtocol? {
-        return nil
+        return true
     }
 }

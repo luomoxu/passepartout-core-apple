@@ -85,7 +85,7 @@
 "organizer.cells.join_community.caption" = "加入社区";
 "organizer.cells.write_review.caption" = "写下想法";
 "organizer.cells.donate.caption" = "提供捐助";
-"organizer.cells.patreon.caption" = "在Patreon上支持我";
+"organizer.cells.github_sponsors.caption" = "在GitHub上支持我";
 "organizer.cells.translate.caption" = "提供翻译";
 "organizer.cells.about.caption" = "关于 %@";
 "organizer.cells.uninstall.caption" = "移除VPN配置";

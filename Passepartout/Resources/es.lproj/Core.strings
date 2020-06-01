@@ -52,7 +52,7 @@
 "organizer.cells.join_community.caption" = "Apuntarse a la comunidad";
 "organizer.cells.write_review.caption" = "Escribir una reseña";
 "organizer.cells.donate.caption" = "Hacer una donación";
-"organizer.cells.patreon.caption" = "Apoyar en Patreon";
+"organizer.cells.github_sponsors.caption" = "Apoyar en GitHub";
 "organizer.cells.translate.caption" = "Ofrecer una traducción";
 "organizer.cells.about.caption" = "Sobre %@";
 "organizer.cells.uninstall.caption" = "Borrar configuración VPN";

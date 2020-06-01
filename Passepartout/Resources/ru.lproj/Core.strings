@@ -52,7 +52,7 @@
 "organizer.cells.join_community.caption" = "Вступить в сообщество";
 "organizer.cells.write_review.caption" = "Написать отзыв";
 "organizer.cells.donate.caption" = "Сделать пожертвование";
-"organizer.cells.patreon.caption" = "Поддержите меня на Patreon";
+"organizer.cells.github_sponsors.caption" = "Поддержите меня на GitHub";
 "organizer.cells.translate.caption" = "Помощь с переводом";
 "organizer.cells.about.caption" = "Об %@";
 "organizer.cells.uninstall.caption" = "Удалить VPN конфигурацию";

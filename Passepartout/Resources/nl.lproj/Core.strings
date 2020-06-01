@@ -52,7 +52,7 @@
 "organizer.cells.join_community.caption" = "Word lid van de gemeenschap";
 "organizer.cells.write_review.caption" = "Schrijf een beoordeling";
 "organizer.cells.donate.caption" = "Doneer een gift";
-"organizer.cells.patreon.caption" = "Steun me op Patreon";
+"organizer.cells.github_sponsors.caption" = "Steun me op GitHub";
 "organizer.cells.translate.caption" = "Help met vertalen";
 "organizer.cells.about.caption" = "Over %@";
 "organizer.cells.uninstall.caption" = "Verwijder VPN configuratie";

@@ -199,7 +199,7 @@ public class AppConstants {
         
         public static let subreddit = URL(string: "https://www.reddit.com/r/passepartout")!
         
-        public static let patreon = URL(string: "https://www.patreon.com/keeshux")!
+        public static let githubSponsors = URL(string: "https://www.github.com/sponsors/passepartoutvpn")!
         
         public static let alternativeTo = URL(string: "https://alternativeto.net/software/passepartout-vpn/")!
         

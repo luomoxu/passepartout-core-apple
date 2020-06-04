@@ -52,7 +52,7 @@
 "organizer.cells.join_community.caption" = "Συμμετοχή στην κοινότητα";
 "organizer.cells.write_review.caption" = "Γράψτε μια κριτική";
 "organizer.cells.donate.caption" = "Κάντε μια δωρεά";
-"organizer.cells.patreon.caption" = "Υποστηρίξτε με στο Patreon";
+"organizer.cells.github_sponsors.caption" = "Υποστηρίξτε με στο GitHub";
 "organizer.cells.translate.caption" = "Βοηθήστε στη μετάφραση";
 "organizer.cells.about.caption" = "Σχετικά με %@";
 "organizer.cells.uninstall.caption" = "Αφαίρεση ρύθμισης VPN";

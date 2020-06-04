@@ -52,7 +52,7 @@
 "organizer.cells.join_community.caption" = "Gå med i samhället";
 "organizer.cells.write_review.caption" = "Skriv en recension";
 "organizer.cells.donate.caption" = "Gör en donation";
-"organizer.cells.patreon.caption" = "Stötta mig på Patreon";
+"organizer.cells.github_sponsors.caption" = "Stötta mig på GitHub";
 "organizer.cells.translate.caption" = "Erbjuda att översätta";
 "organizer.cells.about.caption" = "Om %@";
 "organizer.cells.uninstall.caption" = "Ta bort VPN-konfiguration";

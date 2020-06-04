@@ -98,7 +98,7 @@
 "organizer.cells.join_community.caption" = "Join community";
 "organizer.cells.write_review.caption" = "Write a review";
 "organizer.cells.donate.caption" = "Make a donation";
-"organizer.cells.patreon.caption" = "Support me on Patreon";
+"organizer.cells.github_sponsors.caption" = "Support me on GitHub";
 "organizer.cells.translate.caption" = "Offer to translate";
 "organizer.cells.about.caption" = "About %@";
 "organizer.cells.uninstall.caption" = "Remove VPN configuration";

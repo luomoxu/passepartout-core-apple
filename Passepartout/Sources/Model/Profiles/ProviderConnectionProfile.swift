@@ -146,7 +146,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
         if let address = customAddress {
             builder.prefersResolvedAddresses = true
             builder.resolvedAddresses = [address]
-        } else if builder.sessionConfiguration.hostname == nil {
+        } else if builder.sessionConfiguration.hostname == nil || (pool.isResolved ?? false) {
             builder.prefersResolvedAddresses = true
             builder.resolvedAddresses = pool.addresses()
         } else {

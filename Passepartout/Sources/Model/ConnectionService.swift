@@ -598,7 +598,11 @@ public class ConnectionService: Codable {
         connection.interfaceTypeMatch = .any
         rules.append(connection)
         
-        return NetworkExtensionVPNConfiguration(protocolConfiguration: protocolConfiguration, onDemandRules: rules)
+        return NetworkExtensionVPNConfiguration(
+            title: screenTitle(ProfileKey(profile)),
+            protocolConfiguration: protocolConfiguration,
+            onDemandRules: rules
+        )
     }
     
     private func policyRule(for profile: ConnectionProfile) -> NEOnDemandRule {

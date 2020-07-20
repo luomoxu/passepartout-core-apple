@@ -586,6 +586,12 @@ public class ConnectionService: Codable {
             rule.interfaceTypeMatch = .cellular
             rules.append(rule)
         }
+        #else
+        if profile.trustedNetworks.includesEthernet {
+            let rule = policyRule(for: profile)
+            rule.interfaceTypeMatch = .ethernet
+            rules.append(rule)
+        }
         #endif
         let reallyTrustedWifis = Array(profile.trustedNetworks.includedWiFis.filter { $1 }.keys)
         if !reallyTrustedWifis.isEmpty {

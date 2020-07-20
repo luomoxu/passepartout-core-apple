@@ -28,6 +28,8 @@ import Foundation
 public struct TrustedNetworks: Codable {
     #if os(iOS)
     public var includesMobile = false
+    #else
+    public var includesEthernet = false
     #endif
     
     public var includedWiFis: [String: Bool] = [:]

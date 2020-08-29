@@ -1,7 +1,7 @@
 PODS:
-  - Convenience/Misc (0.0.1)
-  - Convenience/Persistence (0.0.1)
-  - Convenience/WebServices (0.0.1):
+  - Convenience/Misc (0.0.2)
+  - Convenience/Persistence (0.0.2)
+  - Convenience/WebServices (0.0.2):
     - SwiftyBeaver
   - OpenSSL-Apple (1.1.1g.6)
   - SSZipArchive (2.2.3)
@@ -20,9 +20,9 @@ PODS:
     - TunnelKit/Core
 
 DEPENDENCIES:
-  - Convenience/Misc (from `https://github.com/keeshux/convenience`, commit `cfd2e57`)
-  - Convenience/Persistence (from `https://github.com/keeshux/convenience`, commit `cfd2e57`)
-  - Convenience/WebServices (from `https://github.com/keeshux/convenience`, commit `cfd2e57`)
+  - Convenience/Misc (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
+  - Convenience/Persistence (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
+  - Convenience/WebServices (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
   - SSZipArchive
   - TunnelKit/Extra/LZO (from `https://github.com/passepartoutvpn/tunnelkit`, commit `683617d`)
   - TunnelKit/Manager (from `https://github.com/passepartoutvpn/tunnelkit`, commit `683617d`)
@@ -36,7 +36,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Convenience:
-    :commit: cfd2e57
+    :commit: 7b1c88a
     :git: https://github.com/keeshux/convenience
   TunnelKit:
     :commit: 683617d
@@ -44,19 +44,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Convenience:
-    :commit: cfd2e57
+    :commit: 7b1c88a
     :git: https://github.com/keeshux/convenience
   TunnelKit:
     :commit: 683617d
     :git: https://github.com/passepartoutvpn/tunnelkit
 
 SPEC CHECKSUMS:
-  Convenience: 230739dd640bb826b640765d93715744721726be
+  Convenience: c805c2aff569ff735c5d69c2c2b7a9bd110fa507
   OpenSSL-Apple: c9c1b9c5b2b1fc4e1758fc5f0836b58ae7fd8183
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
   TunnelKit: a4fa4ecc6fc2b9fa74c38609c0e8fc4441d9672e
 
-PODFILE CHECKSUM: ba94cb85098bbf04e74ffe879d92f845015257eb
+PODFILE CHECKSUM: 78572f28fec75933a40f5af1328fb46ff06bb6d4
 
 COCOAPODS: 1.9.1

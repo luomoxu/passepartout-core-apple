@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,13 +15,6 @@
 		0E7177992299DF8F0055BBC2 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Core.strings */; };
 		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
-		0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
-		0E7177A42299DF8F0055BBC2 /* MockVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */; };
-		0E7177A52299DF8F0055BBC2 /* VPNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177702299DF8F0055BBC2 /* VPNStatus.swift */; };
-		0E7177A62299DF8F0055BBC2 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */; };
-		0E7177A72299DF8F0055BBC2 /* VPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177722299DF8F0055BBC2 /* VPNProvider.swift */; };
-		0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177732299DF8F0055BBC2 /* VPN.swift */; };
-		0E7177A92299DF8F0055BBC2 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */; };
 		0E7177AA2299DF8F0055BBC2 /* GroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177752299DF8F0055BBC2 /* GroupConstants.swift */; };
 		0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177762299DF8F0055BBC2 /* ApplicationError.swift */; };
 		0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */; };
@@ -56,13 +49,6 @@
 		0E7178032299E2F90055BBC2 /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177762299DF8F0055BBC2 /* ApplicationError.swift */; };
 		0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177752299DF8F0055BBC2 /* GroupConstants.swift */; };
 		0E7178072299E2F90055BBC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71778D2299DF8F0055BBC2 /* Utils.swift */; };
-		0E7178082299E2FD0055BBC2 /* StandardVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */; };
-		0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */; };
-		0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177702299DF8F0055BBC2 /* VPNStatus.swift */; };
-		0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */; };
-		0E71780C2299E2FD0055BBC2 /* VPNProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177722299DF8F0055BBC2 /* VPNProvider.swift */; };
-		0E71780D2299E2FD0055BBC2 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177732299DF8F0055BBC2 /* VPN.swift */; };
-		0E71780E2299E2FD0055BBC2 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */; };
 		0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177932299DF8F0055BBC2 /* PoolGroup.swift */; };
 		0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177942299DF8F0055BBC2 /* Infrastructure.swift */; };
 		0E7178112299E3060055BBC2 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177952299DF8F0055BBC2 /* Pool.swift */; };
@@ -149,13 +135,6 @@
 		0E7177692299DF8F0055BBC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intents.strings; sourceTree = "<group>"; };
 		0E71776A2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Core.strings; sourceTree = "<group>"; };
 		0E71776B2299DF8F0055BBC2 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Intents.strings; sourceTree = "<group>"; };
-		0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardVPNProvider.swift; sourceTree = "<group>"; };
-		0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockVPNProvider.swift; sourceTree = "<group>"; };
-		0E7177702299DF8F0055BBC2 /* VPNStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNStatus.swift; sourceTree = "<group>"; };
-		0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNConfiguration.swift; sourceTree = "<group>"; };
-		0E7177722299DF8F0055BBC2 /* VPNProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNProvider.swift; sourceTree = "<group>"; };
-		0E7177732299DF8F0055BBC2 /* VPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
-		0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GracefulVPN.swift; sourceTree = "<group>"; };
 		0E7177752299DF8F0055BBC2 /* GroupConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConstants.swift; sourceTree = "<group>"; };
 		0E7177762299DF8F0055BBC2 /* ApplicationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 		0E7177782299DF8F0055BBC2 /* ConnectionService+Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConnectionService+Configurations.swift"; sourceTree = "<group>"; };
@@ -311,7 +290,6 @@
 				0E7177772299DF8F0055BBC2 /* Model */,
 				0E7177922299DF8F0055BBC2 /* Services */,
 				0EB9EB6E23867C78009C0A1C /* UI */,
-				0E71776D2299DF8F0055BBC2 /* VPN */,
 				0E71778F2299DF8F0055BBC2 /* AppConstants.swift */,
 				0E7177762299DF8F0055BBC2 /* ApplicationError.swift */,
 				0E7177752299DF8F0055BBC2 /* GroupConstants.swift */,
@@ -319,20 +297,6 @@
 				0E71778D2299DF8F0055BBC2 /* Utils.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		0E71776D2299DF8F0055BBC2 /* VPN */ = {
-			isa = PBXGroup;
-			children = (
-				0E7177742299DF8F0055BBC2 /* GracefulVPN.swift */,
-				0E71776F2299DF8F0055BBC2 /* MockVPNProvider.swift */,
-				0E71776E2299DF8F0055BBC2 /* StandardVPNProvider.swift */,
-				0E7177732299DF8F0055BBC2 /* VPN.swift */,
-				0E7177712299DF8F0055BBC2 /* VPNConfiguration.swift */,
-				0E7177722299DF8F0055BBC2 /* VPNProvider.swift */,
-				0E7177702299DF8F0055BBC2 /* VPNStatus.swift */,
-			);
-			path = VPN;
 			sourceTree = "<group>";
 		};
 		0E7177772299DF8F0055BBC2 /* Model */ = {
@@ -801,7 +765,6 @@
 				0E7177B42299DF8F0055BBC2 /* TransientStore.swift in Sources */,
 				0EB9EB7023867CEA009C0A1C /* TrustedNetworks.swift in Sources */,
 				0E7177B32299DF8F0055BBC2 /* DataUnit.swift in Sources */,
-				0E7177A32299DF8F0055BBC2 /* StandardVPNProvider.swift in Sources */,
 				0E7177C82299DF8F0055BBC2 /* WebServices.swift in Sources */,
 				0E7177AF2299DF8F0055BBC2 /* TrustedNetworksUI.swift in Sources */,
 				0E7177C92299DF8F0055BBC2 /* InfrastructureFactory.swift in Sources */,
@@ -810,7 +773,6 @@
 				0E7177B12299DF8F0055BBC2 /* ProfileNetworkSettings.swift in Sources */,
 				0E7177B82299DF8F0055BBC2 /* HostConnectionProfile.swift in Sources */,
 				0E7177BE2299DF8F0055BBC2 /* SessionProxy+Communication.swift in Sources */,
-				0E7177A92299DF8F0055BBC2 /* GracefulVPN.swift in Sources */,
 				0E7177C72299DF8F0055BBC2 /* InfrastructurePreset.swift in Sources */,
 				0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */,
 				0E7177C52299DF8F0055BBC2 /* Infrastructure.swift in Sources */,
@@ -820,7 +782,6 @@
 				0E7177B22299DF8F0055BBC2 /* Preferences.swift in Sources */,
 				0E7177B02299DF8F0055BBC2 /* DebugLog.swift in Sources */,
 				0E7177BA2299DF8F0055BBC2 /* ProfileKey.swift in Sources */,
-				0E7177A82299DF8F0055BBC2 /* VPN.swift in Sources */,
 				0E7177B52299DF8F0055BBC2 /* EndpointDataSource.swift in Sources */,
 				0EA84512238A9A0500EFC500 /* Infrastructure+Name.swift in Sources */,
 				0E7177AC2299DF8F0055BBC2 /* ConnectionService+Configurations.swift in Sources */,
@@ -830,12 +791,8 @@
 				0E7177C42299DF8F0055BBC2 /* PoolGroup.swift in Sources */,
 				0E7177BB2299DF8F0055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
 				0E7177C22299DF8F0055BBC2 /* AppConstants.swift in Sources */,
-				0E7177A62299DF8F0055BBC2 /* VPNConfiguration.swift in Sources */,
 				0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */,
-				0E7177A72299DF8F0055BBC2 /* VPNProvider.swift in Sources */,
-				0E7177A52299DF8F0055BBC2 /* VPNStatus.swift in Sources */,
 				0EA84517238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */,
-				0E7177A42299DF8F0055BBC2 /* MockVPNProvider.swift in Sources */,
 				0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */,
 				0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */,
 			);
@@ -846,16 +803,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EEF233D2321A82D000AEBE3 /* Issue.swift in Sources */,
-				0E71780D2299E2FD0055BBC2 /* VPN.swift in Sources */,
 				0E71781C2299E3160055BBC2 /* DataUnit.swift in Sources */,
-				0E71780C2299E2FD0055BBC2 /* VPNProvider.swift in Sources */,
 				0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */,
 				0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */,
 				0EA84513238A9A0E00EFC500 /* Infrastructure+Name.swift in Sources */,
 				0E7178242299E3190055BBC2 /* PlaceholderConnectionProfile.swift in Sources */,
 				0E71780F2299E3060055BBC2 /* PoolGroup.swift in Sources */,
-				0E71780A2299E2FD0055BBC2 /* VPNStatus.swift in Sources */,
-				0E7178092299E2FD0055BBC2 /* MockVPNProvider.swift in Sources */,
 				0E45E71322BE12D400F19312 /* OpenVPNOptions.swift in Sources */,
 				0E7178252299E3190055BBC2 /* PoolCategory.swift in Sources */,
 				0E7178102299E3060055BBC2 /* Infrastructure.swift in Sources */,
@@ -867,12 +820,9 @@
 				0E7178162299E3160055BBC2 /* ConnectionService+Migration.swift in Sources */,
 				0E7178172299E3160055BBC2 /* ConnectionProfile.swift in Sources */,
 				0E7178022299E2F90055BBC2 /* AppConstants.swift in Sources */,
-				0E71780E2299E2FD0055BBC2 /* GracefulVPN.swift in Sources */,
-				0E7178082299E2FD0055BBC2 /* StandardVPNProvider.swift in Sources */,
 				0E71781E2299E3160055BBC2 /* EndpointDataSource.swift in Sources */,
 				0E71781F2299E3160055BBC2 /* ConnectionService.swift in Sources */,
 				0E7178122299E3060055BBC2 /* InfrastructurePreset.swift in Sources */,
-				0E71780B2299E2FD0055BBC2 /* VPNConfiguration.swift in Sources */,
 				0E7178202299E3160055BBC2 /* Credentials.swift in Sources */,
 				0EA84518238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */,
 				0E7178152299E3160055BBC2 /* ConnectionService+Configurations.swift in Sources */,

@@ -46,7 +46,9 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     // MARK: ConnectionProfile
     
-    public let context: Context = .host
+    public var context: Context {
+        return .host
+    }
     
     public let id: String
     

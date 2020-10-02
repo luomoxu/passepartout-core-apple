@@ -102,7 +102,9 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
     
     // MARK: ConnectionProfile
     
-    public let context: Context = .provider
+    public var context: Context {
+        return .provider
+    }
 
     public var id: String {
         return name

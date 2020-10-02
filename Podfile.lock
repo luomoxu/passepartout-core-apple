@@ -5,7 +5,7 @@ PODS:
     - SwiftyBeaver
   - OpenSSL-Apple (1.1.1g.6)
   - SSZipArchive (2.2.3)
-  - SwiftyBeaver (1.9.1)
+  - SwiftyBeaver (1.9.2)
   - TunnelKit/AppExtension (2.3.0):
     - SwiftyBeaver
     - TunnelKit/Core
@@ -54,7 +54,7 @@ SPEC CHECKSUMS:
   Convenience: c805c2aff569ff735c5d69c2c2b7a9bd110fa507
   OpenSSL-Apple: c9c1b9c5b2b1fc4e1758fc5f0836b58ae7fd8183
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
-  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+  SwiftyBeaver: b8239f6bfe9e1ea3303e6139abc8c24228081d84
   TunnelKit: a4fa4ecc6fc2b9fa74c38609c0e8fc4441d9672e
 
 PODFILE CHECKSUM: 78572f28fec75933a40f5af1328fb46ff06bb6d4

@@ -85,6 +85,8 @@
 
 //////////////////////
 
+"organizer.sections.twitch.header" = "Twitch";
+"organizer.sections.twitch.footer" = "Come watch me make Passepartout live on Twitch, join the chat to interact and contribute!";
 "organizer.sections.providers.header" = "Providers";
 "organizer.sections.providers.footer" = "Here you find a few providers with preset configuration profiles.";
 "organizer.sections.hosts.header" = "Hosts";
@@ -93,6 +95,7 @@
 "organizer.sections.siri.footer" = "Get help from Siri to speed up your most common interactions with the app.";
 "organizer.sections.support.header" = "Support";
 "organizer.sections.feedback.header" = "Feedback";
+"organizer.cells.follow_twitch.caption" = "Watch Passepartout on Twitch";
 "organizer.cells.profile.value.current" = "In use";
 "organizer.cells.siri_shortcuts.caption" = "Manage shortcuts";
 "organizer.cells.join_community.caption" = "Join community";

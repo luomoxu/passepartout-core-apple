@@ -232,3 +232,6 @@
 "server_network.cells.route.caption" = "Rota";
 "wizards.provider.cells.update_list.caption" = "Atualizar lista";
 "wizards.provider.alerts.unavailable.message" = "Não foi possível baixar a infraestrutura do provedor, tente novamente mais tarde.";
+"organizer.sections.twitch.header" = "Twitch";
+"organizer.sections.twitch.footer" = "Venha me ver fazer o Passepartout ao vivo no Twitch, entre no chat para interagir e contribuir!";
+"organizer.cells.follow_twitch.caption" = "Assistir Passepartout no Twitch";

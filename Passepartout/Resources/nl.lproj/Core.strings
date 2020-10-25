@@ -232,3 +232,6 @@
 "server_network.cells.route.caption" = "Route";
 "wizards.provider.cells.update_list.caption" = "Lijst bijwerken";
 "wizards.provider.alerts.unavailable.message" = "Kon de provider-infrastructuur niet downloaden, probeer het later opnieuw.";
+"organizer.sections.twitch.header" = "Twitch";
+"organizer.sections.twitch.footer" = "Kom kijken hoe ik Passepartout live maak op Twitch, doe mee aan de chat om te communiceren en bij te dragen!";
+"organizer.cells.follow_twitch.caption" = "Bekijk Passepartout op Twitch";

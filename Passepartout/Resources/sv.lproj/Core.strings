@@ -232,3 +232,6 @@
 "server_network.cells.route.caption" = "Rutt";
 "wizards.provider.cells.update_list.caption" = "Uppdatera listan";
 "wizards.provider.alerts.unavailable.message" = "Det gick inte att ladda ner leverantörens infrastruktur, försök igen senare.";
+"organizer.sections.twitch.header" = "Twitch";
+"organizer.sections.twitch.footer" = "Kom och se mig göra Passepartout live på Twitch, gå med i chatten för att interagera och bidra!";
+"organizer.cells.follow_twitch.caption" = "Se Passepartout on Twitch";

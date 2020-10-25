@@ -232,3 +232,6 @@
 "server_network.cells.route.caption" = "Διαδρομή";
 "wizards.provider.cells.update_list.caption" = "Αναβάθμιση Λίστας";
 "wizards.provider.alerts.unavailable.message" = "Δεν ήταν δυνατή η λήψη της υποδομής του παρόχου, δοκιμάστε ξανά αργότερα.";
+"organizer.sections.twitch.header" = "Twitch";
+"organizer.sections.twitch.footer" = "Ελάτε να με παρακολουθήσετε ζωντανά το Passepartout στο Twitch, εγγραφείτε στη συνομιλία για να αλληλεπιδράσετε και να συνεισφέρετε!";
+"organizer.cells.follow_twitch.caption" = "Παρακολουθήστε το Passepartout στο Twitch";

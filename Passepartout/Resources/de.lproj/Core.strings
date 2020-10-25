@@ -231,3 +231,4 @@
 "service.alerts.configuration.disconnected" = "Konfiguration nicht verfügbar, stellen Sie sicher, dass Sie mit dem VPN verbunden sind.";
 "server_network.cells.route.caption" = "Route";
 "wizards.provider.cells.update_list.caption" = "Aktualisiere Liste";
+"wizards.provider.alerts.unavailable.message" = "Die Provider-Infrastruktur konnte nicht heruntergeladen werden. Bitte versuchen Sie es später erneut.";

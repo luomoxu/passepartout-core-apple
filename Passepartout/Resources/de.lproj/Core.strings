@@ -235,3 +235,4 @@
 "organizer.sections.twitch.header" = "Twitch";
 "organizer.sections.twitch.footer" = "Come watch me make Passepartout live on Twitch, join the chat to interact and contribute!";
 "organizer.cells.follow_twitch.caption" = "Passepartout auf Twitch ansehen";
+"service.cells.use_profile.caption" = "Dieses Profil verwenden";

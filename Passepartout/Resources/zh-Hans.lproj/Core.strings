@@ -235,3 +235,4 @@
 "organizer.sections.twitch.header" = "Twitch";
 "organizer.sections.twitch.footer" = "快来看我让Passepartout在Twitch上直播，加入聊天互动并做出贡献！";
 "organizer.cells.follow_twitch.caption" = "在Twitch上观看路路通";
+"service.cells.use_profile.caption" = "使用此配置";

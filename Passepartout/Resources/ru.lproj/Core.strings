@@ -235,3 +235,4 @@
 "organizer.sections.twitch.header" = "Twitch";
 "organizer.sections.twitch.footer" = "Приходите посмотреть, как я делаю Passepartout в прямом эфире на Twitch, присоединяйтесь к чату, чтобы общаться и вносить свой вклад!";
 "organizer.cells.follow_twitch.caption" = "Смотрите Паспарту на Twitch";
+"service.cells.use_profile.caption" = "Использовать это профиль.";

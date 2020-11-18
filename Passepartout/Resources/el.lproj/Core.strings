@@ -235,3 +235,4 @@
 "organizer.sections.twitch.header" = "Twitch";
 "organizer.sections.twitch.footer" = "Ελάτε να με παρακολουθήσετε ζωντανά το Passepartout στο Twitch, εγγραφείτε στη συνομιλία για να αλληλεπιδράσετε και να συνεισφέρετε!";
 "organizer.cells.follow_twitch.caption" = "Παρακολουθήστε το Passepartout στο Twitch";
+"service.cells.use_profile.caption" = "Χρησιμοποιήστε αυτό το προφίλ";

@@ -264,3 +264,4 @@
 "credits.sections.translations.header" = "Tłumaczenia";
 
 "label.license.error" = "Nie udało się pobrać danych licencyjnych.";
+"service.cells.use_profile.caption" = "Używaj tego profilu";

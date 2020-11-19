@@ -27,7 +27,7 @@ import Foundation
 import Convenience
 
 public class WebServices {
-    public static let version = "v3"
+    public static let version = "v4"
     
     public enum Group: String {
         case providers

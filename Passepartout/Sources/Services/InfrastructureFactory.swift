@@ -233,7 +233,7 @@ public class InfrastructureFactory {
                 return
             }
             let appBuild = GroupConstants.App.buildNumber
-            guard appBuild >= infra.build else {
+            guard appBuild >= infra.buildNumber else {
                 log.error("Response requires app build >= \(infra.build) (found \(appBuild))")
                 DispatchQueue.main.async {
                     completionHandler(nil, error)

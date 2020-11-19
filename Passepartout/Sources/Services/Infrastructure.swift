@@ -35,7 +35,17 @@ public class Infrastructure: Codable {
         public let preset: String
     }
     
-    public let build: Int
+    public let build: [String: Int]
+    
+    public var buildNumber: Int {
+        var num: Int?
+        #if os(iOS)
+        num = build["ios"]
+        #else
+        num = build["macos"]
+        #endif
+        return num ?? 0
+    }
     
     public let name: Name
     

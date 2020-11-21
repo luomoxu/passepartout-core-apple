@@ -12,6 +12,7 @@
 		0E3CAF7B229A82040008E5C8 /* API in Resources */ = {isa = PBXBuildFile; fileRef = 0E3CAF79229A82030008E5C8 /* API */; };
 		0E45E71222BE12CD00F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
 		0E45E71322BE12D400F19312 /* OpenVPNOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */; };
+		0E6B5F5525698B6E00E45AA2 /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9EB6F23867CEA009C0A1C /* TrustedNetworks.swift */; };
 		0E7177992299DF8F0055BBC2 /* Core.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71774F2299DF8F0055BBC2 /* Core.strings */; };
 		0E71779A2299DF8F0055BBC2 /* Intents.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E7177512299DF8F0055BBC2 /* Intents.strings */; };
 		0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0E7177642299DF8F0055BBC2 /* Intents.intentdefinition */; };
@@ -804,6 +805,7 @@
 			files = (
 				0EEF233D2321A82D000AEBE3 /* Issue.swift in Sources */,
 				0E71781C2299E3160055BBC2 /* DataUnit.swift in Sources */,
+				0E6B5F5525698B6E00E45AA2 /* TrustedNetworks.swift in Sources */,
 				0E7178192299E3160055BBC2 /* DebugLog.swift in Sources */,
 				0E7178042299E2F90055BBC2 /* GroupConstants.swift in Sources */,
 				0EA84513238A9A0E00EFC500 /* Infrastructure+Name.swift in Sources */,

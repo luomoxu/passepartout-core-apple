@@ -45,7 +45,7 @@ class InfrastructureTests: XCTestCase {
     }
 
     func testIdentifier() {
-        let id = "us-east"
+        let id = "italy"
         guard let pool = infra.pool(for: id) else {
             XCTAssert(false)
             return

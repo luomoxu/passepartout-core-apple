@@ -197,6 +197,8 @@ public class AppConstants {
 
         public static let privacyPolicy = website.appendingPathComponent("privacy")
         
+        public static let donate = website.appendingPathComponent("donate")
+        
         public static let subreddit = URL(string: "https://www.reddit.com/r/passepartout")!
         
         public static let twitch = URL(string: "twitch://stream/keeshux")!

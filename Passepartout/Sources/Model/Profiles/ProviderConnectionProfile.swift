@@ -212,3 +212,10 @@ public extension ProviderConnectionProfile {
         return true
     }
 }
+
+public extension ConnectionService {
+    func setPoolId(_ poolId: String, forProviderProfile profile: ProviderConnectionProfile) {
+        profile.poolId = poolId
+        delegate?.connectionService(didUpdate: profile)
+    }
+}

@@ -40,6 +40,8 @@ public protocol ConnectionServiceDelegate: class {
     func connectionService(willDeactivate profile: ConnectionProfile)
 
     func connectionService(didActivate profile: ConnectionProfile)
+
+    func connectionService(didUpdate profile: ConnectionProfile)
 }
 
 public class ConnectionService: Codable {

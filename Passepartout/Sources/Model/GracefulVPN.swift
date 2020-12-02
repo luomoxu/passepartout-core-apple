@@ -32,15 +32,7 @@ private let log = SwiftyBeaver.self
 public class GracefulVPN {
     private let service: ConnectionService
     
-    public var profile: ConnectionProfile?
-    
     private var vpn: VPNProvider? {
-        guard let profile = profile else {
-            return nil
-        }
-        guard service.isActiveProfile(profile) else {
-            return nil
-        }
         return VPN.shared
     }
     
@@ -54,7 +46,6 @@ public class GracefulVPN {
     
     public init(service: ConnectionService) {
         self.service = service
-        profile = service.activeProfile
     }
     
     public func prepare(completionHandler: (() -> Void)?) {

@@ -30,6 +30,8 @@ import SwiftyBeaver
 
 public class AppConstants {
     public class App {
+        public static let appLauncherId = GroupConstants.App.config?["app_launcher_id"] as? String ?? "DUMMY_app_launcher_id"
+
         public static let appStoreId = GroupConstants.App.config?["appstore_id"] as? String ?? "DUMMY_appstore_id"
 
         public static let tunnelBundleId: String = {

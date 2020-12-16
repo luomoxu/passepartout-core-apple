@@ -26,12 +26,16 @@
 import Foundation
 
 public protocol Preferences {
+    var launchesOnLogin: Bool { get }
+    
     var resolvesHostname: Bool { get }
     
     var disconnectsOnSleep: Bool { get }
 }
 
 public class EditablePreferences: Preferences, Codable {
+    public var launchesOnLogin: Bool = true
+
     public var resolvesHostname: Bool = true
     
     public var disconnectsOnSleep: Bool = false

@@ -520,10 +520,10 @@ public class ConnectionService: Codable {
     }
     
     public func credentials(for profile: ConnectionProfile) -> Credentials? {
-        guard let username = profile.username, let key = profile.passwordKey else {
+        guard let username = profile.username else {
             return nil
         }
-        let password = (try? keychain.password(for: key)) ?? "" // make password optional
+        let password = (try? keychain.password(for: username, context: profile.passwordContext)) ?? "" // make password optional
         return Credentials(username, password)
     }
     

@@ -52,36 +52,33 @@ public protocol ConnectionProfile: class, EndpointDataSource, CustomStringConver
 }
 
 public extension ConnectionProfile {
-    var passwordKey: String? {
+    var passwordContext: String {
+        return "\(Bundle.main.bundleIdentifier!).\(context.rawValue).\(id)"
+    }
+    
+    func password(in keychain: Keychain) -> String? {
         guard let username = username else {
             return nil
         }
-        return "\(Bundle.main.bundleIdentifier!).\(context.rawValue).\(id).\(username)"
-    }
-
-    func password(in keychain: Keychain) -> String? {
-        guard let key = passwordKey else {
-            return nil
-        }
-        return try? keychain.password(for: key)
+        return try? keychain.password(for: username, context: passwordContext)
     }
     
     func setPassword(_ password: String?, in keychain: Keychain) throws {
-        guard let key = passwordKey else {
+        guard let username = username else {
             return
         }
         guard let password = password else {
-            keychain.removePassword(for: key)
+            keychain.removePassword(for: username, context: passwordContext)
             return
         }
-        try keychain.set(password: password, for: key, label: key)
+        try keychain.set(password: password, for: username, context: passwordContext)
     }
     
     func removePassword(in keychain: Keychain) {
-        guard let key = passwordKey else {
+        guard let username = username else {
             return
         }
-        keychain.removePassword(for: key)
+        keychain.removePassword(for: username, context: passwordContext)
     }
 }
 

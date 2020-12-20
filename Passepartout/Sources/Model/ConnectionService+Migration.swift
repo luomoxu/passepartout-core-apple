@@ -25,6 +25,7 @@
 
 import Foundation
 import SwiftyBeaver
+import TunnelKit
 
 private let log = SwiftyBeaver.self
 
@@ -150,6 +151,34 @@ public extension ConnectionService {
                 log.debug("Migrated host: \(filename) -> \(newFilename)")
             } catch let e {
                 log.warning("Unable to migrate host \(filename): \(e)")
+            }
+        }
+    }
+    
+    func migrateKeychainContext() {
+        for key in allProfileKeys() {
+            guard let profile = profile(withKey: key), let username = profile.username else {
+                continue
+            }
+            let keychain = Keychain(group: GroupConstants.App.groupId)
+            let prefix = "com.algoritmico.ios.Passepartout"
+
+            // profiles
+            do {
+                let oldUsername = "\(prefix).\(key.context).\(key.id).\(username)"
+                let password = try keychain.password(for: oldUsername)
+                try profile.setPassword(password, in: keychain)
+                keychain.removePassword(for: oldUsername)
+
+                // tunnel
+                if isActiveProfile(key) {
+                    let oldTunnelUsername = prefix
+                    let tunnelContext = "\(prefix).Tunnel"
+                    try keychain.set(password: password, for: username, context: tunnelContext)
+                    keychain.removePassword(for: oldTunnelUsername)
+                }
+            } catch {
+                //
             }
         }
     }

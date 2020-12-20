@@ -42,6 +42,8 @@ public class TransientStore {
         static let didMigrateDynamicProviders = "DidMigrateDynamicProviders"
 
         static let didMigrateHostsToUUID = "DidMigrateHostsToUUID"
+        
+        static let didMigrateKeychainContext = "didMigrateKeychainContext"
     }
     
     public static let shared = TransientStore()
@@ -96,7 +98,16 @@ public class TransientStore {
             UserDefaults.standard.set(newValue, forKey: Keys.didMigrateHostsToUUID)
         }
     }
-
+    
+    public static var didMigrateKeychainContext: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.didMigrateKeychainContext)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.didMigrateKeychainContext)
+        }
+    }
+    
     public static var baseVPNConfiguration: OpenVPNTunnelProvider.ConfigurationBuilder {
         let sessionBuilder = OpenVPN.ConfigurationBuilder()
         var builder = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionBuilder.build())
@@ -148,6 +159,11 @@ public class TransientStore {
 
             service.loadProfiles()
 
+            if !TransientStore.didMigrateKeychainContext {
+                service.migrateKeychainContext()
+                TransientStore.didMigrateKeychainContext = true
+            }
+
             // post-load migrations
             if !TransientStore.didMigrateHostsRoutingPolicies {
                 if service.reloadHostProfilesFromConfigurationFiles() {
@@ -166,6 +182,7 @@ public class TransientStore {
             TransientStore.didMigrateHostsRoutingPolicies = true
             TransientStore.didMigrateDynamicProviders = true
             TransientStore.didMigrateHostsToUUID = true
+            TransientStore.didMigrateKeychainContext = true
 
 //            // hardcoded loading
 //            _ = service.addProfile(ProviderConnectionProfile(name: .pia), credentials: nil)

@@ -26,7 +26,7 @@
 import Foundation
 
 public protocol Preferences {
-    var launchesOnLogin: Bool { get }
+    var launchesOnLogin: Bool? { get }
     
     var resolvesHostname: Bool { get }
     
@@ -34,7 +34,7 @@ public protocol Preferences {
 }
 
 public class EditablePreferences: Preferences, Codable {
-    public var launchesOnLogin: Bool = true
+    public var launchesOnLogin: Bool? = true
 
     public var resolvesHostname: Bool = true
     

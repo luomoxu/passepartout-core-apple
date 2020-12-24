@@ -111,7 +111,11 @@ public class TransientStore {
     public static var baseVPNConfiguration: OpenVPNTunnelProvider.ConfigurationBuilder {
         let sessionBuilder = OpenVPN.ConfigurationBuilder()
         var builder = OpenVPNTunnelProvider.ConfigurationBuilder(sessionConfiguration: sessionBuilder.build())
+        #if os(macOS)
+        builder.mtu = 1400
+        #else
         builder.mtu = 1250
+        #endif
         builder.shouldDebug = true
 //        builder.debugLogFormat = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $L $N.$F:$l - $M"
 //        builder.debugLogFormat = "$DHH:mm:ss$d $N.$F:$l - $M"

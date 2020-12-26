@@ -70,21 +70,29 @@ public struct Product: RawRepresentable, Equatable, Hashable {
 
     // MARK: Features
 
+    #if os(iOS)
     public static let unlimitedHosts = Product(featureId: "unlimited_hosts")
 
     public static let trustedNetworks = Product(featureId: "trusted_networks")
 
     public static let siriShortcuts = Product(featureId: "siri")
+    #endif
 
     public static let fullVersion = Product(featureId: "full_version")
     
+    #if os(iOS)
     public static let allFeatures: [Product] = [
         .unlimitedHosts,
         .trustedNetworks,
         .siriShortcuts,
         .fullVersion
     ]
-    
+    #else
+    public static let allFeatures: [Product] = [
+        .fullVersion
+    ]
+    #endif
+
     private init(featureId: String) {
         self.init(rawValue: "\(Product.featuresBundle).\(featureId)")!
     }

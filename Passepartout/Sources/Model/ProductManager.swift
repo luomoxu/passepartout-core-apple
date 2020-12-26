@@ -59,6 +59,8 @@ public class ProductManager: NSObject {
     
     private var purchasedFeatures: Set<Product>
     
+    private var purchaseDates: [Product: Date]
+    
     private var refreshRequest: SKReceiptRefreshRequest?
     
     private var restoreCompletionHandler: ((Error?) -> Void)?
@@ -68,6 +70,7 @@ public class ProductManager: NSObject {
         inApp = InApp()
         purchasedAppBuild = nil
         purchasedFeatures = []
+        purchaseDates = [:]
         
         super.init()
 
@@ -157,6 +160,10 @@ public class ProductManager: NSObject {
     public func isEligibleForFeedback() -> Bool {
         return isBeta || !purchasedFeatures.isEmpty
     }
+    
+    public func purchaseDate(forProduct product: Product) -> Date? {
+        return purchaseDates[product]
+    }
 
     public func reloadReceipt(andNotify: Bool = true) {
         guard let url = Bundle.main.appStoreReceiptURL else {
@@ -182,6 +189,8 @@ public class ProductManager: NSObject {
             }
         }
         if let iapReceipts = receipt.inAppPurchaseReceipts {
+            purchaseDates.removeAll()
+            
             log.debug("In-app receipts:")
             iapReceipts.forEach {
                 guard let pid = $0.productIdentifier, let product = Product(rawValue: pid) else {
@@ -193,6 +202,7 @@ public class ProductManager: NSObject {
                 }
                 if let purchaseDate = $0.originalPurchaseDate {
                     log.debug("\t\(pid) [purchased on: \(purchaseDate)]")
+                    purchaseDates[product] = purchaseDate
                 }
                 purchasedFeatures.insert(product)
             }

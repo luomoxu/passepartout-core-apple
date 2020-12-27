@@ -34,7 +34,7 @@ public protocol Preferences {
 }
 
 public class EditablePreferences: Preferences, Codable {
-    public var launchesOnLogin: Bool? = true
+    public var launchesOnLogin: Bool? = false
 
     public var resolvesHostname: Bool = true
     

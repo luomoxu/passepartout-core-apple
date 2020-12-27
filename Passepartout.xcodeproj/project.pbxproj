@@ -95,6 +95,8 @@
 		0EB9EB7023867CEA009C0A1C /* TrustedNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB9EB6F23867CEA009C0A1C /* TrustedNetworks.swift */; };
 		0ECA7D88259662FF0095F369 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA7D87259662FF0095F369 /* GracefulVPN.swift */; };
 		0ECA7D89259662FF0095F369 /* GracefulVPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA7D87259662FF0095F369 /* GracefulVPN.swift */; };
+		0ECA7D9D2596634D0095F369 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA7D9A2596634D0095F369 /* Product.swift */; };
+		0ECA7DB4259665270095F369 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA7DB3259665270095F369 /* ProductManager.swift */; };
 		0EEF233C2321A82D000AEBE3 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF233B2321A82D000AEBE3 /* Issue.swift */; };
 		0EEF233D2321A82D000AEBE3 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEF233B2321A82D000AEBE3 /* Issue.swift */; };
 		3AFA2C9264E53F518FCB9AAF /* Pods_PassepartoutCoreTests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8251F38F153AC3DED8D913 /* Pods_PassepartoutCoreTests_macOS.framework */; };
@@ -186,6 +188,8 @@
 		0EA84516238C2A1100EFC500 /* Infrastructure+Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Infrastructure+Metadata.swift"; sourceTree = "<group>"; };
 		0EB9EB6F23867CEA009C0A1C /* TrustedNetworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedNetworks.swift; sourceTree = "<group>"; };
 		0ECA7D87259662FF0095F369 /* GracefulVPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GracefulVPN.swift; sourceTree = "<group>"; };
+		0ECA7D9A2596634D0095F369 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0ECA7DB3259665270095F369 /* ProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		0EEF233B2321A82D000AEBE3 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		0EF795ED22B8D5D700262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Intents.strings; sourceTree = "<group>"; };
 		0EF795EE22B8D5DB00262FC6 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Core.strings; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 				0ECA7D87259662FF0095F369 /* GracefulVPN.swift */,
 				0E45E71122BE12CC00F19312 /* OpenVPNOptions.swift */,
 				0E71777E2299DF8F0055BBC2 /* Preferences.swift */,
+				0ECA7D9A2596634D0095F369 /* Product.swift */,
+				0ECA7DB3259665270095F369 /* ProductManager.swift */,
 				0E71777D2299DF8F0055BBC2 /* ProfileNetworkSettings.swift */,
 				0E71778B2299DF8F0055BBC2 /* SessionProxy+Communication.swift */,
 				0E7177802299DF8F0055BBC2 /* TransientStore.swift */,
@@ -781,6 +787,7 @@
 				0E7177C72299DF8F0055BBC2 /* InfrastructurePreset.swift in Sources */,
 				0E7177A22299DF8F0055BBC2 /* Intents.intentdefinition in Sources */,
 				0E7177C52299DF8F0055BBC2 /* Infrastructure.swift in Sources */,
+				0ECA7D9D2596634D0095F369 /* Product.swift in Sources */,
 				0E7177C62299DF8F0055BBC2 /* Pool.swift in Sources */,
 				0E7177C32299DF8F0055BBC2 /* IntentDispatcher.swift in Sources */,
 				0E7177B72299DF8F0055BBC2 /* PoolCategory.swift in Sources */,
@@ -800,6 +807,7 @@
 				0E7177BC2299DF8F0055BBC2 /* Credentials.swift in Sources */,
 				0EA84517238C2A1100EFC500 /* Infrastructure+Metadata.swift in Sources */,
 				0E7177AD2299DF8F0055BBC2 /* ConnectionService+Migration.swift in Sources */,
+				0ECA7DB4259665270095F369 /* ProductManager.swift in Sources */,
 				0E7177AB2299DF8F0055BBC2 /* ApplicationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

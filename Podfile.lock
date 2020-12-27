@@ -30,14 +30,14 @@ PODS:
     - TunnelKit/Manager
 
 DEPENDENCIES:
-  - Convenience/InApp (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
-  - Convenience/Misc (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
-  - Convenience/Persistence (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
-  - Convenience/WebServices (from `https://github.com/keeshux/convenience`, commit `7b1c88a`)
+  - Convenience/InApp (from `https://github.com/keeshux/convenience`, commit `b30816a`)
+  - Convenience/Misc (from `https://github.com/keeshux/convenience`, commit `b30816a`)
+  - Convenience/Persistence (from `https://github.com/keeshux/convenience`, commit `b30816a`)
+  - Convenience/WebServices (from `https://github.com/keeshux/convenience`, commit `b30816a`)
   - Kvitto (from `https://github.com/keeshux/Kvitto`, branch `enable-macos-spec`)
   - SSZipArchive
-  - TunnelKit/Extra/LZO (from `https://github.com/passepartoutvpn/tunnelkit`, commit `304d021`)
-  - TunnelKit/Protocols/OpenVPN (from `https://github.com/passepartoutvpn/tunnelkit`, commit `304d021`)
+  - TunnelKit/Extra/LZO (from `https://github.com/passepartoutvpn/tunnelkit`, commit `cfca8fa`)
+  - TunnelKit/Protocols/OpenVPN (from `https://github.com/passepartoutvpn/tunnelkit`, commit `cfca8fa`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -48,24 +48,24 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Convenience:
-    :commit: 7b1c88a
+    :commit: b30816a
     :git: https://github.com/keeshux/convenience
   Kvitto:
     :branch: enable-macos-spec
     :git: https://github.com/keeshux/Kvitto
   TunnelKit:
-    :commit: 304d021
+    :commit: cfca8fa
     :git: https://github.com/passepartoutvpn/tunnelkit
 
 CHECKOUT OPTIONS:
   Convenience:
-    :commit: 7b1c88a
+    :commit: b30816a
     :git: https://github.com/keeshux/convenience
   Kvitto:
     :commit: e263fcd1f40a6a482a0f1e424ba98009c4ad2b96
     :git: https://github.com/keeshux/Kvitto
   TunnelKit:
-    :commit: 304d021
+    :commit: cfca8fa
     :git: https://github.com/passepartoutvpn/tunnelkit
 
 SPEC CHECKSUMS:
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 2e8acd6fc90c6d0a27055867a290794926d57c02
   TunnelKit: 4db9180956f8aaf4ab152fd0d38c6c9c63a46cf8
 
-PODFILE CHECKSUM: dd6b10f7eda0f63900c5baa68ba38cba68543a30
+PODFILE CHECKSUM: bc7ea2b502849085b94b43bd03c4d6997309cd5d
 
 COCOAPODS: 1.10.0

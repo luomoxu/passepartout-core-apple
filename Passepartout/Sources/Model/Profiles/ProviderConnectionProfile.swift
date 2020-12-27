@@ -134,7 +134,6 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
 
         // XXX: copy paste, error prone
         var builder = preset.configuration.builder()
-        builder.mtu = configuration.mtu
         builder.shouldDebug = configuration.shouldDebug
         builder.debugLogFormat = configuration.debugLogFormat
         builder.masksPrivateData = configuration.masksPrivateData
@@ -175,6 +174,7 @@ public class ProviderConnectionProfile: ConnectionProfile, Codable, Equatable {
 //            ]
         }
         sessionBuilder.routingPolicies = [.IPv4, .IPv6]
+        sessionBuilder.mtu = configuration.sessionConfiguration.mtu
         builder.sessionConfiguration = sessionBuilder.build()
         
         return builder.build()

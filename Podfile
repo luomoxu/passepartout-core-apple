@@ -8,12 +8,12 @@ $tunnelkit_specs = ['Protocols/OpenVPN', 'Extra/LZO']
 
 def shared_pods
     #pod_version $tunnelkit_name, $tunnelkit_specs, '~> 3.0.0'
-    pod_git $tunnelkit_name, $tunnelkit_specs, '304d021'
+    pod_git $tunnelkit_name, $tunnelkit_specs, 'cfca8fa'
     #pod_path $tunnelkit_name, $tunnelkit_specs, '..'
-    pod 'Convenience/InApp', :git => 'https://github.com/keeshux/convenience', :commit => '7b1c88a'
-    pod 'Convenience/Misc', :git => 'https://github.com/keeshux/convenience', :commit => '7b1c88a'
-    pod 'Convenience/Persistence', :git => 'https://github.com/keeshux/convenience', :commit => '7b1c88a'
-    pod 'Convenience/WebServices', :git => 'https://github.com/keeshux/convenience', :commit => '7b1c88a'
+
+    for spec in ['InApp', 'Misc', 'Persistence', 'WebServices'] do
+        pod "Convenience/#{spec}", :git => 'https://github.com/keeshux/convenience', :commit => 'b30816a'
+    end
     pod 'Kvitto', :git => 'https://github.com/keeshux/Kvitto', :branch => 'enable-macos-spec'
     pod 'SSZipArchive'
 end

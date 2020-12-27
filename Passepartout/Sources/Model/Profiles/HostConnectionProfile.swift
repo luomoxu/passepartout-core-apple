@@ -71,7 +71,6 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         
         // XXX: copy paste, error prone
         var builder = parameters.builder()
-        builder.mtu = configuration.mtu
         builder.shouldDebug = configuration.shouldDebug
         builder.debugLogFormat = configuration.debugLogFormat
         builder.masksPrivateData = configuration.masksPrivateData
@@ -84,6 +83,7 @@ public class HostConnectionProfile: ConnectionProfile, Codable, Equatable {
         // forcibly override hostname with profile hostname (never nil)
         var sessionBuilder = builder.sessionConfiguration.builder()
         sessionBuilder.hostname = hostname
+        sessionBuilder.mtu = configuration.sessionConfiguration.mtu
         sessionBuilder.tlsSecurityLevel = 0 // lowest, tolerate widest range of certificates
 
         if let proto = customProtocol {

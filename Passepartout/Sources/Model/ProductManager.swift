@@ -143,9 +143,15 @@ public class ProductManager: NSObject {
     // MARK: In-app eligibility
     
     public func isFullVersion() -> Bool {
+        #if os(iOS)
         if isBeta && cfg.isBetaFullVersion {
             return true
         }
+        #else
+        if cfg.isBetaFullVersion {
+            return true
+        }
+        #endif
         return purchasedFeatures.contains(.fullVersion)
     }
     
@@ -158,7 +164,11 @@ public class ProductManager: NSObject {
     }
 
     public func isEligibleForFeedback() -> Bool {
+        #if os(iOS)
         return isBeta || !purchasedFeatures.isEmpty
+        #else
+        return isFullVersion()
+        #endif
     }
     
     public func purchaseDate(forProduct product: Product) -> Date? {
